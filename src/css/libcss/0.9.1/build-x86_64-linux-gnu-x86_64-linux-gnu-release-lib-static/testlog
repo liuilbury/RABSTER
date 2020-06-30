@@ -1,0 +1,178 @@
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_csdetect /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/csdetect/bom.dat
+    1: Detected charset UTF-32BE (1018) Source 3 Expected utf-32be (1018)
+    2: Detected charset UTF-32LE (1019) Source 3 Expected utf-32le (1019)
+    3: Detected charset UTF-16BE (1013) Source 3 Expected utf-16be (1013)
+    4: Detected charset UTF-16LE (1014) Source 3 Expected utf-16le (1014)
+    5: Detected charset UTF-8 (106) Source 3 Expected utf-8 (106)
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_csdetect /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/csdetect/bom-charset.dat
+    1: Detected charset UTF-8 (106) Source 3 Expected utf-8 (106)
+    2: Detected charset UTF-8 (106) Source 3 Expected utf-8 (106)
+    3: Detected charset ISO-8859-2 (5) Source 3 Expected iso-8859-2 (5)
+    4: Detected charset UTF-8 (106) Source 0 Expected utf-8 (106)
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/simple.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/allzengarden.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/blocks.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/malformed.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/badcomment.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/fontface.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex-auto /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/lex/tests1.dat
+    Test 1: PASS
+    Test 2: PASS
+    Test 3: PASS
+    Test 4: PASS
+    Test 5: PASS
+    Test 6: PASS
+    Test 7: PASS
+    Test 8: PASS
+    Test 9: PASS
+    Test 10: PASS
+    Test 11: PASS
+    Test 12: PASS
+    Test 13: PASS
+    Test 14: PASS
+    Test 15: PASS
+    Test 16: PASS
+    Test 17: PASS
+    Test 18: PASS
+    Test 19: PASS
+    Test 20: PASS
+    Test 21: PASS
+    Test 22: PASS
+    Test 23: PASS
+    Test 24: PASS
+    Test 25: PASS
+    Test 26: PASS
+    Test 27: PASS
+    Test 28: PASS
+    Test 29: PASS
+    Test 30: PASS
+    Test 31: PASS
+    Test 32: PASS
+    Test 33: PASS
+    Test 34: PASS
+    Test 35: PASS
+    Test 36: PASS
+    Test 37: PASS
+    Test 38: PASS
+    Test 39: PASS
+    Test 40: PASS
+    Test 41: PASS
+    Test 42: PASS
+    Test 43: PASS
+    Test 44: PASS
+    Test 45: PASS
+    Test 46: PASS
+    Test 47: PASS
+    Test 48: PASS
+    Test 49: PASS
+    Test 50: PASS
+    Test 51: PASS
+    Test 52: PASS
+    Test 53: PASS
+    Test 54: PASS
+    Test 55: PASS
+    Test 56: PASS
+    Test 57: PASS
+    Test 58: PASS
+    Test 59: PASS
+    Test 60: PASS
+    Test 61: PASS
+    Test 62: PASS
+    Test 63: PASS
+    Test 64: PASS
+    Test 65: PASS
+    Test 66: PASS
+    Test 67: PASS
+    Test 68: PASS
+    Test 69: PASS
+    Test 70: PASS
+    Test 71: PASS
+    Test 72: PASS
+    Test 73: PASS
+    Test 74: PASS
+    Test 75: PASS
+    Test 76: PASS
+    Test 77: PASS
+    Test 78: PASS
+    Test 79: PASS
+    Test 80: PASS
+    Test 81: PASS
+    Test 82: PASS
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex-auto /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/lex/tests2.dat
+    Test 1: PASS
+    Test 2: PASS
+    Test 3: PASS
+    Test 4: PASS
+    Test 5: PASS
+    Test 6: PASS
+    Test 7: PASS
+    Test 8: PASS
+    Test 9: PASS
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_lex-auto /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/lex/regression.dat
+    Test 1: PASS
+    Test 2: PASS
+    Test 3: PASS
+    Test 4: PASS
+    Test 5: PASS
+    Test 6: PASS
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_number /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/number/number.dat
+    got: 1.000 expected: 1.000
+    got: 0.000 expected: 0.000
+    got: 0.500 expected: 0.500
+    got: 0.999 expected: 0.999
+    got: 2097151.000 expected: 2097151.000
+    got: 2097151.999 expected: 2097151.999
+    got: -1.000 expected: -1.000
+    got: 0.000 expected: 0.000
+    got: -0.500 expected: -0.500
+    got: -0.999 expected: -0.999
+    got: -2097151.000 expected: -2097151.000
+    got: -2097152.000 expected: -2097152
+    got: -2097152.000 expected: -2097152
+    got: 0.000 expected: 0.000
+    got: 0.000 expected: 0.000
+    got: 0.000 expected: 0.000
+    got: 1.000 expected: 1.000
+    got: 0.000 expected: 0.000
+    got: 0.000 expected: 0.000
+    got: 0.000 expected: 0.000
+    got: 0.123 expected: 0.123
+    got: 0.124 expected: 0.124
+    got: 1.000 expected: 1.000
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_parse /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/simple.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_parse /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/allzengarden.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_parse /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/blocks.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_parse /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/malformed.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_parse /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/badcomment.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_parse /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/fontface.css
+    PASS
+Running build-x86_64-linux-gnu-x86_64-linux-gnu-release-lib-static/test_css21 /mnt/f/Netsurf-demo/libcss/0.9.1/test//data/css/simple.css
+    | bla•f
+    | body
+    |  font-family: 'Bitstream Vera Sans'
+    | body
+    |  font-family: 'foo 
+    	bar'
+    | body
+    | blah
+    | foo
+    | 
+    |  color: #ff008000
+    123123

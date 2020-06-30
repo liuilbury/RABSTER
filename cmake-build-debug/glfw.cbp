@@ -1,0 +1,2102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="glfw"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rabster">
+				<Option output="F:/opengl/glfw/cmake-build-debug/rabster.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 rabster"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rabster/fast">
+				<Option output="F:/opengl/glfw/cmake-build-debug/rabster.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 rabster/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo_all">
+				<Option output="F:/opengl/glfw/cmake-build-debug/demo_all.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo_all"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo_all/fast">
+				<Option output="F:/opengl/glfw/cmake-build-debug/demo_all.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo_all/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo_html">
+				<Option output="F:/opengl/glfw/cmake-build-debug/demo_html.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo_html"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo_html/fast">
+				<Option output="F:/opengl/glfw/cmake-build-debug/demo_html.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo_html/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo_opengl">
+				<Option output="F:/opengl/glfw/cmake-build-debug/demo_opengl.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo_opengl"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo_opengl/fast">
+				<Option output="F:/opengl/glfw/cmake-build-debug/demo_opengl.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="/include/iconv.h"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo_opengl/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jsontest">
+				<Option output="F:/opengl/glfw/cmake-build-debug/jsontest.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 jsontest"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jsontest/fast">
+				<Option output="F:/opengl/glfw/cmake-build-debug/jsontest.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/opengl/glfw/src/css/libparserutils/0.2.4/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src"/>
+					<Add directory="F:/opengl/glfw/src/css/libcss/0.9.1/src"/>
+					<Add directory="F:/opengl/glfw/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 jsontest/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/opengl/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;F:/opengl/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/opengl/glfw/jsontest.cpp">
+			<Option target="jsontest"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/Rabster.cpp">
+			<Option target="rabster"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/bytecode/bytecode.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/bytecode/opcodes.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/charset/detect.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/charset/detect.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/lex/lex.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/lex/lex.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/font_face.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/font_face.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/important.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/important.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/language.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/language.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/mq.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/mq.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/parse.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/parse.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_align_content.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_align_items.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_align_self.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_background_attachment.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_background_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_background_image.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_background_repeat.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_bottom.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_bottom_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_bottom_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_bottom_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_collapse.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_left.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_left_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_left_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_left_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_right.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_right_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_right_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_right_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_side_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_side_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_side_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_top.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_top_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_top_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_border_top_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_bottom.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_box_sizing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_break_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_break_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_break_inside.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_caption_side.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_clear.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_count.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_fill.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_gap.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_rule_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_rule_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_rule_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_span.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_column_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_counter_increment.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_counter_reset.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_cue_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_cue_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_direction.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_display.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_empty_cells.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_flex_basis.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_flex_direction.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_flex_grow.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_flex_shrink.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_flex_wrap.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_float.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_font_size.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_font_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_font_variant.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_justify_content.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_left.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_letter_spacing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_line_height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_list_style_image.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_list_style_position.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_margin_bottom.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_margin_left.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_margin_right.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_margin_side.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_margin_top.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_max_height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_max_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_min_height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_min_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_order.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_orphans.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_outline_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_outline_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_outline_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_overflow_x.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_overflow_y.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_padding_bottom.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_padding_left.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_padding_right.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_padding_side.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_padding_top.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_page_break_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_page_break_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_page_break_inside.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_pause_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_pause_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_pitch.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_pitch_range.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_position.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_richness.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_right.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_side.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_speak.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_speak_header.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_speak_numeral.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_speak_punctuation.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_speech_rate.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_stress.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_table_layout.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_text_align.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_text_indent.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_text_transform.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_top.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_unicode_bidi.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_vertical_align.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_visibility.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_volume.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_white_space.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_widows.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_word_spacing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_writing_mode.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/autogenerated_z_index.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/azimuth.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/background.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/background_position.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/border.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/border_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/border_spacing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/border_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/border_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/clip.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/column_rule.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/columns.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/content.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/css_property_parser_gen.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/cue.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/cursor.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/elevation.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/flex.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/flex_flow.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/font.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/font_family.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/font_weight.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/list_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/list_style_type.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/margin.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/opacity.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/outline.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/overflow.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/padding.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/pause.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/play_during.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/properties.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/properties.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/quotes.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/text_decoration.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/utils.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/utils.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/properties/voice_family.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/propstrings.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/parse/propstrings.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/arena.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/arena.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/arena_hash.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/autogenerated_computed.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/autogenerated_propget.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/autogenerated_propset.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/bloom.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/computed.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/computed.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/dispatch.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/dispatch.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/font_face.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/font_face.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/hash.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/hash.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/mq.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/align_content.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/align_items.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/align_self.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/azimuth.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/background_attachment.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/background_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/background_image.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/background_position.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/background_repeat.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_bottom_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_bottom_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_bottom_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_collapse.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_left_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_left_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_left_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_right_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_right_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_right_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_spacing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_top_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_top_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/border_top_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/bottom.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/box_sizing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/break_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/break_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/break_inside.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/caption_side.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/clear.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/clip.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_count.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_fill.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_gap.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_rule_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_rule_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_rule_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_span.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/column_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/content.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/counter_increment.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/counter_reset.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/cue_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/cue_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/cursor.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/direction.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/display.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/elevation.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/empty_cells.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/flex_basis.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/flex_direction.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/flex_grow.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/flex_shrink.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/flex_wrap.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/float.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/font_family.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/font_size.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/font_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/font_variant.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/font_weight.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/helpers.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/helpers.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/justify_content.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/left.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/letter_spacing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/line_height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/list_style_image.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/list_style_position.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/list_style_type.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/margin_bottom.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/margin_left.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/margin_right.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/margin_top.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/max_height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/max_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/min_height.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/min_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/opacity.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/order.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/orphans.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/outline_color.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/outline_style.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/outline_width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/overflow_x.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/overflow_y.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/padding_bottom.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/padding_left.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/padding_right.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/padding_top.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/page_break_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/page_break_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/page_break_inside.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/pause_after.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/pause_before.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/pitch.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/pitch_range.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/play_during.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/position.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/properties.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/quotes.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/richness.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/right.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/speak.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/speak_header.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/speak_numeral.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/speak_punctuation.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/speech_rate.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/stress.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/table_layout.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/text_align.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/text_decoration.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/text_indent.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/text_transform.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/top.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/unicode_bidi.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/vertical_align.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/visibility.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/voice_family.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/volume.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/white_space.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/widows.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/width.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/word_spacing.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/writing_mode.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/properties/z_index.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/propget.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/propset.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/select.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/select/select.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/stylesheet.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/stylesheet.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/utils/errors.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/utils/parserutilserror.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/utils/utils.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libcss/0.9.1/src/utils/utils.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/aliases.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/aliases.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codec.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/8859_tables.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/codec_8859.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/codec_ascii.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/codec_ext8.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/codec_impl.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/codec_utf16.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/codec_utf8.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/codecs/ext8_tables.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/encodings/utf16.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/encodings/utf8.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/charset/encodings/utf8impl.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/input/filter.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/input/filter.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/input/inputstream.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/utils/buffer.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/utils/endian.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/utils/errors.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/utils/stack.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/utils/utils.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libparserutils/0.2.4/src/utils/vector.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/css/libwapcaplet/0.4.3/src/libwapcaplet.c">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/demo_all.cpp">
+			<Option target="demo_all"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/demo_html.cpp">
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/demo_opengl.cpp">
+			<Option target="demo_opengl"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/glad.c">
+			<Option target="demo_all"/>
+			<Option target="demo_opengl"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/html/Handle.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/html/HtmlContent.cpp">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/html/HtmlContent.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/html/node.cpp">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/src/html/node.h">
+			<Option target="rabster"/>
+			<Option target="demo_all"/>
+			<Option target="demo_html"/>
+		</Unit>
+		<Unit filename="F:/opengl/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
