@@ -473,7 +473,10 @@ uint8_t css_computed_justify_content(
 uint8_t css_computed_order(
 		const css_computed_style *style,
 		int32_t *order);
-
+uint8_t css_computed_transition_delay(const css_computed_style *style,
+	css_fixed *length, css_unit *unit);
+uint8_t css_computed_transition_duration(const css_computed_style *style,
+	css_fixed *length, css_unit *unit);
 #ifdef __cplusplus
 }
 #endif

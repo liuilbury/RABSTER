@@ -48,7 +48,7 @@ void node::change(int key, const std::string &value)
 	//_style.set(key,value);
 	//_final_style.set(key,value);
 }
-void node::Render_Box(int nWidth,int nHeight)
+void node::Render_Box(int nWidth,int nHeight,css_pseudo_element mod)
 {
 	css_fixed width = 0;
 	css_unit wunit = CSS_UNIT_PX;
@@ -57,13 +57,12 @@ void node::Render_Box(int nWidth,int nHeight)
 	css_height_e htype = CSS_HEIGHT_AUTO;
 	css_unit hunit = CSS_UNIT_PX;
 	css_box_sizing_e bs = CSS_BOX_SIZING_CONTENT_BOX;
-	wtype = static_cast<css_width_e>(css_computed_width(_final_style->styles[CSS_PSEUDO_ELEMENT_NONE], &width, &wunit));
-	htype = static_cast<css_height_e>(css_computed_height(_final_style->styles[CSS_PSEUDO_ELEMENT_NONE], &height, &hunit));
-	printf("%d\n",width);
+	wtype = static_cast<css_width_e>(css_computed_width(_final_style->styles[mod], &width, &wunit));
+	htype = static_cast<css_height_e>(css_computed_height(_final_style->styles[mod], &height, &hunit));
 
 	width=width/1024;
 	height=height/1024;
-	bs = static_cast<css_box_sizing_e>(css_computed_box_sizing(_final_style->styles[CSS_PSEUDO_ELEMENT_NONE]));
+	bs = static_cast<css_box_sizing_e>(css_computed_box_sizing(_final_style->styles[mod]));
 	if (wtype == CSS_WIDTH_AUTO)
 	{
 		if (_parent == nullptr)
@@ -105,11 +104,11 @@ void node::Render_Box(int nWidth,int nHeight)
 	box.width=width;
 	box.height=height;
 }
-void node::Render_Color()
+void node::Render_Color(css_pseudo_element mod)
 {
 	css_color_e color_type;
 	css_color color_shade;
-	color_type = static_cast<css_color_e>(css_computed_background_color(_final_style->styles[CSS_PSEUDO_ELEMENT_NONE], &color_shade));
+	color_type = static_cast<css_color_e>(css_computed_background_color(_final_style->styles[mod], &color_shade));
 	char buf[8];
 	sprintf(buf, "%x", color_shade);
 	for (int i = 0; i < 4; i++)
@@ -125,4 +124,19 @@ void node::Render_Color()
 void node::Render_display()
 {
 	box.display= static_cast<css_display_e>(css_computed_display(_final_style->styles[CSS_PSEUDO_ELEMENT_NONE], _parent != nullptr));
+}
+void node::Render_Time()
+{
+	css_fixed delay_time=0;
+	css_transition_delay_e delayE;
+	css_unit delay_unit = CSS_UNIT_S;
+	delayE= static_cast<css_transition_delay_e>(css_computed_transition_delay(_final_style->styles[CSS_PSEUDO_ELEMENT_NONE], &delay_time, &delay_unit));
+	css_fixed duration_time=0;
+	css_transition_duration_e durationE;
+	css_unit duration_unit = CSS_UNIT_S;
+	durationE= static_cast<css_transition_duration_e>(css_computed_transition_duration(_final_style->styles[CSS_PSEUDO_ELEMENT_NONE], &duration_time, &duration_unit));
+	delay_time=delay_time*1000/1024;
+	duration_time=duration_time*1000/1024;
+	box.start_time=delay_time;
+	box.end_time=box.start_time+duration_time;
 }

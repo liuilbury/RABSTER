@@ -322,7 +322,8 @@ css_error node_is_hover(void* pw, void* n, bool* match)
 {
 	UNUSED(pw);
 	UNUSED(n);
-	*match = false;
+	node* node = static_cast<class node*>(n);
+	*match = node->hover;
 	return CSS_OK;
 }
 

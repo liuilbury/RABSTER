@@ -120,7 +120,6 @@ void HtmlContent::get_node_style(node* d, const css_computed_style* parent_style
 {
 	css_stylesheet* inline_style = nullptr;
 	css_computed_style* composed;
-	int flag=0;
 	if (!d->_inline_style.empty())
 	{
 		inline_style = create_inline_style(d->_inline_style);
@@ -145,6 +144,7 @@ void HtmlContent::get_tree_style(node* d)
 	const css_computed_style* parent_style = nullptr;
 	if (d->_parent != nullptr)
 	{
+		d->hover=d->_parent->hover;
 		parent_style = d->_parent->_final_style->styles[CSS_PSEUDO_ELEMENT_NONE];
 	}
 	get_node_style(d, parent_style);

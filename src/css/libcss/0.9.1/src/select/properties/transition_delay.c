@@ -36,7 +36,7 @@ css_error css__compose_transition_delay(const css_computed_style *parent,
 	css_unit unit = CSS_UNIT_S;
 	uint8_t type = get_transition_delay(child, &length, &unit);
 
-	if (type == CSS_WIDTH_INHERIT) {
+	if (type == CSS_TRANSITION_DELAY_INHERIT) {
 		type = get_transition_delay(parent, &length, &unit);
 	}
 

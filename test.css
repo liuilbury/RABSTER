@@ -2,9 +2,15 @@
     background-color: rgb(100,100,100);
 }
 div{
-    width: 50%;
-    height: 50%;
-    background-color: rgb(0,0,0);
+    width: 200px;
+    height: 20%;
+    transition-property:all;
+    transition-duration:5s;
+    background-color: aqua;
+}
+.ppp:hover
+{
+    width:500px;
 }
 .ppp {
     width: 100px;

@@ -11,11 +11,18 @@
 #include <libcss/libcss.h>
 using namespace std;
 struct Box{
-	int x,y;
-	int width;
-	int height;
+	int x=0,y=0;
+	int width=0;
+	int height=0;
 	int color[4];
 	css_display_e display;
+	int start_time=0;
+	int end_time=0;
+	void to_string(){
+		printf("width=%d height=%d\n",width,height);
+		printf("color=%d %d %d %d\n",color[0],color[1],color[2],color[3]);
+		printf("time:%d %d\n",start_time,end_time);
+	}
 };
 class node
 {
@@ -33,6 +40,8 @@ class node
 		_children.clear();
 		_inline_style= "";
 		_final_style= nullptr;
+		hover= false;
+
 	}
 	void* node_data;
 	bool vis[145] = { false };
@@ -50,13 +59,16 @@ class node
 	std::string _inline_style;
 	css_select_results* _style;
 	css_select_results* _final_style;
+	Box save_style;
 	void change(int key, const std::string& value);
 	set<node*> update();
 	void add_child(node*);
-	void Render_Box(int nWidth,int nHeight);
-	void Render_Color();
+	void Render_Box(int nWidth,int nHeight,css_pseudo_element);
+	void Render_Color(css_pseudo_element mod);
 	void Render_display();
+	void Render_Time();
 	Box box;
+	bool hover;
 };
 
 #endif //_NODE_H_

@@ -129,6 +129,7 @@ css_error css__parse_transition_property(css_language* c,
 		error = css__stylesheet_style_appendOPV(result, CSS_PROP_TRANSITION_PROPERTY, 0,TRANSITION_PROPERTY_ALL);
 	}else{
 		error=CSS_INVALID;
+		printf("%s\n",lwc_string_data(token->idata));
 		printf("no complete\n");
 	}
 	if (error != CSS_OK)
@@ -161,6 +162,7 @@ css_error css__parse_transition_timing_function(css_language* c,
 		error = css__stylesheet_style_appendOPV(result, CSS_PROP_TRANSITION_TIMING_FUNCTION, 0,TRANSITION_TIMING_FUNCTION_EASE_IN_OUT);
 	}else {
 		error=CSS_INVALID;
+		printf("%d\n",token->type);
 		printf("no complete\n");
 	}
 	if (error != CSS_OK)

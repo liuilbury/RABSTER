@@ -15,51 +15,85 @@ HDC hdc;
 node* root;
 HtmlContent* html_ctx;
 int nHeight, nWidth;
+int flag = 0;
+int time = 0, cnt = 0;
 void html_init()
 {
-	root = html_init(R"(F:\opengl\glfw\test.json)");
+	root = html_init(R"(F:\opengl\RABSTER\test.json)");
 	html_ctx = new HtmlContent();
 	html_ctx->html_css_new_stylesheets();
-	html_ctx->html_css_append_stylesheets(R"(F:\opengl\glfw\test.css)");
+	html_ctx->html_css_append_stylesheets(R"(F:\opengl\RABSTER\test.css)");
 	html_ctx->html_css_new_selection_context();
 	html_ctx->get_tree_style(root);
 }
-void html_destroy(node *d){
-	for(auto i:d->_children){
+void html_destroy(node* d)
+{
+	for (auto i:d->_children)
+	{
 		html_destroy(d);
 	}
 }
-int cnt=0;
 void Render_Node(node* d)
 {
-	d->Render_Box(nWidth,nHeight);
-	d->Render_Color();
+	css_pseudo_element mod = CSS_PSEUDO_ELEMENT_NONE;
+	d->Render_Box(nWidth, nHeight, mod);
+	d->Render_Color(mod);
 	d->Render_display();
+	d->Render_Time();
+	printf("!!!!%d\n",time);
+	if (time != 0&&d->box.end_time!=0)
+	{
+		if (d->box.start_time <= time && d->box.end_time > time)
+		{
+			flag = 1;
+			int all_time = d->box.end_time - d->box.start_time;
+			int spend_time = time - d->box.start_time;
+			d->box.color[0] = d->save_style.color[0]+(d->box.color[0] - d->save_style.color[0]) * spend_time / all_time;
+			d->box.color[1] = d->save_style.color[1]+(d->box.color[1] - d->save_style.color[1]) * spend_time / all_time;
+			d->box.color[2] = d->save_style.color[2]+(d->box.color[2] - d->save_style.color[2]) * spend_time / all_time;
+			d->box.color[3] = d->save_style.color[3]+(d->box.color[3] - d->save_style.color[3]) * spend_time / all_time;
+			d->box.width = d->save_style.width+(d->box.width - d->save_style.width) * spend_time / all_time;
+			//d->box.height = d->save_style.width+(d->box.height - d->save_style.height) * spend_time / all_time;
+		}
+	}
 	Graphics* graphics = new Graphics(hdc);
-	//Pen* pen=new Pen(Color(255,255,0,0),3);
-	SolidBrush* solidBrush = new SolidBrush(Color(d->box.color[0], d->box.color[1], d->box.color[2]+cnt, d->box.color[3]));
-	//printf("%d %d %d %d\n",d->box.color[0],d->box.color[1],d->box.color[2]+cnt,d->box.color[3]);
-	//graphics->DrawRectangle(pen,20,10,200,100);
-	int nowx=0,nowy=0;
-	if(d->_prev!= nullptr){
-		nowy=d->_prev->box.y;
+	SolidBrush* solidBrush = new SolidBrush(Color(d->box.color[0], d->box.color[1],
+		d->box.color[2] + cnt, d->box.color[3]));
+	int nowx = 0, nowy = 0;
+	if (d->_prev != nullptr)
+	{
+		nowy = d->_prev->box.y;
 	}
 	graphics->FillRectangle(solidBrush, nowx, nowy, d->box.width, d->box.height);
-	d->box.y=nowy+d->box.height;
-	//printf("%s %d %d %d %d\n",d->real_name.c_str(),nowx,nowy,d->box.width,d->box.height);
+	d->box.y = nowy + d->box.height;
+	d->box.to_string();
 }
 void Render_Tree(node* d)
 {
-	std::queue<node*>q;
+	flag = 0;
+	std::queue<node*> q;
 	q.push(d);
-	while(!q.empty()){
-		d=q.front();
+	while (!q.empty())
+	{
+		d = q.front();
 		q.pop();
 		Render_Node(d);
 		for (auto i:d->_children)
 		{
 			q.push(i);
 		}
+	}
+}
+void Save_Node(node* d)
+{
+	d->save_style = d->box;
+}
+void Save_Style(node* d)
+{
+	Save_Node(d);
+	for (auto i:d->_children)
+	{
+		Save_Style(i);
 	}
 }
 /*窗口回调函数*/
@@ -79,20 +113,43 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 	}
 	case WM_MOUSEHOVER:
 	{
-		printf("11\n");
+		return 0;
+	}
+	case WM_TIMER:
+	{
+		if (!flag)
+		{
+			printf("kk\n");
+			KillTimer(hwnd, 1);
+			return 0;
+		}
+		time += 16;
+		RECT rctA;
+		rctA.right = nWidth;
+		rctA.bottom = nHeight;
+		rctA.left = rctA.top = 0;
+		InvalidateRect(hwnd, &rctA, false);
 		return 0;
 	}
 	case WM_KEYDOWN:
 	{
 		if (wParam == VK_F1)
 		{
-			cnt=cnt+10;
+			cnt += 10;
 			//html_init();
 			RECT rctA;
-			rctA.right=nWidth;
-			rctA.bottom=nHeight;
-			rctA.left=rctA.top=0;
-			InvalidateRect(hwnd,&rctA, false);
+			rctA.right = nWidth;
+			rctA.bottom = nHeight;
+			rctA.left = rctA.top = 0;
+			InvalidateRect(hwnd, &rctA, false);
+		}
+		else if (wParam == VK_F2)
+		{
+			Save_Style(root);
+			flag = 1;
+			root->hover = true;
+			html_ctx->get_tree_style(root);
+			SetTimer(hwnd, 1, 16, NULL);
 		}
 		return 0;
 	}
@@ -100,8 +157,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 	{
 		RECT rctA;
 		GetWindowRect(hwnd, &rctA);
-		printf("%d %d %d %d\n",rctA.right,rctA.left,rctA.bottom,rctA.top);
-
+		printf("%d %d %d %d\n", rctA.right, rctA.left, rctA.bottom, rctA.top);
 		nWidth = rctA.right - rctA.left;   //窗口的宽度
 		nHeight = rctA.bottom - rctA.top;  //窗口的高度
 		PAINTSTRUCT ps;

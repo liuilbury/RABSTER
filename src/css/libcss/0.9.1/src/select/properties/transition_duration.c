@@ -35,7 +35,7 @@ css_error css__compose_transition_duration(const css_computed_style *parent,
 	css_unit unit = CSS_UNIT_S;
 	uint8_t type = get_transition_duration(child, &length, &unit);
 
-	if (type == CSS_WIDTH_INHERIT) {
+	if (type == CSS_TRANSITION_DURATION_INHERIT) {
 		type = get_transition_duration(parent, &length, &unit);
 	}
 
