@@ -2523,7 +2523,7 @@ static inline css_error set_transition_delay(css_computed_style *style, uint8_t 
 	/* 7bits: uuuuutt : unit | type */
 	*bits = (*bits & ~TRANSITION_DELAY_MASK) | ((((uint32_t)type & 0x3) | (unit << 2))<< TRANSITION_DELAY_SHIFT);
 
-	style->i.width = length;
+	style->i.transition_delay = length;
 
 	return CSS_OK;
 }

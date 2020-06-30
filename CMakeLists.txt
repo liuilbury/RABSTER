@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project (glfw)
+project (RABSTER)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++17")
 include_directories(src/css/libparserutils/0.2.4/src)

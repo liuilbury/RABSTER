@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = F:\opengl\glfw
+CMAKE_SOURCE_DIR = F:\opengl\RABSTER
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = F:\opengl\glfw\cmake-build-debug
+CMAKE_BINARY_DIR = F:\opengl\RABSTER\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/demo_opengl.dir/depend.make
@@ -59,30 +59,30 @@ include CMakeFiles/demo_opengl.dir/flags.make
 CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.obj: CMakeFiles/demo_opengl.dir/flags.make
 CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.obj: CMakeFiles/demo_opengl.dir/includes_CXX.rsp
 CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.obj: ../src/demo_opengl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\opengl\glfw\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\demo_opengl.dir\src\demo_opengl.cpp.obj -c F:\opengl\glfw\src\demo_opengl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\opengl\RABSTER\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\demo_opengl.dir\src\demo_opengl.cpp.obj -c F:\opengl\RABSTER\src\demo_opengl.cpp
 
 CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\opengl\glfw\src\demo_opengl.cpp > CMakeFiles\demo_opengl.dir\src\demo_opengl.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\opengl\RABSTER\src\demo_opengl.cpp > CMakeFiles\demo_opengl.dir\src\demo_opengl.cpp.i
 
 CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\opengl\glfw\src\demo_opengl.cpp -o CMakeFiles\demo_opengl.dir\src\demo_opengl.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\opengl\RABSTER\src\demo_opengl.cpp -o CMakeFiles\demo_opengl.dir\src\demo_opengl.cpp.s
 
 CMakeFiles/demo_opengl.dir/src/glad.c.obj: CMakeFiles/demo_opengl.dir/flags.make
 CMakeFiles/demo_opengl.dir/src/glad.c.obj: CMakeFiles/demo_opengl.dir/includes_C.rsp
 CMakeFiles/demo_opengl.dir/src/glad.c.obj: ../src/glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\opengl\glfw\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/demo_opengl.dir/src/glad.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\demo_opengl.dir\src\glad.c.obj   -c F:\opengl\glfw\src\glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\opengl\RABSTER\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/demo_opengl.dir/src/glad.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\demo_opengl.dir\src\glad.c.obj   -c F:\opengl\RABSTER\src\glad.c
 
 CMakeFiles/demo_opengl.dir/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/demo_opengl.dir/src/glad.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E F:\opengl\glfw\src\glad.c > CMakeFiles\demo_opengl.dir\src\glad.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E F:\opengl\RABSTER\src\glad.c > CMakeFiles\demo_opengl.dir\src\glad.c.i
 
 CMakeFiles/demo_opengl.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo_opengl.dir/src/glad.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S F:\opengl\glfw\src\glad.c -o CMakeFiles\demo_opengl.dir\src\glad.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S F:\opengl\RABSTER\src\glad.c -o CMakeFiles\demo_opengl.dir\src\glad.c.s
 
 # Object files for target demo_opengl
 demo_opengl_OBJECTS = \
@@ -98,7 +98,7 @@ demo_opengl.exe: CMakeFiles/demo_opengl.dir/build.make
 demo_opengl.exe: CMakeFiles/demo_opengl.dir/linklibs.rsp
 demo_opengl.exe: CMakeFiles/demo_opengl.dir/objects1.rsp
 demo_opengl.exe: CMakeFiles/demo_opengl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\opengl\glfw\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable demo_opengl.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\opengl\RABSTER\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable demo_opengl.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\demo_opengl.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -111,6 +111,6 @@ CMakeFiles/demo_opengl.dir/clean:
 .PHONY : CMakeFiles/demo_opengl.dir/clean
 
 CMakeFiles/demo_opengl.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" F:\opengl\glfw F:\opengl\glfw F:\opengl\glfw\cmake-build-debug F:\opengl\glfw\cmake-build-debug F:\opengl\glfw\cmake-build-debug\CMakeFiles\demo_opengl.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" F:\opengl\RABSTER F:\opengl\RABSTER F:\opengl\RABSTER\cmake-build-debug F:\opengl\RABSTER\cmake-build-debug F:\opengl\RABSTER\cmake-build-debug\CMakeFiles\demo_opengl.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/demo_opengl.dir/depend
 

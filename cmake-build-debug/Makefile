@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E re
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = F:\opengl\glfw
+CMAKE_SOURCE_DIR = F:\opengl\RABSTER
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = F:\opengl\glfw\cmake-build-debug
+CMAKE_BINARY_DIR = F:\opengl\RABSTER\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\opengl\glfw\cmake-build-debug\CMakeFiles F:\opengl\glfw\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\opengl\RABSTER\cmake-build-debug\CMakeFiles F:\opengl\RABSTER\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\opengl\glfw\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\opengl\RABSTER\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -5475,6 +5475,39 @@ src/css/libcss/0.9.1/src/parse/properties/text_decoration.c.s:
 	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/parse/properties/text_decoration.c.s
 .PHONY : src/css/libcss/0.9.1/src/parse/properties/text_decoration.c.s
 
+src/css/libcss/0.9.1/src/parse/properties/transition.obj: src/css/libcss/0.9.1/src/parse/properties/transition.c.obj
+
+.PHONY : src/css/libcss/0.9.1/src/parse/properties/transition.obj
+
+# target to build an object file
+src/css/libcss/0.9.1/src/parse/properties/transition.c.obj:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.obj
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.obj
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.obj
+.PHONY : src/css/libcss/0.9.1/src/parse/properties/transition.c.obj
+
+src/css/libcss/0.9.1/src/parse/properties/transition.i: src/css/libcss/0.9.1/src/parse/properties/transition.c.i
+
+.PHONY : src/css/libcss/0.9.1/src/parse/properties/transition.i
+
+# target to preprocess a source file
+src/css/libcss/0.9.1/src/parse/properties/transition.c.i:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.i
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.i
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.i
+.PHONY : src/css/libcss/0.9.1/src/parse/properties/transition.c.i
+
+src/css/libcss/0.9.1/src/parse/properties/transition.s: src/css/libcss/0.9.1/src/parse/properties/transition.c.s
+
+.PHONY : src/css/libcss/0.9.1/src/parse/properties/transition.s
+
+# target to generate assembly for a file
+src/css/libcss/0.9.1/src/parse/properties/transition.c.s:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.s
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.s
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/parse/properties/transition.c.s
+.PHONY : src/css/libcss/0.9.1/src/parse/properties/transition.c.s
+
 src/css/libcss/0.9.1/src/parse/properties/utils.obj: src/css/libcss/0.9.1/src/parse/properties/utils.c.obj
 
 .PHONY : src/css/libcss/0.9.1/src/parse/properties/utils.obj
@@ -9501,6 +9534,138 @@ src/css/libcss/0.9.1/src/select/properties/top.c.s:
 	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/top.c.s
 .PHONY : src/css/libcss/0.9.1/src/select/properties/top.c.s
 
+src/css/libcss/0.9.1/src/select/properties/transition_delay.obj: src/css/libcss/0.9.1/src/select/properties/transition_delay.c.obj
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_delay.obj
+
+# target to build an object file
+src/css/libcss/0.9.1/src/select/properties/transition_delay.c.obj:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.obj
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.obj
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.obj
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_delay.c.obj
+
+src/css/libcss/0.9.1/src/select/properties/transition_delay.i: src/css/libcss/0.9.1/src/select/properties/transition_delay.c.i
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_delay.i
+
+# target to preprocess a source file
+src/css/libcss/0.9.1/src/select/properties/transition_delay.c.i:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.i
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.i
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.i
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_delay.c.i
+
+src/css/libcss/0.9.1/src/select/properties/transition_delay.s: src/css/libcss/0.9.1/src/select/properties/transition_delay.c.s
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_delay.s
+
+# target to generate assembly for a file
+src/css/libcss/0.9.1/src/select/properties/transition_delay.c.s:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.s
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.s
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_delay.c.s
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_delay.c.s
+
+src/css/libcss/0.9.1/src/select/properties/transition_duration.obj: src/css/libcss/0.9.1/src/select/properties/transition_duration.c.obj
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_duration.obj
+
+# target to build an object file
+src/css/libcss/0.9.1/src/select/properties/transition_duration.c.obj:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.obj
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.obj
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.obj
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_duration.c.obj
+
+src/css/libcss/0.9.1/src/select/properties/transition_duration.i: src/css/libcss/0.9.1/src/select/properties/transition_duration.c.i
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_duration.i
+
+# target to preprocess a source file
+src/css/libcss/0.9.1/src/select/properties/transition_duration.c.i:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.i
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.i
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.i
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_duration.c.i
+
+src/css/libcss/0.9.1/src/select/properties/transition_duration.s: src/css/libcss/0.9.1/src/select/properties/transition_duration.c.s
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_duration.s
+
+# target to generate assembly for a file
+src/css/libcss/0.9.1/src/select/properties/transition_duration.c.s:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.s
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.s
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_duration.c.s
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_duration.c.s
+
+src/css/libcss/0.9.1/src/select/properties/transition_property.obj: src/css/libcss/0.9.1/src/select/properties/transition_property.c.obj
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_property.obj
+
+# target to build an object file
+src/css/libcss/0.9.1/src/select/properties/transition_property.c.obj:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.obj
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.obj
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.obj
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_property.c.obj
+
+src/css/libcss/0.9.1/src/select/properties/transition_property.i: src/css/libcss/0.9.1/src/select/properties/transition_property.c.i
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_property.i
+
+# target to preprocess a source file
+src/css/libcss/0.9.1/src/select/properties/transition_property.c.i:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.i
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.i
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.i
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_property.c.i
+
+src/css/libcss/0.9.1/src/select/properties/transition_property.s: src/css/libcss/0.9.1/src/select/properties/transition_property.c.s
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_property.s
+
+# target to generate assembly for a file
+src/css/libcss/0.9.1/src/select/properties/transition_property.c.s:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.s
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.s
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_property.c.s
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_property.c.s
+
+src/css/libcss/0.9.1/src/select/properties/transition_timing_function.obj: src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.obj
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_timing_function.obj
+
+# target to build an object file
+src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.obj:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.obj
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.obj
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.obj
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.obj
+
+src/css/libcss/0.9.1/src/select/properties/transition_timing_function.i: src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.i
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_timing_function.i
+
+# target to preprocess a source file
+src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.i:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.i
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.i
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.i
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.i
+
+src/css/libcss/0.9.1/src/select/properties/transition_timing_function.s: src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.s
+
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_timing_function.s
+
+# target to generate assembly for a file
+src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.s:
+	$(MAKE) -f CMakeFiles\rabster.dir\build.make CMakeFiles/rabster.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.s
+	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.s
+	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.s
+.PHONY : src/css/libcss/0.9.1/src/select/properties/transition_timing_function.c.s
+
 src/css/libcss/0.9.1/src/select/properties/unicode_bidi.obj: src/css/libcss/0.9.1/src/select/properties/unicode_bidi.c.obj
 
 .PHONY : src/css/libcss/0.9.1/src/select/properties/unicode_bidi.obj
@@ -11197,6 +11362,9 @@ help:
 	@echo ... src/css/libcss/0.9.1/src/parse/properties/text_decoration.obj
 	@echo ... src/css/libcss/0.9.1/src/parse/properties/text_decoration.i
 	@echo ... src/css/libcss/0.9.1/src/parse/properties/text_decoration.s
+	@echo ... src/css/libcss/0.9.1/src/parse/properties/transition.obj
+	@echo ... src/css/libcss/0.9.1/src/parse/properties/transition.i
+	@echo ... src/css/libcss/0.9.1/src/parse/properties/transition.s
 	@echo ... src/css/libcss/0.9.1/src/parse/properties/utils.obj
 	@echo ... src/css/libcss/0.9.1/src/parse/properties/utils.i
 	@echo ... src/css/libcss/0.9.1/src/parse/properties/utils.s
@@ -11563,6 +11731,18 @@ help:
 	@echo ... src/css/libcss/0.9.1/src/select/properties/top.obj
 	@echo ... src/css/libcss/0.9.1/src/select/properties/top.i
 	@echo ... src/css/libcss/0.9.1/src/select/properties/top.s
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_delay.obj
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_delay.i
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_delay.s
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_duration.obj
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_duration.i
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_duration.s
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_property.obj
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_property.i
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_property.s
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_timing_function.obj
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_timing_function.i
+	@echo ... src/css/libcss/0.9.1/src/select/properties/transition_timing_function.s
 	@echo ... src/css/libcss/0.9.1/src/select/properties/unicode_bidi.obj
 	@echo ... src/css/libcss/0.9.1/src/select/properties/unicode_bidi.i
 	@echo ... src/css/libcss/0.9.1/src/select/properties/unicode_bidi.s
