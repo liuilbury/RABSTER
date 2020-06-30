@@ -33,8 +33,8 @@
  *		   If the input is invalid, then \a *ctx remains unchanged.
  */
 css_error css__parse_top(css_language *c,
-		const parserutils_vector *vector, int *ctx,
-		css_style *result)
+	const parserutils_vector *vector, int *ctx,
+	css_style *result)
 {
 	return css__parse_side(c, vector, ctx, result, CSS_PROP_TOP);
 }
