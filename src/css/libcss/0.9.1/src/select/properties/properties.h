@@ -133,6 +133,12 @@ PROPERTY_FUNCS(text_decoration);
 PROPERTY_FUNCS(text_indent);
 PROPERTY_FUNCS(text_transform);
 PROPERTY_FUNCS(top);
+///transition
+PROPERTY_FUNCS(transition_delay);
+PROPERTY_FUNCS(transition_duration);
+PROPERTY_FUNCS(transition_property);
+PROPERTY_FUNCS(transition_timing_function);
+///
 PROPERTY_FUNCS(unicode_bidi);
 PROPERTY_FUNCS(vertical_align);
 PROPERTY_FUNCS(visibility);

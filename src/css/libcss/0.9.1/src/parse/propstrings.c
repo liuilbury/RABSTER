@@ -216,6 +216,13 @@ const stringmap_entry stringmap[LAST_KNOWN] = {
 	{ "text-indent", SLEN("text-indent") },
 	{ "text-transform", SLEN("text-transform") },
 	{ "top", SLEN("top") },
+	///新增transition
+	{"transition",SLEN("transition")},
+	{"transition-delay",SLEN("transition-delay")},
+	{"transition-duration",SLEN("transition-duration")},
+	{"transition-property",SLEN("transition-property")},
+	{"transition-timing-function",SLEN("transition-timing-function")},
+	///
 	{ "unicode-bidi", SLEN("unicode-bidi") },
 	{ "vertical-align", SLEN("vertical-align") },
 	{ "visibility", SLEN("visibility") },
@@ -443,6 +450,13 @@ const stringmap_entry stringmap[LAST_KNOWN] = {
 	{ "or", SLEN("or") },
 	{ "only", SLEN("only") },
 	{ "infinite", SLEN("infinite") },
+	///transition
+	{"linear",SLEN("linear")},
+	{"ease",SLEN("ease")},
+	{"ease-in",SLEN("ease-in")},
+	{"ease-out",SLEN("ease-out")},
+	{"ease-in-out",SLEN("ease-in-out")},
+	///
 
 	{ "aliceblue", SLEN("aliceblue") },
 	{ "antiquewhite", SLEN("antiquewhite") },

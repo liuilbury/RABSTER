@@ -2507,3 +2507,85 @@ static inline css_error set_z_index(css_computed_style *style, uint8_t type,
 #undef Z_INDEX_INDEX
 #undef Z_INDEX_SHIFT
 #undef Z_INDEX_MASK
+
+
+///transition-delay; transition-duration;transition-property;transition-timing-function
+#define TRANSITION_DELAY_INDEX 15
+#define TRANSITION_DELAY_SHIFT 25
+#define TRANSITION_DELAY_MASK 0xfe000000
+static inline css_error set_transition_delay(css_computed_style *style, uint8_t type,
+	css_fixed length, css_unit unit)
+{
+	uint32_t *bits;
+
+	bits = &style->i.bits[TRANSITION_DELAY_INDEX];
+
+	/* 7bits: uuuuutt : unit | type */
+	*bits = (*bits & ~TRANSITION_DELAY_MASK) | ((((uint32_t)type & 0x3) | (unit << 2))<< TRANSITION_DELAY_SHIFT);
+
+	style->i.width = length;
+
+	return CSS_OK;
+}
+#undef TRANSITION_DELAY_INDEX
+#undef TRANSITION_DELAY_SHIFT
+#undef TRANSITION_DELAY_MASK
+
+#define TRANSITION_DURATION_INDEX 15
+#define TRANSITION_DURATION_SHIFT 18
+#define TRANSITION_DURATION_MASK 0x1fc0000
+static inline css_error set_transition_duration(css_computed_style *style, uint8_t type,
+	css_fixed length, css_unit unit)
+{
+	uint32_t *bits;
+
+	bits = &style->i.bits[TRANSITION_DURATION_INDEX];
+
+	/* 7bits: uuuuutt : unit | type */
+	*bits = (*bits & ~TRANSITION_DURATION_MASK) | ((((uint32_t)type & 0x3) | (unit << 2))<< TRANSITION_DURATION_SHIFT);
+
+	style->i.transition_duration = length;
+
+	return CSS_OK;
+}
+#undef TRANSITION_DURATION_INDEX
+#undef TRANSITION_DURATION_SHIFT
+#undef TRANSITION_DURATION_MASK
+
+#define TRANSITION_PROPERTY_INDEX 15
+#define TRANSITION_PROPERTY_SHIFT 16
+#define TRANSITION_PROPERTY_MASK 0x30000
+static inline css_error set_transition_property(css_computed_style *style,
+	uint8_t type)
+{
+	uint32_t *bits;
+
+	bits = &style->i.bits[TRANSITION_PROPERTY_INDEX];
+
+	/* 2bits: tt : type */
+	*bits = (*bits & ~TRANSITION_PROPERTY_MASK) | (((uint32_t)type & 0x3) <<TRANSITION_PROPERTY_SHIFT);
+
+	return CSS_OK;
+}
+#undef TRANSITION_PROPERTY_INDEX
+#undef TRANSITION_PROPERTY_SHIFT
+#undef TRANSITION_PROPERTY_MASK
+
+#define TRANSITION_TIMING_FUNCTION_INDEX 15
+#define TRANSITION_TIMING_FUNCTION_SHIFT 16
+#define TRANSITION_TIMING_FUNCTION_MASK 0x30000
+static inline css_error set_transition_timing_function(css_computed_style *style,
+	uint8_t type)
+{
+	uint32_t *bits;
+
+	bits = &style->i.bits[TRANSITION_TIMING_FUNCTION_INDEX];
+
+	/* 2bits: tt : type */
+	*bits = (*bits & ~TRANSITION_TIMING_FUNCTION_MASK) | (((uint32_t)type & 0x3) <<TRANSITION_TIMING_FUNCTION_SHIFT);
+
+	return CSS_OK;
+}
+#undef TRANSITION_TIMING_FUNCTION_INDEX
+#undef TRANSITION_TIMING_FUNCTION_SHIFT
+#undef TRANSITION_TIMING_FUNCTION_MASK

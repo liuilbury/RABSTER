@@ -201,7 +201,12 @@ struct css_computed_style_i {
  * list_style_position; counter_increment; background_image; quotes; order;
  * opacity; widows; flex_grow; orphans; counter_reset; flex_shrink
  */
-	uint32_t bits[15];
+	///transition
+/*
+ * 15 ddddddduuuuuuuppffff............
+ * transition-delay; transition-duration;transition-property;transition-timing-function
+ */
+	uint32_t bits[16];
 	
 	css_color background_color;
 	lwc_string *background_image;
@@ -262,7 +267,9 @@ struct css_computed_style_i {
 	css_fixed width;
 	css_fixed word_spacing;
 	int32_t z_index;
-	
+	css_fixed transition_delay;
+	css_fixed transition_duration;
+
 };
 
 struct css_computed_style {

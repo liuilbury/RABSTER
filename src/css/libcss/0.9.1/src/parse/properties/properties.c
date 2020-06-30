@@ -146,6 +146,13 @@ const css_prop_handler property_handlers[LAST_PROP + 1 - FIRST_PROP] =
 	css__parse_text_indent,
 	css__parse_text_transform,
 	css__parse_top,
+	///transition
+	css__parse_transition,
+	css__parse_transition_delay,
+	css__parse_transition_duration,
+	css__parse_transition_property,
+	css__parse_transition_timing_function,
+	///
 	css__parse_unicode_bidi,
 	css__parse_vertical_align,
 	css__parse_visibility,

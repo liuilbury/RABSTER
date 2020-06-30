@@ -424,6 +424,23 @@ css_error css__parse_text_transform(css_language *c,
 css_error css__parse_top(css_language *c,
 		const parserutils_vector *vector, int *ctx,
 		css_style *result);
+///transition
+css_error css__parse_transition(css_language *c,
+	const parserutils_vector *vector, int *ctx,
+	css_style *result);
+css_error css__parse_transition_delay(css_language *c,
+	const parserutils_vector *vector, int *ctx,
+	css_style *result);
+css_error css__parse_transition_duration(css_language *c,
+	const parserutils_vector *vector, int *ctx,
+	css_style *result);
+css_error css__parse_transition_property(css_language *c,
+	const parserutils_vector *vector, int *ctx,
+	css_style *result);
+css_error css__parse_transition_timing_function(css_language *c,
+	const parserutils_vector *vector, int *ctx,
+	css_style *result);
+///
 css_error css__parse_unicode_bidi(css_language *c,
 		const parserutils_vector *vector, int *ctx,
 		css_style *result);
