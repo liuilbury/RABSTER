@@ -370,6 +370,16 @@ emmintrin.h
 arm_neon.h
 -
 
+../src/gumbo/gumbo.h
+stdbool.h
+-
+stddef.h
+-
+tag_enum.h
+../src/gumbo/tag_enum.h
+
+../src/gumbo/tag_enum.h
+
 F:/opengl/RABSTER/src/Rabster.cpp
 windows.h
 -
@@ -411,6 +421,8 @@ rapidjson/writer.h
 F:/opengl/RABSTER/src/html/rapidjson/writer.h
 rapidjson/stringbuffer.h
 F:/opengl/RABSTER/src/html/rapidjson/stringbuffer.h
+gumbo.h
+F:/opengl/RABSTER/src/html/gumbo.h
 
 F:/opengl/RABSTER/src/html/node.h
 style.h
@@ -421,6 +433,8 @@ list
 -
 libcss/libcss.h
 -
+gumbo.h
+F:/opengl/RABSTER/src/html/gumbo.h
 
 F:/opengl/RABSTER/src/html/style.h
 string

@@ -9,6 +9,7 @@
 #include <set>
 #include <list>
 #include <libcss/libcss.h>
+#include "gumbo.h"
 using namespace std;
 struct Box{
 	int x=0,y=0;
@@ -43,6 +44,7 @@ class node
 		hover= false;
 
 	}
+	GumboNode* htmlnode;
 	void* node_data;
 	bool vis[145] = { false };
 	lwc_string* name;
@@ -60,6 +62,7 @@ class node
 	css_select_results* _style;
 	css_select_results* _final_style;
 	Box save_style;
+	std::list<std::string>url;
 	void change(int key, const std::string& value);
 	set<node*> update();
 	void add_child(node*);

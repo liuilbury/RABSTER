@@ -10603,6 +10603,111 @@ CMakeFiles/rabster.dir/src/css/libparserutils/0.2.4/src/utils/vector.c.obj: ../s
 CMakeFiles/rabster.dir/src/css/libwapcaplet/0.4.3/src/libwapcaplet.c.obj: ../include/libwapcaplet/libwapcaplet.h
 CMakeFiles/rabster.dir/src/css/libwapcaplet/0.4.3/src/libwapcaplet.c.obj: ../src/css/libwapcaplet/0.4.3/src/libwapcaplet.c
 
+CMakeFiles/rabster.dir/src/gumbo/attribute.c.obj: ../src/gumbo/attribute.c
+CMakeFiles/rabster.dir/src/gumbo/attribute.c.obj: ../src/gumbo/attribute.h
+CMakeFiles/rabster.dir/src/gumbo/attribute.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/attribute.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/attribute.c.obj: ../src/gumbo/util.h
+
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/char_ref.c
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/char_ref.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/error.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/insertion_mode.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/string_buffer.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/string_piece.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/token_type.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/utf8.h
+CMakeFiles/rabster.dir/src/gumbo/char_ref.c.obj: ../src/gumbo/util.h
+
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/error.c
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/error.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/insertion_mode.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/parser.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/string_buffer.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/token_type.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/util.h
+CMakeFiles/rabster.dir/src/gumbo/error.c.obj: ../src/gumbo/vector.h
+
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/attribute.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/error.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/insertion_mode.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/parser.c
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/parser.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/string_buffer.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/token_type.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/tokenizer.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/tokenizer_states.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/utf8.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/util.h
+CMakeFiles/rabster.dir/src/gumbo/parser.c.obj: ../src/gumbo/vector.h
+
+CMakeFiles/rabster.dir/src/gumbo/string_buffer.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/string_buffer.c.obj: ../src/gumbo/string_buffer.c
+CMakeFiles/rabster.dir/src/gumbo/string_buffer.c.obj: ../src/gumbo/string_buffer.h
+CMakeFiles/rabster.dir/src/gumbo/string_buffer.c.obj: ../src/gumbo/string_piece.h
+CMakeFiles/rabster.dir/src/gumbo/string_buffer.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/string_buffer.c.obj: ../src/gumbo/util.h
+
+CMakeFiles/rabster.dir/src/gumbo/string_piece.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/string_piece.c.obj: ../src/gumbo/string_piece.c
+CMakeFiles/rabster.dir/src/gumbo/string_piece.c.obj: ../src/gumbo/string_piece.h
+CMakeFiles/rabster.dir/src/gumbo/string_piece.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/string_piece.c.obj: ../src/gumbo/util.h
+
+CMakeFiles/rabster.dir/src/gumbo/tag.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/tag.c.obj: ../src/gumbo/tag.c
+CMakeFiles/rabster.dir/src/gumbo/tag.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/tag.c.obj: ../src/gumbo/tag_gperf.h
+CMakeFiles/rabster.dir/src/gumbo/tag.c.obj: ../src/gumbo/tag_sizes.h
+CMakeFiles/rabster.dir/src/gumbo/tag.c.obj: ../src/gumbo/tag_strings.h
+
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/attribute.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/char_ref.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/error.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/insertion_mode.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/parser.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/string_buffer.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/string_piece.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/token_type.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/tokenizer.c
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/tokenizer.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/tokenizer_states.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/utf8.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/util.h
+CMakeFiles/rabster.dir/src/gumbo/tokenizer.c.obj: ../src/gumbo/vector.h
+
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/error.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/insertion_mode.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/parser.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/string_buffer.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/token_type.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/utf8.c
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/utf8.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/util.h
+CMakeFiles/rabster.dir/src/gumbo/utf8.c.obj: ../src/gumbo/vector.h
+
+CMakeFiles/rabster.dir/src/gumbo/util.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/util.c.obj: ../src/gumbo/parser.h
+CMakeFiles/rabster.dir/src/gumbo/util.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/util.c.obj: ../src/gumbo/util.c
+CMakeFiles/rabster.dir/src/gumbo/util.c.obj: ../src/gumbo/util.h
+
+CMakeFiles/rabster.dir/src/gumbo/vector.c.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/gumbo/vector.c.obj: ../src/gumbo/tag_enum.h
+CMakeFiles/rabster.dir/src/gumbo/vector.c.obj: ../src/gumbo/util.h
+CMakeFiles/rabster.dir/src/gumbo/vector.c.obj: ../src/gumbo/vector.c
+CMakeFiles/rabster.dir/src/gumbo/vector.c.obj: ../src/gumbo/vector.h
+
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../include/libcss/computed.h
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../include/libcss/errors.h
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../include/libcss/font_face.h
@@ -10640,6 +10745,8 @@ CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../include/rapidjson/reader.h
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../include/rapidjson/stream.h
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../include/rapidjson/stringbuffer.h
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../include/rapidjson/writer.h
+CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../src/gumbo/tag_enum.h
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../src/Rabster.cpp
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../src/html/HtmlContent.h
 CMakeFiles/rabster.dir/src/Rabster.cpp.obj: ../src/html/html.h
@@ -10658,6 +10765,8 @@ CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../include/libcss/select.h
 CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../include/libcss/stylesheet.h
 CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../include/libcss/types.h
 CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../include/libwapcaplet/libwapcaplet.h
+CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../src/gumbo/tag_enum.h
 CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../src/html/Handle.h
 CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../src/html/HtmlContent.cpp
 CMakeFiles/rabster.dir/src/html/HtmlContent.cpp.obj: ../src/html/HtmlContent.h
@@ -10676,9 +10785,143 @@ CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../include/libcss/select.h
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../include/libcss/stylesheet.h
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../include/libcss/types.h
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../include/libwapcaplet/libwapcaplet.h
+CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../src/gumbo/gumbo.h
+CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../src/gumbo/tag_enum.h
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../src/html/node.cpp
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../src/html/node.h
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../src/html/style.h
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../src/lex/CSSLex.h
 CMakeFiles/rabster.dir/src/html/node.cpp.obj: ../src/lex/CSSToken.h
+
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/BitUtils.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/Utils.cpp
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/Utils.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGFloatOptional.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGLayout.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGNode.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGStyle.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/Utils.cpp.obj: ../src/yoga/Yoga.h
+
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/YGConfig.cpp
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/YGConfig.cpp.obj: ../src/yoga/Yoga.h
+
+CMakeFiles/rabster.dir/src/yoga/YGEnums.cpp.obj: ../src/yoga/YGEnums.cpp
+CMakeFiles/rabster.dir/src/yoga/YGEnums.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/YGEnums.cpp.obj: ../src/yoga/YGMacros.h
+
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/BitUtils.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/Utils.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGFloatOptional.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGLayout.cpp
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGLayout.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGNode.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGStyle.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/YGLayout.cpp.obj: ../src/yoga/Yoga.h
+
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/BitUtils.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/Utils.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGFloatOptional.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGLayout.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGNode.cpp
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGNode.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGStyle.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/YGNode.cpp.obj: ../src/yoga/Yoga.h
+
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/BitUtils.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/Utils.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGFloatOptional.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGLayout.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGNode.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGNodePrint.cpp
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGNodePrint.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGStyle.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/YGNodePrint.cpp.obj: ../src/yoga/Yoga.h
+
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/BitUtils.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/Utils.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGFloatOptional.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGLayout.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGNode.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGStyle.cpp
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGStyle.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/YGStyle.cpp.obj: ../src/yoga/Yoga.h
+
+CMakeFiles/rabster.dir/src/yoga/YGValue.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/YGValue.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/YGValue.cpp.obj: ../src/yoga/YGValue.cpp
+CMakeFiles/rabster.dir/src/yoga/YGValue.cpp.obj: ../src/yoga/YGValue.h
+
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/BitUtils.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/Utils.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGFloatOptional.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGLayout.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGNode.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGNodePrint.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGStyle.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/Yoga.cpp
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/Yoga.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/event/event.h
+CMakeFiles/rabster.dir/src/yoga/Yoga.cpp.obj: ../src/yoga/log.h
+
+CMakeFiles/rabster.dir/src/yoga/event/event.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/event/event.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/event/event.cpp.obj: ../src/yoga/event/event.cpp
+CMakeFiles/rabster.dir/src/yoga/event/event.cpp.obj: ../src/yoga/event/event.h
+
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/BitUtils.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/CompactValue.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGConfig.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGEnums.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGFloatOptional.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGLayout.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGMacros.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGNode.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGStyle.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/YGValue.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/Yoga-internal.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/Yoga.h
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/log.cpp
+CMakeFiles/rabster.dir/src/yoga/log.cpp.obj: ../src/yoga/log.h
 

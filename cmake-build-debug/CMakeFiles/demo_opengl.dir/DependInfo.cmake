@@ -14,6 +14,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../src/css/libparserutils/0.2.4/src"
   "../src/css/libwapcaplet/0.4.3/src"
   "../src/css/libcss/0.9.1/src"
+  "../src/yoga"
+  "../src/gumbo"
   "../include"
   "/include/iconv.h"
   )
@@ -27,6 +29,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/css/libparserutils/0.2.4/src"
   "../src/css/libwapcaplet/0.4.3/src"
   "../src/css/libcss/0.9.1/src"
+  "../src/yoga"
+  "../src/gumbo"
   "../include"
   "/include/iconv.h"
   )

@@ -19,10 +19,14 @@ int flag = 0;
 int time = 0, cnt = 0;
 void html_init()
 {
-	root = html_init(R"(F:\opengl\RABSTER\test.json)");
+	root = html_init(R"(F:\opengl\RABSTER\test.html)");
 	html_ctx = new HtmlContent();
 	html_ctx->html_css_new_stylesheets();
-	html_ctx->html_css_append_stylesheets(R"(F:\opengl\RABSTER\test.css)");
+	for(auto i:root->url)
+	{
+		std::string str=R"(F:\opengl\RABSTER\)"+i;
+		html_ctx->html_css_append_stylesheets(str.data());
+	}
 	html_ctx->html_css_new_selection_context();
 	html_ctx->get_tree_style(root);
 }
@@ -40,7 +44,6 @@ void Render_Node(node* d)
 	d->Render_Color(mod);
 	d->Render_display();
 	d->Render_Time();
-	printf("!!!!%d\n",time);
 	if (time != 0&&d->box.end_time!=0)
 	{
 		if (d->box.start_time <= time && d->box.end_time > time)
@@ -66,7 +69,9 @@ void Render_Node(node* d)
 	}
 	graphics->FillRectangle(solidBrush, nowx, nowy, d->box.width, d->box.height);
 	d->box.y = nowy + d->box.height;
+#ifdef DEBUG
 	d->box.to_string();
+#endif
 }
 void Render_Tree(node* d)
 {
@@ -119,7 +124,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 	{
 		if (!flag)
 		{
-			printf("kk\n");
 			KillTimer(hwnd, 1);
 			return 0;
 		}
@@ -157,7 +161,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 	{
 		RECT rctA;
 		GetWindowRect(hwnd, &rctA);
-		printf("%d %d %d %d\n", rctA.right, rctA.left, rctA.bottom, rctA.top);
 		nWidth = rctA.right - rctA.left;   //窗口的宽度
 		nHeight = rctA.bottom - rctA.top;  //窗口的高度
 		PAINTSTRUCT ps;
