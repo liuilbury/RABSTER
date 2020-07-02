@@ -10,6 +10,7 @@
 #include "rapidjson/stringbuffer.h"
 #include "gumbo.h"
 std::queue<std::string> URL;
+const YGConfigRef config = YGConfigNew();
 node* build_html_tree(node* fa, GumboNode* dom)
 {
 	if (dom->type != GUMBO_NODE_ELEMENT)
@@ -33,7 +34,11 @@ node* build_html_tree(node* fa, GumboNode* dom)
 	}
 	else
 	{
-		now->htmlnode=dom;
+#ifdef DEBUG_HTML
+		printf("%s\n",gumbo_normalized_tagname(dom->v.element.tag));
+#endif
+		now->ygnode = YGNodeNewWithConfig(config);
+		now->htmlnode = dom;
 		const char* name;
 		if (dom->v.element.tag != GUMBO_TAG_UNKNOWN)
 			name = gumbo_normalized_tagname(dom->v.element.tag);
@@ -43,11 +48,13 @@ node* build_html_tree(node* fa, GumboNode* dom)
 		lwc_intern_string(name, strlen(name), &now->name);
 		if ((attr = gumbo_get_attribute(&dom->v.element.attributes, "class")))
 		{
-			char *class_name =std::strtok (const_cast<char*>(attr->value)," ");
-			while(class_name!= nullptr){
-				now->classes= static_cast<lwc_string**>(realloc(now->classes,(now->n_classes + 1) * sizeof(lwc_string*)));
+			char* class_name = std::strtok(const_cast<char*>(attr->value), " ");
+			while (class_name != nullptr)
+			{
+				now->classes = static_cast<lwc_string**>(realloc(now->classes,
+					(now->n_classes + 1) * sizeof(lwc_string*)));
 				lwc_intern_string(class_name, strlen(class_name), &now->classes[now->n_classes]);
-				class_name = strtok(NULL," ");
+				class_name = strtok(NULL, " ");
 				now->n_classes++;
 			}
 		}
@@ -55,12 +62,18 @@ node* build_html_tree(node* fa, GumboNode* dom)
 		{
 			now->_inline_style = attr->value;
 		}
+		if ((attr = gumbo_get_attribute(&dom->v.element.attributes, "id")))
+		{
+			lwc_intern_string(attr->value, strlen(attr->value), &now->Id);
+		}
+		int index = 0;
 		for (int i = 0; i < children->length; ++i)
 		{
 			n = build_html_tree(now, static_cast<GumboNode*>(children->data[i]));
 			if (n != nullptr)
 			{
 				now->_children.push_back(n);
+				YGNodeInsertChild(now->ygnode, n->ygnode, index++);
 				n->_prev = _last_child;
 				if (_last_child != nullptr)
 					_last_child->_next = n;

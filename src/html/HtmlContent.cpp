@@ -138,7 +138,6 @@ void HtmlContent::get_node_style(node* d, const css_computed_style* parent_style
 	d->_final_style=styles;
 	//show(d);
 }
-
 void HtmlContent::get_tree_style(node* d)
 {
 	const css_computed_style* parent_style = nullptr;

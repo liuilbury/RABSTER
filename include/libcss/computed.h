@@ -464,8 +464,7 @@ uint8_t css_computed_flex_shrink(
 		const css_computed_style *style,
 		css_fixed *number);
 
-uint8_t css_computed_flex_wrap(
-		const css_computed_style *style);
+uint8_t css_computed_flex_wrap(const css_computed_style* style);
 
 uint8_t css_computed_justify_content(
 		const css_computed_style *style);

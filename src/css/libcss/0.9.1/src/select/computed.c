@@ -1062,7 +1062,7 @@ uint8_t css_computed_flex_shrink(const css_computed_style *style,
 	return get_flex_shrink(style, number);
 }
 
-uint8_t css_computed_flex_wrap(const css_computed_style *style)
+uint8_t css_computed_flex_wrap(const css_computed_style* style)
 {
 	return get_flex_wrap(style);
 }

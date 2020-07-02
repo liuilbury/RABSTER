@@ -10,6 +10,9 @@
 #include <list>
 #include <libcss/libcss.h>
 #include "gumbo.h"
+#include "Yoga.h"
+#include "YGStyle.h"
+#include "YGLayout.h"
 using namespace std;
 struct Box{
 	int x=0,y=0;
@@ -44,6 +47,7 @@ class node
 		hover= false;
 
 	}
+	YGNodeRef ygnode;
 	GumboNode* htmlnode;
 	void* node_data;
 	bool vis[145] = { false };
@@ -68,10 +72,23 @@ class node
 	void add_child(node*);
 	void Render_Box(int nWidth,int nHeight,css_pseudo_element);
 	void Render_Color(css_pseudo_element mod);
-	void Render_display();
+	void Render_Display(css_computed_style* style);
 	void Render_Time();
 	Box box;
 	bool hover;
+	void Render_Width(css_computed_style* style);
+	void Render_Height(css_computed_style* style);
+	void Render_Flex_Basis(css_computed_style* style);
+	void Render_Box_Sizing(css_computed_style* style);
+	void Render_Flex_Direction(css_computed_style* style);
+	void Render_Flex_Grow(css_computed_style* style);
+	void Render_Flex_Shrink(css_computed_style* style);
+	void Render_Position(css_computed_style* style);
+	void Render_Flex_Wrap(css_computed_style* style);
+	void Render_Direction(css_computed_style* style);
+	void Render_Align_Content(css_computed_style* style);
+	void Render_Position_Type(css_computed_style* style);
+	void Render_Flex(css_computed_style* style);
 };
 
 #endif //_NODE_H_

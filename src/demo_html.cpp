@@ -3,7 +3,10 @@
 //
 #include "html/html.h"
 int main(){
-	node* root=html_init(R"(F:\opengl\glfw\test.json)");
+	const YGConfigRef config = YGConfigNew();
+	const YGNodeRef YGroot = YGNodeNewWithConfig(config);
+
+	node* root=html_init(R"(F:\opengl\glfw\test.html)");
 	HtmlContent* html_ctx=new HtmlContent;
 	html_ctx->html_css_new_stylesheets();
 	html_ctx->html_css_append_stylesheets(R"(F:\opengl\glfw\test.css)");

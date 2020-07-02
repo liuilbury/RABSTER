@@ -42,36 +42,7 @@ void Render_Node(node* d)
 	css_pseudo_element mod = CSS_PSEUDO_ELEMENT_NONE;
 	d->Render_Box(nWidth, nHeight, mod);
 	d->Render_Color(mod);
-	d->Render_display();
 	d->Render_Time();
-	if (time != 0&&d->box.end_time!=0)
-	{
-		if (d->box.start_time <= time && d->box.end_time > time)
-		{
-			flag = 1;
-			int all_time = d->box.end_time - d->box.start_time;
-			int spend_time = time - d->box.start_time;
-			d->box.color[0] = d->save_style.color[0]+(d->box.color[0] - d->save_style.color[0]) * spend_time / all_time;
-			d->box.color[1] = d->save_style.color[1]+(d->box.color[1] - d->save_style.color[1]) * spend_time / all_time;
-			d->box.color[2] = d->save_style.color[2]+(d->box.color[2] - d->save_style.color[2]) * spend_time / all_time;
-			d->box.color[3] = d->save_style.color[3]+(d->box.color[3] - d->save_style.color[3]) * spend_time / all_time;
-			d->box.width = d->save_style.width+(d->box.width - d->save_style.width) * spend_time / all_time;
-			//d->box.height = d->save_style.width+(d->box.height - d->save_style.height) * spend_time / all_time;
-		}
-	}
-	Graphics* graphics = new Graphics(hdc);
-	SolidBrush* solidBrush = new SolidBrush(Color(d->box.color[0], d->box.color[1],
-		d->box.color[2] + cnt, d->box.color[3]));
-	int nowx = 0, nowy = 0;
-	if (d->_prev != nullptr)
-	{
-		nowy = d->_prev->box.y;
-	}
-	graphics->FillRectangle(solidBrush, nowx, nowy, d->box.width, d->box.height);
-	d->box.y = nowy + d->box.height;
-#ifdef DEBUG
-	d->box.to_string();
-#endif
 }
 void Render_Tree(node* d)
 {
@@ -100,6 +71,43 @@ void Save_Style(node* d)
 	{
 		Save_Style(i);
 	}
+}
+void show_node(node *d){
+	/*if (time != 0&&d->box.end_time!=0)
+	{
+		if (d->box.start_time <= time && d->box.end_time > time)
+		{
+			flag = 1;
+			int all_time = d->box.end_time - d->box.start_time;
+			int spend_time = time - d->box.start_time;
+			d->box.color[0] = d->save_style.color[0]+(d->box.color[0] - d->save_style.color[0]) * spend_time / all_time;
+			d->box.color[1] = d->save_style.color[1]+(d->box.color[1] - d->save_style.color[1]) * spend_time / all_time;
+			d->box.color[2] = d->save_style.color[2]+(d->box.color[2] - d->save_style.color[2]) * spend_time / all_time;
+			d->box.color[3] = d->save_style.color[3]+(d->box.color[3] - d->save_style.color[3]) * spend_time / all_time;
+			d->box.width = d->save_style.width+(d->box.width - d->save_style.width) * spend_time / all_time;
+			//d->box.height = d->save_style.width+(d->box.height - d->save_style.height) * spend_time / all_time;
+		}
+	}*/
+	Graphics* graphics = new Graphics(hdc);
+	SolidBrush* solidBrush = new SolidBrush(Color(d->box.color[0], d->box.color[1],d->box.color[2] + cnt, d->box.color[3]));
+	float left,top,width,height;
+	left=YGNodeLayoutGetLeft(d->ygnode);
+	top=YGNodeLayoutGetTop(d->ygnode);
+	width=YGNodeLayoutGetWidth(d->ygnode);
+	height=YGNodeLayoutGetHeight(d->ygnode);
+	printf("%s ",d->real_name.data());
+	printf("%f %f %f %f\n",left,top,width,height);
+	printf("%d %d\n",d->box.width,d->box.height);
+	graphics->FillRectangle(solidBrush,left,top,width,height);
+}
+void show_tree(node* d){
+	show_node(d);
+	for(auto i:d->_children){
+		show_tree(i);
+	}
+#ifdef DEBUG
+	d->box.to_string();
+#endif
 }
 /*窗口回调函数*/
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam, LPARAM lParam)
@@ -166,6 +174,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hwnd, &ps);
 		Render_Tree(root);
+		YGNodeCalculateLayout(root->ygnode,nWidth,nHeight,YGDirectionLTR);
+		show_tree(root);
 		EndPaint(hwnd, &ps);
 		/*窗口有绘图操作更新时,会收到这个消息*/
 		return 0;
