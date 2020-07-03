@@ -335,7 +335,7 @@ static inline css_error set_border_left_width(css_computed_style *style,
 	uint32_t *bits;
 	
 	bits = &style->i.bits[BORDER_LEFT_WIDTH_INDEX];
-	
+
 	/* 8bits: uuuuuttt : unit | type */
 	*bits = (*bits & ~BORDER_LEFT_WIDTH_MASK) | ((((uint32_t)type & 0x7) | (
 			unit << 3)) << BORDER_LEFT_WIDTH_SHIFT);

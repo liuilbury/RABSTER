@@ -19,12 +19,12 @@ int flag = 0;
 int time = 0, cnt = 0;
 void html_init()
 {
-	root = html_init(R"(F:\opengl\RABSTER\test.html)");
+	root = html_init(R"(F:\opengl\RABSTER\resources\test.html)");
 	html_ctx = new HtmlContent();
 	html_ctx->html_css_new_stylesheets();
 	for(auto i:root->url)
 	{
-		std::string str=R"(F:\opengl\RABSTER\)"+i;
+		std::string str=R"(F:\opengl\RABSTER\resources\)"+i;
 		html_ctx->html_css_append_stylesheets(str.data());
 	}
 	html_ctx->html_css_new_selection_context();
@@ -34,7 +34,7 @@ void html_destroy(node* d)
 {
 	for (auto i:d->_children)
 	{
-		html_destroy(d);
+		html_destroy(i);
 	}
 }
 void Render_Node(node* d)
@@ -95,10 +95,27 @@ void show_node(node *d){
 	top=YGNodeLayoutGetTop(d->ygnode);
 	width=YGNodeLayoutGetWidth(d->ygnode);
 	height=YGNodeLayoutGetHeight(d->ygnode);
+	graphics->FillRectangle(solidBrush,left,top,width,height);
+	float cleft,ctop,cright,cbottom;
+	cleft=YGNodeStyleGetBorder(d->ygnode,YGEdgeLeft);
+	ctop=YGNodeStyleGetBorder(d->ygnode,YGEdgeTop);
+	cright=YGNodeStyleGetBorder(d->ygnode,YGEdgeRight);
+	cbottom=YGNodeStyleGetBorder(d->ygnode,YGEdgeBottom);
+	Pen*pen =new Pen(Color(255,195,195,195),2);
+	pen->SetColor(Color(d->box.border_color[0][0],d->box.border_color[0][1],d->box.border_color[0][2],d->box.border_color[0][3]));
+#ifdef DEBUG
 	printf("%s ",d->real_name.data());
 	printf("%f %f %f %f\n",left,top,width,height);
-	printf("%d %d\n",d->box.width,d->box.height);
-	graphics->FillRectangle(solidBrush,left,top,width,height);
+	printf("%f %f %f %f\n",cleft,ctop,cright,cbottom);
+#endif
+	pen->SetWidth(cleft);
+	graphics->DrawLine(pen,left+cleft/2,top,left+cleft/2,top+height);
+	pen->SetWidth(ctop);
+	graphics->DrawLine(pen,left,top+ctop/2,left+width-cright/2,top+ctop/2);
+	pen->SetWidth(cright);
+	graphics->DrawLine(pen,left+width-cright/2,top,left+width-cright/2,top+height);
+	pen->SetWidth(cbottom);
+	graphics->DrawLine(pen,left,top+height-cbottom/2,left+width,top+height-cbottom/2);
 }
 void show_tree(node* d){
 	show_node(d);

@@ -21,7 +21,7 @@ void HtmlContent::html_css_new_stylesheets()
 {
 	html_stylesheet htmlsheet;
 	htmlsheet.sheet= nullptr;
-	stylesheets.push_back(htmlsheet);//STYLESHEET_BASE
+	html_css_append_stylesheets("F:\\opengl\\RABSTER\\resources\\default.css");//STYLESHEET_BASE
 	stylesheets.push_back(htmlsheet);//STYLESHEET_QUIRKS
 	stylesheets.push_back(htmlsheet);//STYLESHEET_ADBLOCK
 	stylesheets.push_back(htmlsheet);//STYLESHEET_USER

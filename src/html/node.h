@@ -19,6 +19,8 @@ struct Box{
 	int width=0;
 	int height=0;
 	int color[4];
+	css_border_style_e border_style[4];
+	int border_color[4][4];
 	css_display_e display;
 	int start_time=0;
 	int end_time=0;
@@ -89,6 +91,9 @@ class node
 	void Render_Align_Content(css_computed_style* style);
 	void Render_Position_Type(css_computed_style* style);
 	void Render_Flex(css_computed_style* style);
+	void Render_Border_Width(css_computed_style* style);
+	void Render_Border_Style(css_computed_style* style);
+	void Render_Border_Color(css_computed_style* style);
 };
 
 #endif //_NODE_H_

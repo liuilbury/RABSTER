@@ -56,28 +56,28 @@ include CMakeFiles/jsontest.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/jsontest.dir/flags.make
 
-CMakeFiles/jsontest.dir/jsontest.cpp.obj: CMakeFiles/jsontest.dir/flags.make
-CMakeFiles/jsontest.dir/jsontest.cpp.obj: CMakeFiles/jsontest.dir/includes_CXX.rsp
-CMakeFiles/jsontest.dir/jsontest.cpp.obj: ../jsontest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\opengl\RABSTER\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/jsontest.dir/jsontest.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\jsontest.dir\jsontest.cpp.obj -c F:\opengl\RABSTER\jsontest.cpp
+CMakeFiles/jsontest.dir/src/jsontest.cpp.obj: CMakeFiles/jsontest.dir/flags.make
+CMakeFiles/jsontest.dir/src/jsontest.cpp.obj: CMakeFiles/jsontest.dir/includes_CXX.rsp
+CMakeFiles/jsontest.dir/src/jsontest.cpp.obj: ../src/jsontest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\opengl\RABSTER\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/jsontest.dir/src/jsontest.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\jsontest.dir\src\jsontest.cpp.obj -c F:\opengl\RABSTER\src\jsontest.cpp
 
-CMakeFiles/jsontest.dir/jsontest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jsontest.dir/jsontest.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\opengl\RABSTER\jsontest.cpp > CMakeFiles\jsontest.dir\jsontest.cpp.i
+CMakeFiles/jsontest.dir/src/jsontest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jsontest.dir/src/jsontest.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\opengl\RABSTER\src\jsontest.cpp > CMakeFiles\jsontest.dir\src\jsontest.cpp.i
 
-CMakeFiles/jsontest.dir/jsontest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jsontest.dir/jsontest.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\opengl\RABSTER\jsontest.cpp -o CMakeFiles\jsontest.dir\jsontest.cpp.s
+CMakeFiles/jsontest.dir/src/jsontest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jsontest.dir/src/jsontest.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\opengl\RABSTER\src\jsontest.cpp -o CMakeFiles\jsontest.dir\src\jsontest.cpp.s
 
 # Object files for target jsontest
 jsontest_OBJECTS = \
-"CMakeFiles/jsontest.dir/jsontest.cpp.obj"
+"CMakeFiles/jsontest.dir/src/jsontest.cpp.obj"
 
 # External object files for target jsontest
 jsontest_EXTERNAL_OBJECTS =
 
-jsontest.exe: CMakeFiles/jsontest.dir/jsontest.cpp.obj
+jsontest.exe: CMakeFiles/jsontest.dir/src/jsontest.cpp.obj
 jsontest.exe: CMakeFiles/jsontest.dir/build.make
 jsontest.exe: CMakeFiles/jsontest.dir/linklibs.rsp
 jsontest.exe: CMakeFiles/jsontest.dir/objects1.rsp

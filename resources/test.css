@@ -1,0 +1,16 @@
+#main {
+    width: 350px;
+    height: 100px;
+    border: 1px solid #c3c3c3;
+    display: flex;
+}
+
+#main div {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 40px;
+}
+
+#main div:nth-of-type(2) {
+    flex-basis: 80px;
+}

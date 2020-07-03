@@ -24,6 +24,12 @@ node* build_html_tree(node* fa, GumboNode* dom)
 	node* n = nullptr, * _last_child = nullptr;
 	if (dom->v.element.tag == GUMBO_TAG_STYLE)
 	{
+		std::string oo="style("+to_string(URL.size())+").css";
+		URL.push(oo);
+		ofstream fs(R"(F:\opengl\RABSTER\resources\)"+oo);
+		GumboNode* data=static_cast<GumboNode*>(children->data[0]);
+		fs<<std::string(data->v.text.text);
+		fs.close();
 		return nullptr;
 	}
 	else if (dom->v.element.tag == GUMBO_TAG_LINK)
@@ -41,6 +47,7 @@ node* build_html_tree(node* fa, GumboNode* dom)
 		now->htmlnode = dom;
 		const char* name;
 		if (dom->v.element.tag != GUMBO_TAG_UNKNOWN)
+
 			name = gumbo_normalized_tagname(dom->v.element.tag);
 		else
 			name = "UNKNOWN";

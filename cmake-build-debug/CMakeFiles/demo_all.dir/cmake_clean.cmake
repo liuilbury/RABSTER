@@ -317,7 +317,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/demo_all.dir/src/css/libparserutils/0.2.4/src/utils/vector.c.obj"
   "CMakeFiles/demo_all.dir/src/css/libwapcaplet/0.4.3/src/libwapcaplet.c.obj"
   "CMakeFiles/demo_all.dir/src/demo_all.cpp.obj"
-  "CMakeFiles/demo_all.dir/src/glad.c.obj"
   "CMakeFiles/demo_all.dir/src/html/HtmlContent.cpp.obj"
   "CMakeFiles/demo_all.dir/src/html/node.cpp.obj"
   "demo_all.exe"

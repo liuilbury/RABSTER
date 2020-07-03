@@ -322,7 +322,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "F:/opengl/RABSTER/src/css/libparserutils/0.2.4/src/utils/stack.c" "F:/opengl/RABSTER/cmake-build-debug/CMakeFiles/demo_all.dir/src/css/libparserutils/0.2.4/src/utils/stack.c.obj"
   "F:/opengl/RABSTER/src/css/libparserutils/0.2.4/src/utils/vector.c" "F:/opengl/RABSTER/cmake-build-debug/CMakeFiles/demo_all.dir/src/css/libparserutils/0.2.4/src/utils/vector.c.obj"
   "F:/opengl/RABSTER/src/css/libwapcaplet/0.4.3/src/libwapcaplet.c" "F:/opengl/RABSTER/cmake-build-debug/CMakeFiles/demo_all.dir/src/css/libwapcaplet/0.4.3/src/libwapcaplet.c.obj"
-  "F:/opengl/RABSTER/src/glad.c" "F:/opengl/RABSTER/cmake-build-debug/CMakeFiles/demo_all.dir/src/glad.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

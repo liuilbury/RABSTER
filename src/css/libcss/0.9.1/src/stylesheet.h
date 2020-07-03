@@ -233,7 +233,6 @@ static inline css_error css__stylesheet_style_appendOPV(css_style *style,
 static inline css_error css_stylesheet_style_inherit(css_style *style,
 		opcode_t opcode)
 {
-	printf("inherit");
 	return css__stylesheet_style_append(style,
 			buildOPV(opcode, FLAG_INHERIT, 0));
 }

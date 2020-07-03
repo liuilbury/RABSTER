@@ -174,33 +174,6 @@ jsontest/fast:
 	$(MAKE) -f CMakeFiles\jsontest.dir\build.make CMakeFiles/jsontest.dir/build
 .PHONY : jsontest/fast
 
-jsontest.obj: jsontest.cpp.obj
-
-.PHONY : jsontest.obj
-
-# target to build an object file
-jsontest.cpp.obj:
-	$(MAKE) -f CMakeFiles\jsontest.dir\build.make CMakeFiles/jsontest.dir/jsontest.cpp.obj
-.PHONY : jsontest.cpp.obj
-
-jsontest.i: jsontest.cpp.i
-
-.PHONY : jsontest.i
-
-# target to preprocess a source file
-jsontest.cpp.i:
-	$(MAKE) -f CMakeFiles\jsontest.dir\build.make CMakeFiles/jsontest.dir/jsontest.cpp.i
-.PHONY : jsontest.cpp.i
-
-jsontest.s: jsontest.cpp.s
-
-.PHONY : jsontest.s
-
-# target to generate assembly for a file
-jsontest.cpp.s:
-	$(MAKE) -f CMakeFiles\jsontest.dir\build.make CMakeFiles/jsontest.dir/jsontest.cpp.s
-.PHONY : jsontest.cpp.s
-
 src/Rabster.obj: src/Rabster.cpp.obj
 
 .PHONY : src/Rabster.obj
@@ -10770,36 +10743,6 @@ src/demo_opengl.cpp.s:
 	$(MAKE) -f CMakeFiles\demo_opengl.dir\build.make CMakeFiles/demo_opengl.dir/src/demo_opengl.cpp.s
 .PHONY : src/demo_opengl.cpp.s
 
-src/glad.obj: src/glad.c.obj
-
-.PHONY : src/glad.obj
-
-# target to build an object file
-src/glad.c.obj:
-	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/glad.c.obj
-	$(MAKE) -f CMakeFiles\demo_opengl.dir\build.make CMakeFiles/demo_opengl.dir/src/glad.c.obj
-.PHONY : src/glad.c.obj
-
-src/glad.i: src/glad.c.i
-
-.PHONY : src/glad.i
-
-# target to preprocess a source file
-src/glad.c.i:
-	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/glad.c.i
-	$(MAKE) -f CMakeFiles\demo_opengl.dir\build.make CMakeFiles/demo_opengl.dir/src/glad.c.i
-.PHONY : src/glad.c.i
-
-src/glad.s: src/glad.c.s
-
-.PHONY : src/glad.s
-
-# target to generate assembly for a file
-src/glad.c.s:
-	$(MAKE) -f CMakeFiles\demo_all.dir\build.make CMakeFiles/demo_all.dir/src/glad.c.s
-	$(MAKE) -f CMakeFiles\demo_opengl.dir\build.make CMakeFiles/demo_opengl.dir/src/glad.c.s
-.PHONY : src/glad.c.s
-
 src/gumbo/attribute.obj: src/gumbo/attribute.c.obj
 
 .PHONY : src/gumbo/attribute.obj
@@ -11196,6 +11139,33 @@ src/html/node.cpp.s:
 	$(MAKE) -f CMakeFiles\demo_html.dir\build.make CMakeFiles/demo_html.dir/src/html/node.cpp.s
 .PHONY : src/html/node.cpp.s
 
+src/jsontest.obj: src/jsontest.cpp.obj
+
+.PHONY : src/jsontest.obj
+
+# target to build an object file
+src/jsontest.cpp.obj:
+	$(MAKE) -f CMakeFiles\jsontest.dir\build.make CMakeFiles/jsontest.dir/src/jsontest.cpp.obj
+.PHONY : src/jsontest.cpp.obj
+
+src/jsontest.i: src/jsontest.cpp.i
+
+.PHONY : src/jsontest.i
+
+# target to preprocess a source file
+src/jsontest.cpp.i:
+	$(MAKE) -f CMakeFiles\jsontest.dir\build.make CMakeFiles/jsontest.dir/src/jsontest.cpp.i
+.PHONY : src/jsontest.cpp.i
+
+src/jsontest.s: src/jsontest.cpp.s
+
+.PHONY : src/jsontest.s
+
+# target to generate assembly for a file
+src/jsontest.cpp.s:
+	$(MAKE) -f CMakeFiles\jsontest.dir\build.make CMakeFiles/jsontest.dir/src/jsontest.cpp.s
+.PHONY : src/jsontest.cpp.s
+
 src/yoga/Utils.obj: src/yoga/Utils.cpp.obj
 
 .PHONY : src/yoga/Utils.obj
@@ -11539,9 +11509,6 @@ help:
 	@echo ... jsontest
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... jsontest.obj
-	@echo ... jsontest.i
-	@echo ... jsontest.s
 	@echo ... src/Rabster.obj
 	@echo ... src/Rabster.i
 	@echo ... src/Rabster.s
@@ -12505,9 +12472,6 @@ help:
 	@echo ... src/demo_opengl.obj
 	@echo ... src/demo_opengl.i
 	@echo ... src/demo_opengl.s
-	@echo ... src/glad.obj
-	@echo ... src/glad.i
-	@echo ... src/glad.s
 	@echo ... src/gumbo/attribute.obj
 	@echo ... src/gumbo/attribute.i
 	@echo ... src/gumbo/attribute.s
@@ -12547,6 +12511,9 @@ help:
 	@echo ... src/html/node.obj
 	@echo ... src/html/node.i
 	@echo ... src/html/node.s
+	@echo ... src/jsontest.obj
+	@echo ... src/jsontest.i
+	@echo ... src/jsontest.s
 	@echo ... src/yoga/Utils.obj
 	@echo ... src/yoga/Utils.i
 	@echo ... src/yoga/Utils.s

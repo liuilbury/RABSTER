@@ -37,13 +37,13 @@ target_link_libraries(demo_html PUBLIC iconv)
 target_include_directories(demo_html PUBLIC /include/iconv.h)
 
 
-add_executable(demo_opengl src/demo_opengl.cpp src/glad.c)
+add_executable(demo_opengl src/demo_opengl.cpp)
 target_link_libraries(demo_opengl PUBLIC glfw3)
 target_link_libraries(demo_opengl PUBLIC iconv)
 target_include_directories(demo_opengl PUBLIC /include/iconv.h)
 
 
-add_executable(demo_all src/demo_all.cpp src/glad.c ${CSS} ${HTML})
+add_executable(demo_all src/demo_all.cpp ${CSS} ${HTML})
 target_link_libraries(demo_all PUBLIC glfw3)
 target_link_libraries(demo_all PUBLIC iconv)
 target_include_directories(demo_all PUBLIC /include/iconv.h)
@@ -54,5 +54,5 @@ target_link_libraries(rabster PUBLIC iconv)
 target_include_directories(rabster PUBLIC /include/iconv.h)
 
 
-add_executable(jsontest jsontest.cpp)
+add_executable(jsontest src/jsontest.cpp)
 #add_definitions(-DDEBUG_HTML)

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/jsontest.dir/jsontest.cpp.obj"
+  "CMakeFiles/jsontest.dir/src/jsontest.cpp.obj"
   "jsontest.exe"
   "jsontest.exe.manifest"
   "jsontest.pdb"
