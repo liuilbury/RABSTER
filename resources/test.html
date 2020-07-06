@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>test</title>
     <style>
         #main {
-            width: 350px;
-            height: 100px;
-            border: 2px solid #c3c3c3;
-            display: flex;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #c3c3c3;
+            display: -webkit-flex; /* Safari */
+            flex-wrap: wrap;
         }
-        #main div:nth-of-type(1) {flex-grow: 1;}
-        #main div:nth-of-type(2) {flex-grow: 3;}
-        #main div:nth-of-type(3) {flex-grow: 1;}
-        #main div:nth-of-type(4) {flex-grow: 1;}
-        #main div:nth-of-type(5) {flex-grow: 1;}
+
+        .ss {
+            width: 200px;
+            height: 200px;
+        }
+
+        .sss {
+            flex-grow: 1;
+            width: 50px;
+            height: 50px;
+        }
+
+        .ssss {
+            flex-grow: 4;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
 
 <div id="main">
-    <div style="background-color:coral;"></div>
-    <div style="background-color:lightblue;"></div>
-    <div style="background-color:khaki;"></div>
-    <div style="background-color:pink;"></div>
-    <div style="background-color:#d70b0b;"></div>
+    <div class="sss" style="background-color:coral;">A</div>
+    <div class="sss" style="background-color:lightblue;">B</div>
+    <div class="ssss">
+        <div class="sss" style="background-color:khaki;">C</div>
+        <div class="sss" style="background-color:pink;">D</div>
+        <div class="sss" style="background-color:lightgrey;">E</div>
+        <div class="sss" style="background-color:lightgreen;">F</div>
+    </div>
 </div>
-
 </body>
 </html>
