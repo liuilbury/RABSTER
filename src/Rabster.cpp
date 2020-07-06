@@ -281,6 +281,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 		TranslateMessage(&msg);
 		//派发消息
 		DispatchMessage(&msg);
+
 	}
 	//返回消息的wParam参数给系统
 	return msg.wParam;

@@ -1,0 +1,26 @@
+
+        #main {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #c3c3c3;
+            display: -webkit-flex; /* Safari */
+            flex-wrap: wrap;
+        }
+
+        .ss {
+            width: 200px;
+            height: 200px;
+        }
+
+        .sss {
+            flex-grow: 1;
+            width: 50px;
+            height: 50px;
+        }
+
+        .ssss {
+            flex-grow: 4;
+            width: 50px;
+            height: 50px;
+        }
+    
