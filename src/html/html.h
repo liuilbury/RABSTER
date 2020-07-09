@@ -47,7 +47,6 @@ node* build_html_tree(node* fa, GumboNode* dom)
 		now->htmlnode = dom;
 		const char* name;
 		if (dom->v.element.tag != GUMBO_TAG_UNKNOWN)
-
 			name = gumbo_normalized_tagname(dom->v.element.tag);
 		else
 			name = "UNKNOWN";
@@ -119,4 +118,7 @@ node* html_init(std::string url)
 		URL.pop();
 	}
 	return root;
+}
+node* html_append_link(){
+
 }

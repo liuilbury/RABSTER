@@ -135,9 +135,9 @@ css_error css__language_create(css_stylesheet *sheet, css_parser *parser,
 		return css_error_from_parserutils_error(perror);
 	}
 
-	params.event_handler.handler = language_handle_event;//语法分析器
+	params.event_handler.handler = language_handle_event;//Handler for core parser events
 	params.event_handler.pw = c;//内存
-	error = css__parser_setopt(parser, CSS_PARSER_EVENT_HANDLER, &params);//将语法分析器赋值到parser
+	error = css__parser_setopt(parser, CSS_PARSER_EVENT_HANDLER, &params);//Configure a CSS parser
 	if (error != CSS_OK) {
 		parserutils_stack_destroy(c->context);
 		free(c);
@@ -200,7 +200,7 @@ css_error css__language_destroy(css_language *language)
 css_error language_handle_event(css_parser_event type,
 		const parserutils_vector *tokens, void *pw)
 {
-	css_language *language = (css_language *) pw;
+		css_language *language = (css_language *) pw;
 
 	switch (type) {
 	case CSS_PARSER_START_STYLESHEET:

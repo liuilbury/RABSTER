@@ -97,6 +97,7 @@ void node::Render_Direction(css_computed_style* style)
 {
 	css_direction_e direction_type;
 	direction_type = static_cast<css_direction_e>(css_computed_direction(style));
+	box.direction=direction_type;
 	if (direction_type == CSS_DIRECTION_INHERIT)
 	{
 		YGNodeStyleSetDirection(ygnode, YGDirectionInherit);
@@ -114,6 +115,7 @@ void node::Render_Align_Content(css_computed_style* style)
 {
 	css_align_content_e align_content_type;
 	align_content_type = static_cast<css_align_content_e>(css_computed_align_content(style));
+	box.align_content=align_content_type;
 	switch (align_content_type)
 	{
 	case CSS_ALIGN_CONTENT_FLEX_START:
@@ -154,25 +156,30 @@ void node::Render_Flex_Basis(css_computed_style* style)
 {
 	css_fixed flex_basis_value = 0;
 	css_unit flex_basis_unit = CSS_UNIT_PX;
-	css_width_e flex_basis_type = CSS_WIDTH_AUTO;
-	flex_basis_type = static_cast<css_width_e>(css_computed_flex_basis(style, &flex_basis_value, &flex_basis_unit));
+	css_flex_basis_e flex_basis_type = CSS_FLEX_BASIS_AUTO;
+	flex_basis_type = static_cast<css_flex_basis_e>(css_computed_flex_basis(style, &flex_basis_value, &flex_basis_unit));
 	flex_basis_value /= 1024;
-	if (flex_basis_type == CSS_WIDTH_AUTO)
+	box.flex_basis.value=flex_basis_value;
+	if (flex_basis_type == CSS_FLEX_BASIS_AUTO)
 	{
 		YGNodeStyleSetFlexBasisAuto(ygnode);
+		box.flex_basis.unit=YGUnitAuto;
 	}
 	else if (flex_basis_unit == CSS_UNIT_PCT)
 	{
 		YGNodeStyleSetFlexBasisPercent(ygnode, flex_basis_value);
+		box.flex_basis.unit=YGUnitPercent;
 	}
 	else
 	{
 		YGNodeStyleSetFlexBasis(ygnode, flex_basis_value);
+		box.flex_basis.unit=YGUnitPoint;
 	}
 }
 void node::Render_Flex_Direction(css_computed_style* style)
 {
 	css_flex_direction_e flex_direction = static_cast<css_flex_direction_e>(css_computed_flex_direction(style));
+	box.flex_direction=flex_direction;
 	if (flex_direction == CSS_FLEX_DIRECTION_COLUMN)
 	{
 		YGNodeStyleSetFlexDirection(ygnode, YGFlexDirectionColumn);
@@ -195,9 +202,11 @@ void node::Render_Flex_Grow(css_computed_style* style)
 	css_fixed flex_grow;
 	css_flex_grow_e flex_grow_type = static_cast<css_flex_grow_e>(css_computed_flex_grow(style, &flex_grow));
 	flex_grow /= 1024;
+	box.flex_grow.value=flex_grow;
 	if (flex_grow_type == CSS_FLEX_GROW_SET)
 	{
 		YGNodeStyleSetFlexGrow(ygnode, flex_grow);
+		box.flex_grow.unit=YGUnitPoint;
 	}
 }
 void node::Render_Flex_Shrink(css_computed_style* style)
@@ -205,6 +214,7 @@ void node::Render_Flex_Shrink(css_computed_style* style)
 	css_fixed flex_shrink;
 	css_flex_shrink_e flex_shrink_type = static_cast<css_flex_shrink_e>(css_computed_flex_shrink(style, &flex_shrink));
 	flex_shrink /= 1024;
+	box.flex_shrink.value=flex_shrink;
 	if (flex_shrink_type == CSS_FLEX_SHRINK_SET)
 	{
 		YGNodeStyleSetFlexShrink(ygnode, flex_shrink);
@@ -213,6 +223,7 @@ void node::Render_Flex_Shrink(css_computed_style* style)
 void node::Render_Flex_Wrap(css_computed_style* style)
 {
 	css_flex_wrap_e flex_wrap_type = static_cast<css_flex_wrap_e>(css_computed_flex_wrap(style));
+	box.flex_wrap=flex_wrap_type;
 	if (flex_wrap_type == CSS_FLEX_WRAP_NOWRAP)
 	{
 		YGNodeStyleSetFlexWrap(ygnode, YGWrapNoWrap);
@@ -240,8 +251,8 @@ void node::Render_Position(css_computed_style* style)
 
 	css_fixed top = 0;
 	css_unit tunit = CSS_UNIT_PX;
-	css_left_e ttype = CSS_LEFT_AUTO;
-	ttype = static_cast<css_left_e>(css_computed_top(style, &top, &tunit));
+	css_top_e ttype = CSS_TOP_AUTO;
+	ttype = static_cast<css_top_e>(css_computed_top(style, &top, &tunit));
 	top /= 1024;
 	if (tunit == CSS_UNIT_PCT)
 		YGNodeStyleSetPositionPercent(ygnode, YGEdgeTop, top);
@@ -250,8 +261,8 @@ void node::Render_Position(css_computed_style* style)
 
 	css_fixed right = 0;
 	css_unit runit = CSS_UNIT_PX;
-	css_left_e rtype = CSS_LEFT_AUTO;
-	rtype = static_cast<css_left_e>(css_computed_right(style, &right, &runit));
+	css_right_e rtype = CSS_RIGHT_AUTO;
+	rtype = static_cast<css_right_e>(css_computed_right(style, &right, &runit));
 	right /= 1024;
 	if (runit == CSS_UNIT_PCT)
 		YGNodeStyleSetPositionPercent(ygnode, YGEdgeRight, right);
@@ -260,17 +271,22 @@ void node::Render_Position(css_computed_style* style)
 
 	css_fixed bottom = 0;
 	css_unit bunit = CSS_UNIT_PX;
-	css_left_e btype = CSS_LEFT_AUTO;
-	btype = static_cast<css_left_e>(css_computed_bottom(style, &bottom, &bunit));
+	css_bottom_e btype = CSS_BOTTOM_AUTO;
+	btype = static_cast<css_bottom_e>(css_computed_bottom(style, &bottom, &bunit));
 	bottom /= 1024;
 	if (bunit == CSS_UNIT_PCT)
 		YGNodeStyleSetPositionPercent(ygnode, YGEdgeBottom, bottom);
 	else
 		YGNodeStyleSetPosition(ygnode, YGEdgeBottom, bottom);
+	box.position[0]=left;
+	box.position[1]=top;
+	box.position[2]=right;
+	box.position[3]=bottom;
 }
 void node::Render_Position_Type(css_computed_style* style)
 {
 	css_position_e position_type = static_cast<css_position_e>(css_computed_position(style));
+	box.position_type=position_type;
 	if (position_type == CSS_POSITION_RELATIVE)
 	{
 		YGNodeStyleSetPositionType(ygnode, YGPositionTypeRelative);
@@ -443,6 +459,36 @@ void node::Render_Border_Style(css_computed_style* style)
 	btype = static_cast<css_border_style_e>(css_computed_border_bottom_style(style));
 	box.border_style[3] = btype;
 }
+void node::Render_Border_Padding(css_computed_style* style)
+{
+	css_fixed left = 0;
+	css_unit lunit = CSS_UNIT_PX;
+	css_padding_e ltype = CSS_PADDING_INHERIT;
+	ltype = static_cast<css_padding_e>(css_computed_padding_left(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutPadding(left,YGEdgeLeft);
+	ltype = static_cast<css_padding_e>(css_computed_padding_top(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutPadding(left,YGEdgeTop);
+	ltype = static_cast<css_padding_e>(css_computed_padding_right(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutPadding(left,YGEdgeRight);
+	ltype = static_cast<css_padding_e>(css_computed_padding_bottom(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutPadding(left,YGEdgeBottom);
+	static_cast<css_margin_e>(css_computed_margin_left(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutMargin(left,YGEdgeLeft);
+	static_cast<css_margin_e>(css_computed_margin_top(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutMargin(left,YGEdgeTop);
+	static_cast<css_margin_e>(css_computed_margin_right(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutMargin(left,YGEdgeRight);
+	static_cast<css_margin_e>(css_computed_margin_bottom(style, &left, &lunit));
+	left /= 1024;
+	ygnode->setLayoutMargin(left,YGEdgeBottom);
+}
 void node::Render_Display(css_computed_style* style)
 {
 	box.display = static_cast<css_display_e>(css_computed_display(style, _parent != nullptr));
@@ -455,7 +501,7 @@ void node::Render_Display(css_computed_style* style)
 		YGNodeStyleSetDisplay(ygnode, YGDisplayNone);
 	}
 }
-void node::Render_Box(int nWidth, int nHeight, css_pseudo_element mod)
+void node::Render_Box(css_pseudo_element mod)
 {
 	Render_Width(_final_style->styles[mod]);
 	Render_Height(_final_style->styles[mod]);
@@ -474,6 +520,7 @@ void node::Render_Box(int nWidth, int nHeight, css_pseudo_element mod)
 	Render_Border_Style(_final_style->styles[mod]);
 	Render_Border_Width(_final_style->styles[mod]);
 	Render_Border_Color(_final_style->styles[mod]);
+	Render_Border_Padding(_final_style->styles[mod]);
 }
 void node::Render_Color(css_pseudo_element mod)
 {
@@ -508,3 +555,8 @@ void node::Render_Time()
 	box.start_time = delay_time;
 	box.end_time = box.start_time + duration_time;
 }
+void node::Render_Init_Box(css_pseudo_element mod)
+{
+	YGNodeStyleSetDisplay(ygnode, YGDisplayNone);
+}
+

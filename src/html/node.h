@@ -13,19 +13,30 @@
 #include "Yoga.h"
 #include "YGStyle.h"
 #include "YGLayout.h"
+#include "YGNode.h"
 using namespace std;
 struct Box{
 	int x=0,y=0;
 	int width=0;
 	int height=0;
 	int color[4];
+	int position[4];
+	css_position_e position_type;
 	css_border_style_e border_style[4];
 	int border_color[4][4];
 	css_display_e display;
 	int start_time=0;
 	int end_time=0;
+	css_direction_e direction;
+	css_align_content_e align_content;
+	YGValue flex_grow;
+	css_flex_direction_e flex_direction;
+	YGValue flex_basis;
+	YGValue flex_shrink;
+	css_flex_wrap_e flex_wrap;
 	void to_string(){
 		printf("width=%d height=%d\n",width,height);
+		printf("position:%d %d %d %d\n",position[0],position[1],position[2],position[3]);
 		printf("color=%d %d %d %d\n",color[0],color[1],color[2],color[3]);
 		printf("time:%d %d\n",start_time,end_time);
 	}
@@ -47,7 +58,7 @@ class node
 		_inline_style= "";
 		_final_style= nullptr;
 		hover= false;
-
+		link= nullptr;
 	}
 	YGNodeRef ygnode;
 	GumboNode* htmlnode;
@@ -72,12 +83,14 @@ class node
 	void change(int key, const std::string& value);
 	set<node*> update();
 	void add_child(node*);
-	void Render_Box(int nWidth,int nHeight,css_pseudo_element);
+	void Render_Box(css_pseudo_element);
+	void Render_Init_Box(css_pseudo_element);
 	void Render_Color(css_pseudo_element mod);
 	void Render_Display(css_computed_style* style);
 	void Render_Time();
 	Box box;
 	bool hover;
+	node *link;
 	void Render_Width(css_computed_style* style);
 	void Render_Height(css_computed_style* style);
 	void Render_Flex_Basis(css_computed_style* style);
@@ -94,6 +107,7 @@ class node
 	void Render_Border_Width(css_computed_style* style);
 	void Render_Border_Style(css_computed_style* style);
 	void Render_Border_Color(css_computed_style* style);
+	void Render_Border_Padding(css_computed_style* style);
 };
 
 #endif //_NODE_H_
