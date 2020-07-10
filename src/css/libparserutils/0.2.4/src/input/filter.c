@@ -11,7 +11,7 @@
 #include <string.h>
 
 #ifndef WITHOUT_ICONV_FILTER
-#include <iconv.h>
+#include <parserutils/iconv.h>
 #endif
 
 #include <parserutils/charset/mibenum.h>

@@ -4,7 +4,6 @@
 
 #include "node.h"
 #include <queue>
-#include "../lex/CSSLex.h"
 std::set<node*> node::update()
 {
 	std::set<node*> changeNode;

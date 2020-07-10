@@ -6,78 +6,35 @@
 #include <gdiplus.h>
 #include <iostream>
 #include "html/html.h"
+#include "../render/Render.h"
 #include <vector>
 using namespace Gdiplus;
 HWND hwnd;    //创建窗口函数CreateWindow()会返回一个HWND句柄，这里定义下，用来接收这个句柄
 MSG msg;      //消息结构体，在消息循环的时候需要
 WNDCLASS wndclass; //创建窗口类对象
 HDC hdc;
-node* root;
 HtmlContent* html_ctx;
 int nHeight, nWidth;
 int flag = 0;
 int time = 0, cnt = 0;
+Render* ctx;
 void html_init()
 {
-	root = html_init(R"(F:\opengl\RABSTER\resources\test.html)");
 	html_ctx = new HtmlContent();
-	html_ctx->html_css_new_stylesheets();
-	for (auto i:root->url)
-	{
-		std::string str = R"(F:\opengl\RABSTER\resources\)" + i;
-		html_ctx->html_css_append_stylesheets(str.data());
-	}
-	html_ctx->html_css_new_selection_context();
-	html_ctx->get_tree_style(root);
+	html_ctx->html_init(R"(F:\opengl\RABSTER\resources\test.html)");
+	ctx = new Render();
+	ctx->root = ctx->build(html_ctx->root, nullptr);
+	ctx->Render_Tree();
+	ctx->Layout_Tree();
 }
-void html_destroy(node* d)
+void html_destroy(DomNode* d)
 {
 	for (auto i:d->_children)
 	{
 		html_destroy(i);
 	}
 }
-void Render_Node(node* d)
-{
-	css_pseudo_element mod = CSS_PSEUDO_ELEMENT_NONE;
-	d->Render_Color(mod);
-	d->Render_Time();
-	if (d->link == nullptr||d->_prev->link== nullptr)
-	{
-		d->Render_Box(mod);
-	}else{
-		d->Render_Init_Box(mod);
-	}
-}
-void Render_Tree(node* d)
-{
-	flag = 0;
-	std::queue<node*> q;
-	q.push(d);
-	while (!q.empty())
-	{
-		d = q.front();
-		q.pop();
-		Render_Node(d);
-		for (auto i:d->_children)
-		{
-			q.push(i);
-		}
-	}
-}
-void Save_Node(node* d)
-{
-	d->save_style = d->box;
-}
-void Save_Style(node* d)
-{
-	Save_Node(d);
-	for (auto i:d->_children)
-	{
-		Save_Style(i);
-	}
-}
-void show_node(node* d)
+void show_node(RenderNode* d)
 {
 	/*if (time != 0&&d->box.end_time!=0)
 	{
@@ -95,25 +52,25 @@ void show_node(node* d)
 		}
 	}*/
 	Graphics* graphics = new Graphics(hdc);
-	SolidBrush* solidBrush = new SolidBrush(Color(d->box.color[0], d->box.color[1],
-		d->box.color[2] + cnt, d->box.color[3]));
+	SolidBrush* solidBrush = new SolidBrush(Color(d->style->StyleColor.sbackgroud_color.color[0], d->style->StyleColor.sbackgroud_color.color[1],
+		d->style->StyleColor.sbackgroud_color.color[2] + cnt, d->style->StyleColor.sbackgroud_color.color[3]));
 	float left, top, width, height;
-	left = YGNodeLayoutGetLeft(d->ygnode);
-	top = YGNodeLayoutGetTop(d->ygnode);
-	width = YGNodeLayoutGetWidth(d->ygnode);
-	height = YGNodeLayoutGetHeight(d->ygnode);
+	left = YGNodeLayoutGetLeft(d->ygNode);
+	top = YGNodeLayoutGetTop(d->ygNode);
+	width = YGNodeLayoutGetWidth(d->ygNode);
+	height = YGNodeLayoutGetHeight(d->ygNode);
 	graphics->FillRectangle(solidBrush, left, top, width, height);
 	float cleft, ctop, cright, cbottom;
-	cleft = YGNodeStyleGetBorder(d->ygnode, YGEdgeLeft);
-	ctop = YGNodeStyleGetBorder(d->ygnode, YGEdgeTop);
-	cright = YGNodeStyleGetBorder(d->ygnode, YGEdgeRight);
-	cbottom = YGNodeStyleGetBorder(d->ygnode, YGEdgeBottom);
+	cleft = YGNodeStyleGetBorder(d->ygNode, YGEdgeLeft);
+	ctop = YGNodeStyleGetBorder(d->ygNode, YGEdgeTop);
+	cright = YGNodeStyleGetBorder(d->ygNode, YGEdgeRight);
+	cbottom = YGNodeStyleGetBorder(d->ygNode, YGEdgeBottom);
 	Pen* pen = new Pen(Color(255, 195, 195, 195), 2);
-	pen->SetColor(Color(d->box.border_color[0][0], d->box.border_color[0][1], d->box.border_color[0][2], d->box.border_color[0][3]));
+	//pen->SetColor(Color(d->box.border_color[0][0], d->box.border_color[0][1], d->box.border_color[0][2], d->box.border_color[0][3]));
 //#ifdef DEBUG
-	printf("%s ",d->real_name.data());
-	printf("%f %f %f %f\n",left,top,width,height);
-	printf("%f %f %f %f\n",cleft,ctop,cright,cbottom);
+	printf("%s ", d->get_Name().data());
+	printf("%f %f %f %f\n", left, top, width, height);
+	printf("%f %f %f %f\n", cleft, ctop, cright, cbottom);
 //#endif
 	pen->SetWidth(cleft);
 	graphics->DrawLine(pen, left + cleft / 2, top, left + cleft / 2, top + height);
@@ -124,12 +81,11 @@ void show_node(node* d)
 	pen->SetWidth(cbottom);
 	graphics->DrawLine(pen, left, top + height - cbottom / 2, left + width, top + height - cbottom / 2);
 }
-void show_tree(node* d)
+void show_tree(RenderNode* d)
 {
-	printf("%s\n",d->real_name.data());
-	d->box.to_string();
+	printf("%s\n", d->get_Name().data());
 	show_node(d);
-	for (auto i:d->_children)
+	for (auto i:d->getChildren())
 	{
 		show_tree(i);
 	}
@@ -137,8 +93,8 @@ void show_tree(node* d)
 void test()
 {
 	int cc = 0;
-	node* d = root;
-	std::queue<node*> q;
+	DomNode* d = html_ctx->root;
+	std::queue<DomNode*> q;
 	q.push(d);
 	while (!q.empty())
 	{
@@ -206,10 +162,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 		}
 		else if (wParam == VK_F2)
 		{
-			Save_Style(root);
+			//Save_Style(html_ctx->root);
 			flag = 1;
-			root->hover = true;
-			html_ctx->get_tree_style(root);
+			html_ctx->root->hover = true;
+			html_ctx->get_tree_style(html_ctx->root);
 			SetTimer(hwnd, 1, 16, NULL);
 		}
 		else if (wParam == VK_F3)
@@ -226,9 +182,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 		nHeight = rctA.bottom - rctA.top;  //窗口的高度
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hwnd, &ps);
-		Render_Tree(root);
-		YGNodeCalculateLayout(root->ygnode, nWidth, nHeight, YGDirectionLTR);
-		show_tree(root);
+		ctx->Render_Tree();
+		ctx->Layout_Tree();
+		YGNodeCalculateLayout(ctx->root->ygNode, nWidth, nHeight, YGDirectionLTR);
+		show_tree(ctx->root);
 		EndPaint(hwnd, &ps);
 		/*窗口有绘图操作更新时,会收到这个消息*/
 		return 0;

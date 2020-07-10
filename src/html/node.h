@@ -5,7 +5,6 @@
 #ifndef _NODE_H_
 #define _NODE_H_
 
-#include "style.h"
 #include <set>
 #include <list>
 #include <libcss/libcss.h>
@@ -14,7 +13,6 @@
 #include "YGStyle.h"
 #include "YGLayout.h"
 #include "YGNode.h"
-using namespace std;
 struct Box{
 	int x=0,y=0;
 	int width=0;
@@ -74,14 +72,14 @@ class node
 	node* _next;
 	node* _prev;
 	node* _last_child;
-	list<node*> _children;
+	std::list<node*> _children;
 	std::string _inline_style;
 	css_select_results* _style;
 	css_select_results* _final_style;
 	Box save_style;
 	std::list<std::string>url;
 	void change(int key, const std::string& value);
-	set<node*> update();
+	std::set<node*> update();
 	void add_child(node*);
 	void Render_Box(css_pseudo_element);
 	void Render_Init_Box(css_pseudo_element);

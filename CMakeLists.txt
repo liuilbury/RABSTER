@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
 project (RABSTER)
-link_directories(${PROJECT_SOURCE_DIR}/lib)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++17")
 
 
@@ -30,29 +29,10 @@ aux_source_directory(./src/gumbo gumbo)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 set(CSS  ${file1} ${file2} ${file3} ${file4} ${file5} ${file6})
-set(HTML src/html/node.h src/html/node.cpp src/html/HtmlContent.cpp src/html/HtmlContent.h src/html/Handle.h  src/html/HtmlLayout.cpp src/html/HtmlLayout.h)
-add_executable(demo_html src/demo_html.cpp ${CSS} ${HTML} ${gumbo} ${yoga})
-target_link_libraries(demo_html PUBLIC glfw3)
-target_link_libraries(demo_html PUBLIC iconv)
-target_include_directories(demo_html PUBLIC /include/iconv.h)
+set(HTML src/html/node.h src/html/node.cpp src/html/HtmlContent.cpp src/html/HtmlContent.h src/html/Handle.h  src/html/HtmlLayout.cpp src/html/HtmlLayout.h src/html/DomNode.cpp src/html/DomNode.h src/render/RenderNode.cpp src/render/RenderNode.h)
 
-
-add_executable(demo_opengl src/demo_opengl.cpp)
-target_link_libraries(demo_opengl PUBLIC glfw3)
-target_link_libraries(demo_opengl PUBLIC iconv)
-target_include_directories(demo_opengl PUBLIC /include/iconv.h)
-
-
-add_executable(demo_all src/demo_all.cpp ${CSS} ${HTML})
-target_link_libraries(demo_all PUBLIC glfw3)
-target_link_libraries(demo_all PUBLIC iconv)
-target_include_directories(demo_all PUBLIC /include/iconv.h)
-
-add_executable(rabster src/Rabster.cpp ${CSS} ${HTML} ${gumbo} ${yoga})
-target_link_libraries(rabster  PUBLIC gdiplus.lib)
+add_executable(rabster src/Rabster.cpp ${CSS} ${HTML} ${gumbo} ${yoga} src/render/Style.cpp src/render/Style.h src/render/Style_Layout.cpp src/render/Style_Layout.h src/render/Style_Color.cpp src/render/Style_Color.h src/render/Render.cpp src/render/Render.h include/html/Node.h)
+target_link_libraries(rabster  PUBLIC gdiplus)
 target_link_libraries(rabster PUBLIC iconv)
-target_include_directories(rabster PUBLIC /include/iconv.h)
-
-
-add_executable(jsontest src/jsontest.cpp)
+target_include_directories(rabster PUBLIC /include/parserutils/iconv.h)
 #add_definitions(-DDEBUG_HTML)

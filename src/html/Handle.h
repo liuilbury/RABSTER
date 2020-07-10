@@ -4,12 +4,11 @@
 
 #ifndef GLFW_HANDLE_H
 #define GLFW_HANDLE_H
-#include "libcss/libcss.h"
 #define UNUSED(x) ((x) = (x))
 
 css_error node_name(void* pw, void* n, css_qname* qname)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 
 	UNUSED(pw);
 
@@ -21,7 +20,7 @@ css_error node_name(void* pw, void* n, css_qname* qname)
 css_error node_classes(void* pw, void* n,
 	lwc_string*** classes, uint32_t* n_classes)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	unsigned int i;
 	*classes = node->classes;
@@ -33,7 +32,7 @@ css_error node_classes(void* pw, void* n,
 
 css_error node_id(void* pw, void* n, lwc_string** id)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	*id = node->Id;
 	return CSS_OK;
@@ -41,7 +40,7 @@ css_error node_id(void* pw, void* n, lwc_string** id)
 
 css_error named_ancestor_node(void* pw, void* n, const css_qname* qname, void** ancestor)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	for (node = node->_parent; node != nullptr; node = node->_parent)
 	{
 		bool match = false;
@@ -58,7 +57,7 @@ css_error named_ancestor_node(void* pw, void* n, const css_qname* qname, void** 
 
 css_error named_parent_node(void* pw, void* n, const css_qname* qname, void** parent)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	if (node->_parent != nullptr)
 	{
@@ -74,7 +73,7 @@ css_error named_parent_node(void* pw, void* n, const css_qname* qname, void** pa
 
 css_error named_generic_sibling_node(void* pw, void* n, const css_qname* qname, void** sibling)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	for (node = node->_prev; node != nullptr; node = node->_prev)
 	{
 		bool match = false;
@@ -91,7 +90,7 @@ css_error named_generic_sibling_node(void* pw, void* n, const css_qname* qname, 
 
 css_error named_sibling_node(void* pw, void* n, const css_qname* qname, void** sibling)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	*sibling = nullptr;
 	UNUSED(pw);
 	if (node->_prev != nullptr)
@@ -108,7 +107,7 @@ css_error named_sibling_node(void* pw, void* n, const css_qname* qname, void** s
 
 css_error parent_node(void* pw, void* n, void** parent)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	*parent = (void*)node->_parent;
 	UNUSED(pw);
 	return CSS_OK;
@@ -116,7 +115,7 @@ css_error parent_node(void* pw, void* n, void** parent)
 
 css_error sibling_node(void* pw, void* n, void** sibling)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	*sibling = (void*)node->_prev;
 	UNUSED(pw);
 	return CSS_OK;
@@ -124,7 +123,7 @@ css_error sibling_node(void* pw, void* n, void** sibling)
 
 css_error node_has_name(void* pw, void* n, const css_qname* qname, bool* match)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	if (lwc_string_length(qname->name) == 1 &&
 		lwc_string_data(qname->name)[0] == '*')
@@ -137,7 +136,7 @@ css_error node_has_name(void* pw, void* n, const css_qname* qname, bool* match)
 
 css_error node_has_class(void* pw, void* n, lwc_string* name, bool* match)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	UNUSED(name);
 	*match = (node->n_classes != 0);
@@ -148,7 +147,7 @@ css_error node_has_id(void* pw, void* n,
 	lwc_string* name,
 	bool* match)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	UNUSED(name);
 	*match = (node->Id != nullptr);
@@ -247,7 +246,7 @@ css_error node_has_attribute_substring(void* pw, void* n,
 css_error node_is_root(void* pw, void* n, bool* match)
 {
 	UNUSED(pw);
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	*match = (node->_parent == nullptr);
 	return CSS_OK;
 }
@@ -257,7 +256,7 @@ css_error node_count_siblings(void* pw, void* n,
 {
 	int cnt = 0;
 	bool match = false;
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	lwc_string* name = node->name;
 	UNUSED(pw);
 	if (after)
@@ -297,7 +296,7 @@ css_error node_count_siblings(void* pw, void* n,
 css_error node_is_empty(void* pw, void* n, bool* match)
 {
 	UNUSED(pw);
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	*match = (node->_children.size() == 0);
 	return CSS_OK;
 }
@@ -322,7 +321,7 @@ css_error node_is_hover(void* pw, void* n, bool* match)
 {
 	UNUSED(pw);
 	UNUSED(n);
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	*match = node->hover;
 	return CSS_OK;
 }
@@ -508,7 +507,7 @@ css_error compute_font_size(void* pw, const css_hint* parent, css_hint* size)
 static css_error set_libcss_node_data(void* pw, void* n,
 	void* libcss_node_data)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	node->node_data = libcss_node_data;
 	return CSS_OK;
@@ -517,7 +516,7 @@ static css_error set_libcss_node_data(void* pw, void* n,
 static css_error get_libcss_node_data(void* pw, void* n,
 	void** libcss_node_data)
 {
-	node* node = static_cast<class node*>(n);
+	DomNode* node = static_cast<class DomNode*>(n);
 	UNUSED(pw);
 	*libcss_node_data = node->node_data;
 
