@@ -191,9 +191,14 @@ struct SPadding{
 			padding[i].print();
 	}
 };
+
+struct Box{
+	float left=0,top=0;
+};
 class Style_Layout
 {
  public:
+	Box box_size;
 	SValue swidth;
 	SValue sheight;
 	SAlign salignContent;
@@ -236,6 +241,7 @@ class Style_Layout
 	void Render_max_height(css_computed_style* style);
 	void Render_Layout(css_computed_style* style,bool);
 	void print();
+	Box& getBox();
 };
 
 #endif //_STYLE_LAYOUT_H_

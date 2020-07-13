@@ -22,8 +22,7 @@
 YGConfigRef YGConfigGetDefault();
 
 struct YOGA_EXPORT YGNode {
-  using MeasureWithContextFn =
-      YGSize (*)(YGNode*, float, YGMeasureMode, float, YGMeasureMode, void*);
+  using MeasureWithContextFn =YGSize (*)(YGNode*, float, YGMeasureMode, float, YGMeasureMode, void*);
   using BaselineWithContextFn = float (*)(YGNode*, float, float, void*);
   using PrintWithContextFn = void (*)(YGNode*, void*);
 

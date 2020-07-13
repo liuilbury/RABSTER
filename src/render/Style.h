@@ -12,8 +12,8 @@
 #include "YGNode.h"
 class Style
 {
-	Style_Layout StyleLayout;
  public:
+	Style_Layout StyleLayout;
 	Style_Color StyleColor;
 	void Render_Style(css_computed_style* style,bool);
 	Style_Layout* get_Layout();

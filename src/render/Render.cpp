@@ -6,6 +6,7 @@
 void Render::Render_Tree()
 {
 	ygConfig = YGConfigNew();
+
 	std::queue<RenderNode*> q;
 	q.push(root);
 	while (!q.empty())

@@ -15,8 +15,13 @@
         }
 
         #main div {
+            display: flex;
             width: 50px;
             height: 50px;
+        }
+        #ff{
+            width: 150px;
+            height: 50px;;
         }
     </style>
 </head>
@@ -26,13 +31,11 @@
     <div style="background-color:coral;">A</div>
     <div style="background-color:lightblue;">B</div>
     <div style="background-color:khaki;">C</div>
-    <div style="background-color:pink;">D</div>
-    <div style="background-color:lightgrey;">E</div>
-    <div style="background-color:lightgreen;">F</div>
+    <div style="height: 50px;width: 150px;">
+        <div style="background-color:pink;">D</div>
+        <div style="background-color:lightgrey;">E</div>
+        <div style="background-color:lightgreen;">F</div>
+    </div>
 </div>
-
-<p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 flex-wrap 属性。</p>
-<p><b>注意:</b> Safari 6.1 及更新版本通过 -webkit-flex-wrap 属性支持该属性。</p>
-
 </body>
 </html>

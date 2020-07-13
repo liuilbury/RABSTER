@@ -149,8 +149,7 @@ YGSize YGNode::measure(
     void* layoutContext) {
 
   return facebook::yoga::detail::getBooleanData(flags, measureUsesContext_)
-      ? measure_.withContext(
-            this, width, widthMode, height, heightMode, layoutContext)
+      ? measure_.withContext(this, width, widthMode, height, heightMode, layoutContext)
       : measure_.noContext(this, width, widthMode, height, heightMode);
 }
 

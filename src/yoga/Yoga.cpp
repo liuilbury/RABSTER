@@ -3909,7 +3909,6 @@ bool YGLayoutNodeInternal(
 
     (performLayout ? layoutMarkerData.cachedLayouts
                    : layoutMarkerData.cachedMeasures) += 1;
-
     if (gPrintChanges && gPrintSkips) {
       Log::log(
           node,

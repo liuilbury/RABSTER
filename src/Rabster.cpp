@@ -26,7 +26,7 @@ void html_init()
 	ctx->root = ctx->build(html_ctx->root, nullptr);
 	ctx->Render_Tree();
 	ctx->Layout_Tree();
-	//ctx->Print_Tree();
+	ctx->Print_Tree();
 }
 void html_destroy(DomNode* d)
 {
@@ -53,14 +53,24 @@ void show_node(RenderNode* d)
 		}
 	}*/
 	Graphics* graphics = new Graphics(hdc);
-	SolidBrush* solidBrush = new SolidBrush(Color(d->style->StyleColor.sbackgroud_color.color[0], d->style->StyleColor.sbackgroud_color.color[1],
-		d->style->StyleColor.sbackgroud_color.color[2] + cnt, d->style->StyleColor.sbackgroud_color.color[3]));
+	int color[4];
+	for(int i=0;i<4;i++){
+		color[i]=d->style->StyleColor.sbackgroud_color.color[i];
+	}
+	SolidBrush* solidBrush = new SolidBrush(Color(color[0], color[1],color[2] + cnt, color[3]));
+	Box &box=d->style->StyleLayout.getBox();
+	if(d->getParent()!=nullptr)
+	{
+		Box& fa_box = d->getParent()->style->StyleLayout.getBox();
+		box=fa_box;
+	}
 	float left, top, width, height;
 	left = YGNodeLayoutGetLeft(d->ygNode);
 	top = YGNodeLayoutGetTop(d->ygNode);
 	width = YGNodeLayoutGetWidth(d->ygNode);
 	height = YGNodeLayoutGetHeight(d->ygNode);
-	graphics->FillRectangle(solidBrush, left, top, width, height);
+	box.left+=left,box.top+=top;
+	graphics->FillRectangle(solidBrush, box.left, box.top, width, height);
 	float cleft, ctop, cright, cbottom;
 	cleft = YGNodeStyleGetBorder(d->ygNode, YGEdgeLeft);
 	ctop = YGNodeStyleGetBorder(d->ygNode, YGEdgeTop);
@@ -74,13 +84,13 @@ void show_node(RenderNode* d)
 	printf("%f %f %f %f\n", cleft, ctop, cright, cbottom);
 #endif
 	pen->SetWidth(cleft);
-	graphics->DrawLine(pen, left + cleft / 2, top, left + cleft / 2, top + height);
+	graphics->DrawLine(pen, box.left + cleft / 2, box.top, box.left + cleft / 2, box.top + height);
 	pen->SetWidth(ctop);
-	graphics->DrawLine(pen, left, top + ctop / 2, left + width - cright / 2, top + ctop / 2);
+	graphics->DrawLine(pen, box.left, box.top + ctop / 2, box.left + width - cright / 2, box.top + ctop / 2);
 	pen->SetWidth(cright);
-	graphics->DrawLine(pen, left + width - cright / 2, top, left + width - cright / 2, top + height);
+	graphics->DrawLine(pen, box.left + width - cright / 2, box.top, box.left + width - cright / 2, box.top + height);
 	pen->SetWidth(cbottom);
-	graphics->DrawLine(pen, left, top + height - cbottom / 2, left + width, top + height - cbottom / 2);
+	graphics->DrawLine(pen, box.left, box.top + height - cbottom / 2, box.left + width, box.top + height - cbottom / 2);
 }
 void show_tree(RenderNode* d)
 {
@@ -184,6 +194,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 		hdc = BeginPaint(hwnd, &ps);
 		ctx->Render_Tree();
 		ctx->Layout_Tree();
+		YGNodeCalculateLayout(ctx->root->ygNode, nWidth, nHeight, YGDirectionLTR);
 		YGNodeCalculateLayout(ctx->root->ygNode, nWidth, nHeight, YGDirectionLTR);
 		show_tree(ctx->root);
 		EndPaint(hwnd, &ps);

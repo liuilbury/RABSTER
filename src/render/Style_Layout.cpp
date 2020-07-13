@@ -955,3 +955,7 @@ void Style_Layout::print()
 	spaddings.print();
 	printf("\n--------------\n");
 }
+Box& Style_Layout::getBox()
+{
+	return box_size;
+}
