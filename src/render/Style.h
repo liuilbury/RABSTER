@@ -17,6 +17,7 @@ class Style
 	Style_Color StyleColor;
 	void Render_Style(css_computed_style* style,bool);
 	Style_Layout* get_Layout();
+	void print();
 };
 
 #endif //_STYLE_H_

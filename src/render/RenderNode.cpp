@@ -68,7 +68,7 @@ void RenderNode::Calculate_Layout()
 	//position_type
 	YGNodeStyleSetPositionType(ygNode, (YGPositionType)layout->spositions.type);
 	////////////////
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		YGEdge ygEdge = (YGEdge)i;
 		//position
@@ -87,7 +87,8 @@ void RenderNode::Calculate_Layout()
 			YGNodeStyleSetMargin(ygNode, ygEdge, layout->smargins.margin[ygEdge].value);
 		}
 		//border
-		YGNodeStyleSetBorder(ygNode, ygEdge, layout->sborders.border[ygEdge].value);
+		if (layout->sborders.type[ygEdge] != SBorderTypeNone)
+			YGNodeStyleSetBorder(ygNode, ygEdge, layout->sborders.border[ygEdge]);
 		//padding
 		if ((YGUnit)layout->spaddings.padding[ygEdge].unit == YGUnitPercent)
 		{
@@ -98,4 +99,11 @@ void RenderNode::Calculate_Layout()
 			YGNodeStyleSetPadding(ygNode, ygEdge, layout->spaddings.padding[ygEdge].value);
 		}
 	}
+	print();
 }
+void RenderNode::print()
+{
+	printf("%s\n",get_Name().data());
+	style->print();
+}
+

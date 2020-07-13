@@ -12,4 +12,9 @@ Style_Layout* Style::get_Layout()
 {
 	return &StyleLayout;
 }
+void Style::print()
+{
+	StyleLayout.print();
+	//StyleColor.print();
+}
 

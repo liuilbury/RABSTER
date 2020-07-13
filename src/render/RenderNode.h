@@ -19,6 +19,7 @@ class RenderNode : public Node<RenderNode>
 		_final_style=new css_select_results();
 		style=new Style();
 	}
+	void print();
 };
 
 #endif //_RENDERNODE_H_

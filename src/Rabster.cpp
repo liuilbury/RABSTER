@@ -14,7 +14,7 @@ MSG msg;      //消息结构体，在消息循环的时候需要
 WNDCLASS wndclass; //创建窗口类对象
 HDC hdc;
 HtmlContent* html_ctx;
-int nHeight, nWidth;
+float nHeight, nWidth;
 int flag = 0;
 int time = 0, cnt = 0;
 Render* ctx;
@@ -67,11 +67,11 @@ void show_node(RenderNode* d)
 	cbottom = YGNodeStyleGetBorder(d->ygNode, YGEdgeBottom);
 	Pen* pen = new Pen(Color(255, 195, 195, 195), 2);
 	//pen->SetColor(Color(d->box.border_color[0][0], d->box.border_color[0][1], d->box.border_color[0][2], d->box.border_color[0][3]));
-//#ifdef DEBUG
+#ifdef DEBUG
 	printf("%s ", d->get_Name().data());
 	printf("%f %f %f %f\n", left, top, width, height);
 	printf("%f %f %f %f\n", cleft, ctop, cright, cbottom);
-//#endif
+#endif
 	pen->SetWidth(cleft);
 	graphics->DrawLine(pen, left + cleft / 2, top, left + cleft / 2, top + height);
 	pen->SetWidth(ctop);
@@ -83,7 +83,6 @@ void show_node(RenderNode* d)
 }
 void show_tree(RenderNode* d)
 {
-	printf("%s\n", d->get_Name().data());
 	show_node(d);
 	for (auto i:d->getChildren())
 	{

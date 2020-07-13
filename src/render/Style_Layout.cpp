@@ -158,6 +158,7 @@ void Style_Layout::Render_height(css_computed_style* style)
 	css_unit hunit = CSS_UNIT_PX;
 	htype = static_cast<css_height_e>(css_computed_height(style, &height, &hunit));
 	height = height / 1024;
+	sheight.value=height;
 	if (htype == CSS_HEIGHT_AUTO)
 	{
 		sheight.unit = SUnitAuto;
@@ -368,13 +369,13 @@ void Style_Layout::Render_justify(css_computed_style* style)
 void Style_Layout::Render_positions(css_computed_style* style)
 {
 	css_position_e position_type = static_cast<css_position_e>(css_computed_position(style));
-	if (position_type == CSS_POSITION_RELATIVE)
+	if (position_type == CSS_POSITION_ABSOLUTE)
 	{
-		spositions.type = SPositionTypeRelative;
+		spositions.type = SPositionTypeAbsolute;
 	}
 	else
 	{
-		spositions.type = SPositionTypeAbsolute;
+		spositions.type = SPositionTypeRelative;
 	}
 
 	css_fixed value = 0;
@@ -492,7 +493,7 @@ void Style_Layout::Render_margins(css_computed_style* style)
 		smargins.margin[SEdgeRight].unit = SUnitUndefined;
 	}
 
-	setValue(style, position_bottom, value, unit, type);
+	setValue(style, margin_bottom, value, unit, type);
 	smargins.margin[SEdgeBottom].value = value;
 	if (type == CSS_WIDTH_AUTO)
 	{
@@ -522,85 +523,85 @@ void Style_Layout::Render_borders(css_computed_style* style)
 	css_border_width_e t;
 	setValue(style, border_left, value, unit, type);
 	t = static_cast<css_border_width_e>(type);
-	sborders.border[SEdgeLeft].unit = SUnitPoint;
+	sborders.type[SEdgeLeft] = static_cast<SBorderType>(css_computed_border_left_style(style));
 	switch (t)
 	{
 	case CSS_BORDER_WIDTH_INHERIT:
 		break;
 	case CSS_BORDER_WIDTH_THIN:
-		sborders.border[SEdgeLeft].value = 1;
+		sborders.border[SEdgeLeft] = 1;
 		break;
 	case CSS_BORDER_WIDTH_MEDIUM:
-		sborders.border[SEdgeLeft].value = 3;
+		sborders.border[SEdgeLeft] = 3;
 		break;
 	case CSS_BORDER_WIDTH_THICK:
-		sborders.border[SEdgeLeft].value = 5;
+		sborders.border[SEdgeLeft] = 5;
 		break;
 	case CSS_BORDER_WIDTH_WIDTH:
-		sborders.border[SEdgeLeft].value = value;
+		sborders.border[SEdgeLeft] = value;
 		break;
 	}
 
 	setValue(style, border_top, value, unit, type);
 	t = static_cast<css_border_width_e>(type);
-	sborders.border[SEdgeTop].unit = SUnitPoint;
+	sborders.type[SEdgeTop] = static_cast<SBorderType>(css_computed_border_top_style(style));
 	switch (t)
 	{
 	case CSS_BORDER_WIDTH_INHERIT:
 		break;
 	case CSS_BORDER_WIDTH_THIN:
-		sborders.border[SEdgeTop].value = 1;
+		sborders.border[SEdgeTop] = 1;
 		break;
 	case CSS_BORDER_WIDTH_MEDIUM:
-		sborders.border[SEdgeTop].value = 3;
+		sborders.border[SEdgeTop] = 3;
 		break;
 	case CSS_BORDER_WIDTH_THICK:
-		sborders.border[SEdgeTop].value = 5;
+		sborders.border[SEdgeTop] = 5;
 		break;
 	case CSS_BORDER_WIDTH_WIDTH:
-		sborders.border[SEdgeTop].value = value;
+		sborders.border[SEdgeTop] = value;
 		break;
 	}
 
 	setValue(style, border_right, value, unit, type);
 	t = static_cast<css_border_width_e>(type);
-	sborders.border[SEdgeRight].unit = SUnitPoint;
+	sborders.type[SEdgeRight] = static_cast<SBorderType>(css_computed_border_right_style(style));
 	switch (t)
 	{
 	case CSS_BORDER_WIDTH_INHERIT:
 		break;
 	case CSS_BORDER_WIDTH_THIN:
-		sborders.border[SEdgeRight].value = 1;
+		sborders.border[SEdgeRight] = 1;
 		break;
 	case CSS_BORDER_WIDTH_MEDIUM:
-		sborders.border[SEdgeRight].value = 3;
+		sborders.border[SEdgeRight] = 3;
 		break;
 	case CSS_BORDER_WIDTH_THICK:
-		sborders.border[SEdgeRight].value = 5;
+		sborders.border[SEdgeRight] = 5;
 		break;
 	case CSS_BORDER_WIDTH_WIDTH:
-		sborders.border[SEdgeRight].value = value;
+		sborders.border[SEdgeRight] = value;
 		break;
 	}
 
 	setValue(style, border_bottom, value, unit, type);
 	t = static_cast<css_border_width_e>(type);
-	sborders.border[SEdgeBottom].unit = SUnitPoint;
+	sborders.type[SEdgeBottom] = static_cast<SBorderType>(css_computed_border_bottom_style(style));
 	switch (t)
 	{
 	case CSS_BORDER_WIDTH_INHERIT:
 		break;
 	case CSS_BORDER_WIDTH_THIN:
-		sborders.border[SEdgeBottom].value = 1;
+		sborders.border[SEdgeBottom] = 1;
 		break;
 	case CSS_BORDER_WIDTH_MEDIUM:
-		sborders.border[SEdgeBottom].value = 3;
+		sborders.border[SEdgeBottom] = 3;
 		break;
 	case CSS_BORDER_WIDTH_THICK:
-		sborders.border[SEdgeBottom].value = 5;
+		sborders.border[SEdgeBottom] = 5;
 		break;
 	case CSS_BORDER_WIDTH_WIDTH:
-		sborders.border[SEdgeBottom].value = value;
+		sborders.border[SEdgeBottom] = value;
 		break;
 	}
 }
@@ -764,4 +765,154 @@ void Style_Layout::Render_max_height(css_computed_style* style)
 			}
 		}
 	}
+}
+void Style_Layout::print()
+{
+	printf("\n--------------\n");
+	printf("\nwidth: ");
+	swidth.print();
+	printf("\nheight: ");
+	sheight.print();
+	printf("\nalignContent: ");
+	switch (salignContent)
+	{
+	case SAlignAuto:
+		printf("auto");
+		break;
+	case SAlignFlexStart:
+		printf("flex-start");
+		break;
+	case SAlignCenter:
+		printf("center");
+		break;
+	case SAlignFlexEnd:
+		printf("flex-end");
+		break;
+	case SAlignStretch:
+		printf("stretch");
+		break;
+	case SAlignBaseline:
+		printf("baseline");
+		break;
+	case SAlignSpaceBetween:
+		printf("between");
+		break;
+	case SAlignSpaceAround:
+		printf("around");
+		break;
+	}
+	printf("\nalignItems: ");
+	switch (salignItems)
+	{
+	case SAlignAuto:
+		printf("auto");
+		break;
+	case SAlignFlexStart:
+		printf("flex-start");
+		break;
+	case SAlignCenter:
+		printf("center");
+		break;
+	case SAlignFlexEnd:
+		printf("flex-end");
+		break;
+	case SAlignStretch:
+		printf("stretch");
+		break;
+	case SAlignBaseline:
+		printf("baseline");
+		break;
+	case SAlignSpaceBetween:
+		printf("between");
+		break;
+	case SAlignSpaceAround:
+		printf("around");
+		break;
+	}
+	printf("\nalignSelf: ");
+	switch (salignSelf)
+	{
+	case SAlignAuto:
+		printf("auto");
+		break;
+	case SAlignFlexStart:
+		printf("flex-start");
+		break;
+	case SAlignCenter:
+		printf("center");
+		break;
+	case SAlignFlexEnd:
+		printf("flex-end");
+		break;
+	case SAlignStretch:
+		printf("stretch");
+		break;
+	case SAlignBaseline:
+		printf("baseline");
+		break;
+	case SAlignSpaceBetween:
+		printf("between");
+		break;
+	case SAlignSpaceAround:
+		printf("around");
+		break;
+	}
+	printf("\ndisplay: ");
+	switch (sdisplay)
+	{
+	case SDisplayFlex:
+		printf("flex");
+		break;
+	case SDisplayNone:
+		printf("none");
+		break;
+	}
+	printf("\nflex_wrap: ");
+	switch (sflex_wrap)
+	{
+	case SWrapNoWrap:
+		printf("no-wrap");
+		break;
+	case SWrapWrap:
+		printf("wrap");
+		break;
+	case SWrapWrapReverse:
+		printf("wrap-reverse");
+		break;
+	}
+	printf("\nflex_grow:%f",sflex_grow);
+	printf("\nflex_shrink:%f",sflex_shrink);
+	printf("\nflex_basis: ");
+	sflex_basis.print();
+	printf("\njustify: ");
+	switch (sjustify)
+	{
+	case SJustifyFlexStart:
+		printf("flex-start");
+		break;
+	case SJustifyCenter:
+		printf("center");
+		break;
+	case SJustifyFlexEnd:
+		printf("flex-end");
+		break;
+	case SJustifySpaceBetween:
+		printf("space-between");
+		break;
+	case SJustifySpaceAround:
+		printf("around");
+		break;
+	case SJustifySpaceEvenly:
+		printf("space-evenly");
+		break;
+	}
+	printf("\nposition: ");
+	spositions.print();
+	printf("\nmargin: ");
+	smargins.print();
+	printf("\nborder: ");
+	sborders.print();
+	printf("\npadding: ");
+	spaddings.print();
+	printf("\n--------------\n");
 }
