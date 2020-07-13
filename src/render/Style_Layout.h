@@ -40,6 +40,12 @@ enum SWrap
 	SWrapWrap,
 	SWrapWrapReverse
 };
+enum SFlexDirection{
+	SFlexDirectionColumn,
+	SFlexDirectionColumnReverse,
+	SFlexDirectionRow,
+	SFlexDirectionRowReverse
+};
 enum SJustify
 {
 	SJustifyFlexStart,
@@ -198,6 +204,7 @@ class Style_Layout
 	float sflex_grow;
 	float sflex_shrink;
 	SValue sflex_basis;
+	SFlexDirection sflex_direction;
 	SJustify sjustify;
 	SPosition spositions;
 	SMargin smargins;
@@ -217,6 +224,7 @@ class Style_Layout
 	void Render_flex_grow(css_computed_style* style);
 	void Render_flex_shrink(css_computed_style* style);
 	void Render_flex_basis(css_computed_style* style);
+	void Render_flex_direction(css_computed_style* style);
 	void Render_justify(css_computed_style* style);
 	void Render_positions(css_computed_style* style);
 	void Render_margins(css_computed_style* style);

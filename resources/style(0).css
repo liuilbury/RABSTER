@@ -1,23 +1,16 @@
 
         #main {
-            width: 350px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             border: 1px solid #c3c3c3;
             display: -webkit-flex; /* Safari */
+            -webkit-flex-wrap: wrap; /* Safari 6.1+ */
             display: flex;
+            flex-wrap: wrap;
         }
 
         #main div {
-            -webkit-flex-grow: 0; /* Safari 6.1+ */
-            -webkit-flex-shrink: 0; /* Safari 6.1+ */
-            -webkit-flex-basis: 40px; /* Safari 6.1+ */
-            flex-grow: 0;
-            flex-shrink: 0;
-            flex-basis: 40px;
-        }
-
-        #main div:nth-of-type(2) {
-            -webkit-flex-basis: 80px; /* Safari 6.1+ */
-            flex-basis: 80px;
+            width: 50px;
+            height: 50px;
         }
     

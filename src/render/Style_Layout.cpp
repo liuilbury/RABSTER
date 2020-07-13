@@ -113,6 +113,7 @@ void Style_Layout::Render_Layout(css_computed_style* style, bool hasparent)
 	Render_flex_grow(style);
 	Render_flex_shrink(style);
 	Render_flex_basis(style);
+	Render_flex_direction(style);
 	Render_justify(style);
 	Render_positions(style);
 	Render_margins(style);
@@ -337,6 +338,28 @@ void Style_Layout::Render_flex_basis(css_computed_style* style)
 	else
 	{
 		sflex_basis.unit = SUnitUndefined;
+	}
+}
+void Style_Layout::Render_flex_direction(css_computed_style* style)
+{
+	css_flex_direction_e flex_wrap_type = static_cast<css_flex_direction_e>(css_computed_flex_direction(style));
+	switch (flex_wrap_type)
+	{
+	case CSS_FLEX_DIRECTION_INHERIT:
+		sflex_direction=SFlexDirectionColumn;
+		break;
+	case CSS_FLEX_DIRECTION_ROW:
+		sflex_direction=SFlexDirectionRow;
+		break;
+	case CSS_FLEX_DIRECTION_ROW_REVERSE:
+		sflex_direction=SFlexDirectionRowReverse;
+		break;
+	case CSS_FLEX_DIRECTION_COLUMN:
+		sflex_direction=SFlexDirectionColumn;
+		break;
+	case CSS_FLEX_DIRECTION_COLUMN_REVERSE:
+		sflex_direction=SFlexDirectionColumnReverse;
+		break;
 	}
 }
 void Style_Layout::Render_justify(css_computed_style* style)
@@ -884,6 +907,22 @@ void Style_Layout::print()
 	printf("\nflex_shrink:%f",sflex_shrink);
 	printf("\nflex_basis: ");
 	sflex_basis.print();
+	printf("\nflex_direction: ");
+	switch (sflex_direction)
+	{
+	case SFlexDirectionColumn:
+		printf("column");
+		break;
+	case SFlexDirectionColumnReverse:
+		printf("column-reverse");
+		break;
+	case SFlexDirectionRow:
+		printf("row");
+		break;
+	case SFlexDirectionRowReverse:
+		printf("row-reverse");
+		break;
+	}
 	printf("\njustify: ");
 	switch (sjustify)
 	{

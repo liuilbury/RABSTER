@@ -63,6 +63,8 @@ void RenderNode::Calculate_Layout()
 	{
 		YGNodeStyleSetFlexBasis(ygNode, layout->sflex_basis.value);
 	}
+	//flex_direction;
+	YGNodeStyleSetFlexDirection(ygNode,(YGFlexDirection)layout->sflex_direction);
 	//justify
 	YGNodeStyleSetJustifyContent(ygNode, (YGJustify)layout->sjustify);
 	//position_type
