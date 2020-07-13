@@ -39,6 +39,19 @@ void Render::Layout_Tree()
 }
 void Render::Print_Tree()
 {
+	std::queue<RenderNode*> q;
+	q.push(root);
+	while (!q.empty())
+	{
+		RenderNode* d = q.front();
+		q.pop();
+		d->print();
+		int cnt=0;
+		for (auto i:d->getChildren())
+		{
+			q.push(i);
+		}
+	}
 }
 RenderNode* Render::build(DomNode* root,RenderNode* fa)
 {

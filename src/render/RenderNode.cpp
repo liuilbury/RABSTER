@@ -21,7 +21,15 @@ void RenderNode::Calculate_Layout()
 	}
 	else
 	{
-		YGNodeStyleSetWidth(ygNode, layout->swidth.value);
+		///
+		float width=layout->swidth.value;
+		if(layout->sborders.type[YGEdgeLeft]!=SBorderTypeNone){
+			width+=layout->sborders.border[YGEdgeLeft];
+		}
+		if(layout->sborders.type[YGEdgeRight]!=SBorderTypeNone){
+			width+=layout->sborders.border[YGEdgeRight];
+		}
+		YGNodeStyleSetWidth(ygNode, width);
 	}
 	//height
 	if ((YGUnit)layout->sheight.unit == YGUnitAuto)
@@ -34,7 +42,14 @@ void RenderNode::Calculate_Layout()
 	}
 	else
 	{
-		YGNodeStyleSetHeight(ygNode, layout->sheight.value);
+		float height=layout->sheight.value;
+		if(layout->sborders.type[YGEdgeTop]!=SBorderTypeNone){
+			height+=layout->sborders.border[YGEdgeTop];
+		}
+		if(layout->sborders.type[YGEdgeBottom]!=SBorderTypeNone){
+			height+=layout->sborders.border[YGEdgeBottom];
+		}
+		YGNodeStyleSetHeight(ygNode, height);
 	}
 	//align_content
 	YGNodeStyleSetAlignContent(ygNode, (YGAlign)layout->salignContent);
@@ -101,7 +116,6 @@ void RenderNode::Calculate_Layout()
 			YGNodeStyleSetPadding(ygNode, ygEdge, layout->spaddings.padding[ygEdge].value);
 		}
 	}
-	print();
 }
 void RenderNode::print()
 {

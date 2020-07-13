@@ -26,6 +26,7 @@ void html_init()
 	ctx->root = ctx->build(html_ctx->root, nullptr);
 	ctx->Render_Tree();
 	ctx->Layout_Tree();
+	//ctx->Print_Tree();
 }
 void html_destroy(DomNode* d)
 {
