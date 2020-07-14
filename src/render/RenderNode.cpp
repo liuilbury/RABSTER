@@ -3,6 +3,7 @@
 //
 
 #include "RenderNode.h"
+#include <gumbo.h>
 void RenderNode::Render_Node()
 {
 	style->Render_Style(_final_style->styles[0], getParent() != nullptr);
@@ -22,12 +23,14 @@ void RenderNode::Calculate_Layout()
 	else
 	{
 		///
-		float width=layout->swidth.value;
-		if(layout->sborders.type[YGEdgeLeft]!=SBorderTypeNone){
-			width+=layout->sborders.border[YGEdgeLeft];
+		float width = layout->swidth.value;
+		if (layout->sborders.type[YGEdgeLeft] != SBorderTypeNone)
+		{
+			width += layout->sborders.border[YGEdgeLeft];
 		}
-		if(layout->sborders.type[YGEdgeRight]!=SBorderTypeNone){
-			width+=layout->sborders.border[YGEdgeRight];
+		if (layout->sborders.type[YGEdgeRight] != SBorderTypeNone)
+		{
+			width += layout->sborders.border[YGEdgeRight];
 		}
 		YGNodeStyleSetWidth(ygNode, width);
 	}
@@ -42,12 +45,14 @@ void RenderNode::Calculate_Layout()
 	}
 	else
 	{
-		float height=layout->sheight.value;
-		if(layout->sborders.type[YGEdgeTop]!=SBorderTypeNone){
-			height+=layout->sborders.border[YGEdgeTop];
+		float height = layout->sheight.value;
+		if (layout->sborders.type[YGEdgeTop] != SBorderTypeNone)
+		{
+			height += layout->sborders.border[YGEdgeTop];
 		}
-		if(layout->sborders.type[YGEdgeBottom]!=SBorderTypeNone){
-			height+=layout->sborders.border[YGEdgeBottom];
+		if (layout->sborders.type[YGEdgeBottom] != SBorderTypeNone)
+		{
+			height += layout->sborders.border[YGEdgeBottom];
 		}
 		YGNodeStyleSetHeight(ygNode, height);
 	}
@@ -79,7 +84,7 @@ void RenderNode::Calculate_Layout()
 		YGNodeStyleSetFlexBasis(ygNode, layout->sflex_basis.value);
 	}
 	//flex_direction;
-	YGNodeStyleSetFlexDirection(ygNode,(YGFlexDirection)layout->sflex_direction);
+	YGNodeStyleSetFlexDirection(ygNode, (YGFlexDirection)layout->sflex_direction);
 	//justify
 	YGNodeStyleSetJustifyContent(ygNode, (YGJustify)layout->sjustify);
 	//position_type
@@ -119,7 +124,12 @@ void RenderNode::Calculate_Layout()
 }
 void RenderNode::print()
 {
-	printf("%s\n",get_Name().data());
+	printf("%s\n", get_Name().data());
 	style->print();
+}
+YGSize RenderNode::measure()
+{
+	GumboNode* dom = element;
+	return YGSize({ 1, 2 });
 }
 

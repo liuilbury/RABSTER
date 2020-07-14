@@ -172,6 +172,7 @@ DomNode* HtmlContent::build_html_tree(DomNode* fa, GumboNode* dom)
 	GumboAttribute* attr;
 	DomNode* now = new DomNode();
 	now->_parent = fa;
+	now->element=dom;
 	GumboVector* children = &dom->v.element.children;
 	DomNode* n = nullptr, * _last_child = nullptr;
 	if (dom->v.element.tag == GUMBO_TAG_STYLE)

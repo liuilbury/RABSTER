@@ -9,6 +9,7 @@
 class RenderNode : public Node<RenderNode>
 {
  public:
+	GumboNode* element;
 	Style* style;
 	css_select_results* _final_style;
 	YGNode *ygNode;
@@ -20,6 +21,7 @@ class RenderNode : public Node<RenderNode>
 		style=new Style();
 	}
 	void print();
+	YGSize measure();
 };
 
 #endif //_RENDERNODE_H_

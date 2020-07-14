@@ -14,6 +14,7 @@ void Render::Render_Tree()
 		RenderNode* d = q.front();
 		q.pop();
 		d->ygNode=YGNodeNewWithConfig(ygConfig);
+		d->ygNode->setContext(d);
 		d->Render_Node();
 		for (auto i:d->getChildren())
 		{
@@ -54,13 +55,14 @@ void Render::Print_Tree()
 		}
 	}
 }
-RenderNode* Render::build(DomNode* root,RenderNode* fa)
+RenderNode* Render::build(DomNode* dom,RenderNode* fa)
 {
 	RenderNode* renderNode=new RenderNode();
-	renderNode->_final_style=root->_final_style;
-	renderNode->setName(root->real_name);
+	renderNode->_final_style=dom->_final_style;
+	renderNode->setName(dom->real_name);
 	renderNode->setParent(fa);
-	for(auto i:root->_children){
+	renderNode->element=dom->element;
+	for(auto i:dom->_children){
 		renderNode->setchild(build(i,renderNode));
 	}
 	return renderNode;

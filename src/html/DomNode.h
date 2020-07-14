@@ -7,6 +7,7 @@
 #include <list>
 #include <string>
 #include <libcss/libcss.h>
+#include <gumbo.h>
 class DomNode
 {
  public:
@@ -25,6 +26,7 @@ class DomNode
 		hover = false;
 		link = nullptr;
 	}
+	GumboNode* element;
 	lwc_string* name;
 	std::string real_name;
 	bool hover;

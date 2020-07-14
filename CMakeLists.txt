@@ -29,7 +29,7 @@ aux_source_directory(./src/gumbo gumbo)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 set(CSS  ${file1} ${file2} ${file3} ${file4} ${file5} ${file6})
-set(HTML src/html/node.h src/html/node.cpp src/html/HtmlContent.cpp src/html/HtmlContent.h src/html/Handle.h  src/html/HtmlLayout.cpp src/html/HtmlLayout.h src/html/DomNode.cpp src/html/DomNode.h src/render/RenderNode.cpp src/render/RenderNode.h)
+set(HTML src/html/node.h src/html/node.cpp src/html/HtmlContent.cpp src/html/HtmlContent.h src/html/Handle.h src/html/DomNode.cpp src/html/DomNode.h src/render/RenderNode.cpp src/render/RenderNode.h)
 
 add_executable(rabster src/Rabster.cpp ${CSS} ${HTML} ${gumbo} ${yoga} src/render/Style.cpp src/render/Style.h src/render/Style_Layout.cpp src/render/Style_Layout.h src/render/Style_Color.cpp src/render/Style_Color.h src/render/Render.cpp src/render/Render.h include/html/Node.h)
 target_link_libraries(rabster  PUBLIC gdiplus)

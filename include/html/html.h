@@ -6,6 +6,5 @@
 #define _HTML_H_
 #include "../html/DomNode.h"
 #include "../html/HtmlContent.h"
-#include "../html/HtmlLayout.h"
 #include "Node.h"
 #endif //_HTML_H_
