@@ -66,7 +66,7 @@ void html_init()
 	ctx->root = ctx->build(html_ctx->root, nullptr);
 	ctx->Render_Tree();
 	ctx->Layout_Tree();
-	ctx->Print_Tree();
+	//ctx->Print_Tree();
 }
 void html_destroy(DomNode* d)
 {
@@ -118,9 +118,11 @@ void print_position(RenderNode* d, Graphics* graphics)
 	box.left += left, box.top += top;
 	box.width = width, box.height = height;
 	graphics->FillRectangle(solidBrush, box.left, box.top, width, height);
+#ifdef DEBUG
 	printf("%s ", d->get_Name().data());
 	printf("%f %f\n",left,top);
 	printf("%f %f %f %f\n", box.left, box.top, width, height);
+#endif
 }
 void print_border(RenderNode* d, Graphics* graphics)
 {
