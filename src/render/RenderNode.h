@@ -13,6 +13,9 @@ class RenderNode : public Node<RenderNode>
 	Style* style;
 	css_select_results* _final_style;
 	YGNode *ygNode;
+	std::string text;
+	std::vector<char*>data;
+	int display;
 	void Render_Node();
 	void Calculate_Layout();
 	RenderNode(){

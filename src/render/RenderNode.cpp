@@ -130,6 +130,7 @@ void RenderNode::print()
 YGSize RenderNode::measure()
 {
 	GumboNode* dom = element;
+
 	return YGSize({ 1, 2 });
 }
 

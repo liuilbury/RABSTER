@@ -15,20 +15,25 @@ struct SColor{
 		{
 			uint32_t x;
 			sscanf(buf + 2 * i, "%2x", &x);
-#ifdef DEBUG_ALL
-			printf("%d%c", x,j==3?'\n':',');
-#endif
 			color[i] = x;
+		}
+	}
+	void print(){
+		for(int i=0;i<4;i++){
+			printf("%d%c",color[i],i==3?'\n':',');
 		}
 	}
 };
 class Style_Color
 {
  private:
-	void Render_backgroud_color(css_computed_style* style);
+	void Render_background_color(css_computed_style* style);
+	void Render_border_color(css_computed_style* style);
+	void Render_color(css_computed_style* style);
  public:
-	SColor sbackgroud_color;
-	SColor color;
+	SColor sbackground_color;
+	SColor sborder_color[4];
+	SColor scolor;
 	void Render_Color(css_computed_style* style);
 };
 

@@ -15,6 +15,22 @@ class Node
 	std::list<_node*> _children;
 
  public:
+	void setPrev(_node* n){
+		_prev=n;
+	}
+	void setNext(_node* n){
+		_next=n;
+	}
+	void setBrother(_node* br){
+		br->setNext(br);
+		setPrev(br);
+	}
+	_node* getPrev(){
+		return _prev;
+	}
+	_node* getNext(){
+		return _next;
+	}
 	void setName(std::string name){
 		real_name=name;
 	}

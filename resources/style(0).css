@@ -1,29 +1,19 @@
 
-        #main {
-            width: 200px;
-            height: 200px;
-            border: 1px solid #c3c3c3;
-            display: -webkit-flex; /* Safari */
-            -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+        #content {
             display: flex;
-            flex-wrap: wrap;
+            width: 100%;
         }
 
-        #main div {
-            display: flex;
-            width: 50px;
-            height: 50px;
+        #content div {
+            border: 3px solid rgba(0,0,0,.2);
+            font-size: 30px;
         }
-        #ff{
-            width: 500px;
-            height: 500px;
-            display: flex;
-            background-color: #cc3322;
+
+        .box {
+            flex-shrink: 1;
         }
-        #ll{
-            width: 10px;
-            height: 10px;
-            margin: auto auto auto auto;
-            background-color: #0c3379;
+
+        .box1 {
+            flex-shrink: 1;
         }
     

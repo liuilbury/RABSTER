@@ -8,7 +8,17 @@
 #include "html/html.h"
 #include "../render/Render.h"
 #include <vector>
+
+std::wstring utf8_decode(const std::string& str)
+{
+	if (str.empty()) return std::wstring();
+	int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
+	std::wstring wstrTo(size_needed, 0);
+	MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
+	return wstrTo;
+}
 using namespace Gdiplus;
+
 HWND hwnd;    //创建窗口函数CreateWindow()会返回一个HWND句柄，这里定义下，用来接收这个句柄
 MSG msg;      //消息结构体，在消息循环的时候需要
 WNDCLASS wndclass; //创建窗口类对象
@@ -16,13 +26,43 @@ HDC hdc;
 HtmlContent* html_ctx;
 float nHeight, nWidth;
 int flag = 0;
-int time = 0, cnt = 0;
+int cnt = 0;
 Render* ctx;
+Graphics* graphics;
+
+YGSize GetTextBounds(std::string font_name, float emSize, float width, float height,std::string text)
+{
+	std::wstring w_font = utf8_decode(font_name);
+	Font font(w_font.data(), emSize);
+	std::wstring w_text = utf8_decode(text);
+	RectF layoutRect(0, 0, width, height);
+	StringFormat stringformat(StringAlignmentNear);
+	RectF stringRect;
+	graphics->MeasureString(w_text.data(), (int)wcslen(w_text.data()), &font, layoutRect, &stringformat, &stringRect);
+	return {
+		.width=stringRect.Width,
+		.height=stringRect.Height
+	};
+}
+YGSize text_measure(YGNodeRef node, float width, YGMeasureMode widthMode, float height, YGMeasureMode heightMode)
+{
+	std::string text = ((RenderNode*)node->getContext())->text;
+	if (widthMode == YGMeasureModeUndefined)width = 10000;
+	if (heightMode == YGMeasureModeUndefined)height = 10000;
+	YGSize size = GetTextBounds("Arial", 20, width, height, text);
+	width = size.width;
+	height = size.height;
+	return {
+		.width=width,
+		.height=height
+	};
+}
 void html_init()
 {
 	html_ctx = new HtmlContent();
 	html_ctx->html_init(R"(F:\opengl\RABSTER\resources\test.html)");
 	ctx = new Render();
+	ctx->measure = text_measure;
 	ctx->root = ctx->build(html_ctx->root, nullptr);
 	ctx->Render_Tree();
 	ctx->Layout_Tree();
@@ -35,7 +75,147 @@ void html_destroy(DomNode* d)
 		html_destroy(i);
 	}
 }
-void show_node(RenderNode* d)
+void get_position(RenderNode* d, float& left, float& top, float& width, float& height)
+{
+	left = YGNodeLayoutGetLeft(d->ygNode);
+	top = YGNodeLayoutGetTop(d->ygNode);
+	width = YGNodeLayoutGetWidth(d->ygNode);
+	height = YGNodeLayoutGetHeight(d->ygNode);
+}
+void print_position(RenderNode* d, Graphics* graphics)
+{
+	int background_color[4];
+	for (int i = 0; i < 4; i++)
+	{
+		background_color[i] = d->style->StyleColor.sbackground_color.color[i];
+	}
+	SolidBrush* solidBrush = new SolidBrush(Color(background_color[0], background_color[1],
+		background_color[2] + cnt, background_color[3]));
+	Box& box = d->style->StyleLayout.getBox();
+	if (d->getParent() != nullptr)
+	{
+		box=d->getParent()->style->StyleLayout.getBox();
+		if (d->getParent()->style->StyleLayout.sdisplay == 2)
+		{
+			if (d->getPrev() != nullptr)
+			{
+				Box& br_box = d->getPrev()->style->StyleLayout.getBox();
+				box.top = br_box.top + br_box.height;
+			}
+		}
+		else
+		{
+			Box& fa_box = d->getParent()->style->StyleLayout.getBox();
+			box = fa_box;
+		}
+	}
+	else
+	{
+		box.left = box.top = 0;
+	}
+	float left, top, width, height;
+	get_position(d, left, top, width, height);
+	box.left += left, box.top += top;
+	box.width = width, box.height = height;
+	graphics->FillRectangle(solidBrush, box.left, box.top, width, height);
+	printf("%s ", d->get_Name().data());
+	printf("%f %f\n",left,top);
+	printf("%f %f %f %f\n", box.left, box.top, width, height);
+}
+void print_border(RenderNode* d, Graphics* graphics)
+{
+	float left, top, width, height;
+	get_position(d, left, top, width, height);
+	float cleft, ctop, cright, cbottom;
+	cleft = YGNodeStyleGetBorder(d->ygNode, YGEdgeLeft);
+	ctop = YGNodeStyleGetBorder(d->ygNode, YGEdgeTop);
+	cright = YGNodeStyleGetBorder(d->ygNode, YGEdgeRight);
+	cbottom = YGNodeStyleGetBorder(d->ygNode, YGEdgeBottom);
+	int border_color[4][4];
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			border_color[i][j] = d->style->StyleColor.sborder_color[i].color[j];
+		}
+	}
+	Box& box = d->style->StyleLayout.getBox();
+	Pen* pen = new Pen(Color(0, 0, 0, 0), 0);
+	pen->SetColor(Color(border_color[0][0], border_color[0][1], border_color[0][2], border_color[0][3]));
+	pen->SetWidth(cleft);
+	pen->SetAlignment(PenAlignmentInset);
+	graphics->DrawRectangle(pen, box.left, box.top, width, height);
+}
+void print_string(RenderNode* d, Graphics* graphics)
+{
+	if (!d->text.empty())
+	{
+		int color[4];
+		for (int i = 0; i < 4; i++)
+		{
+			color[i] = d->style->StyleColor.scolor.color[i];
+		}
+		SolidBrush* solidBrush = new SolidBrush(Color(255, color[1], color[2], color[3]));
+		FontFamily fontFamily(L"Arial");
+		Font font(&fontFamily, 20, FontStyleRegular, UnitPixel);
+		Box& box = d->style->StyleLayout.getBox();
+		RectF rectF(box.left, box.top, box.width, box.height);
+		std::string s,last;
+		YGSize fontSize;
+		float now_top=box.top;
+		int count=0;
+		for(int i0=0;i0<d->data.size();i0++){
+			char* i=d->data[i0];
+			if(count!=0)s+=' ';
+			s+=i;
+			count++;
+			fontSize=GetTextBounds("Arial",20,10000,10000,s);
+			if(fontSize.width>box.width){
+				if(count>1)
+				{
+					std::wstring data = utf8_decode(last);
+					graphics->DrawString(data.c_str(), -1, &font, PointF(box.left, now_top), solidBrush);
+					now_top += fontSize.height;
+					s = "";
+					last="";
+					i0--;
+					count=0;
+				}else{
+					std::string ss="";
+					last="";
+					for(int j=0;j<s.size();j++){
+						ss+=s[j];
+						fontSize=GetTextBounds("Arial",20,10000,10000,ss);
+						if(fontSize.width>box.width){
+							std::wstring data = utf8_decode(last);
+							graphics->DrawString(data.c_str(), -1, &font, PointF(box.left, now_top), solidBrush);
+							now_top += fontSize.height;
+							ss="";
+							last="";
+							j--;
+							count=0;
+						}
+						else
+						{
+							last += s[j];
+						}
+					}
+					if(!last.empty()){
+						count=1;
+					}
+				}
+			}else{
+				last=s;
+			}
+		}
+		if(!last.empty()){
+			std::wstring data = utf8_decode(last);
+			graphics->DrawString(data.c_str(), -1, &font, PointF(box.left, now_top), solidBrush);
+			last="";
+		}
+	}
+}
+void print_time(RenderNode* d, Graphics* graphics)
 {
 	/*if (time != 0&&d->box.end_time!=0)
 	{
@@ -52,45 +232,13 @@ void show_node(RenderNode* d)
 			//d->box.height = d->save_style.width+(d->box.height - d->save_style.height) * spend_time / all_time;
 		}
 	}*/
-	Graphics* graphics = new Graphics(hdc);
-	int color[4];
-	for(int i=0;i<4;i++){
-		color[i]=d->style->StyleColor.sbackgroud_color.color[i];
-	}
-	SolidBrush* solidBrush = new SolidBrush(Color(color[0], color[1],color[2] + cnt, color[3]));
-	Box &box=d->style->StyleLayout.getBox();
-	if(d->getParent()!=nullptr)
-	{
-		Box& fa_box = d->getParent()->style->StyleLayout.getBox();
-		box=fa_box;
-	}
-	float left, top, width, height;
-	left = YGNodeLayoutGetLeft(d->ygNode);
-	top = YGNodeLayoutGetTop(d->ygNode);
-	width = YGNodeLayoutGetWidth(d->ygNode);
-	height = YGNodeLayoutGetHeight(d->ygNode);
-	box.left+=left,box.top+=top;
-	graphics->FillRectangle(solidBrush, box.left, box.top, width, height);
-	float cleft, ctop, cright, cbottom;
-	cleft = YGNodeStyleGetBorder(d->ygNode, YGEdgeLeft);
-	ctop = YGNodeStyleGetBorder(d->ygNode, YGEdgeTop);
-	cright = YGNodeStyleGetBorder(d->ygNode, YGEdgeRight);
-	cbottom = YGNodeStyleGetBorder(d->ygNode, YGEdgeBottom);
-	Pen* pen = new Pen(Color(255, 195, 195, 195), 2);
-	//pen->SetColor(Color(d->box.border_color[0][0], d->box.border_color[0][1], d->box.border_color[0][2], d->box.border_color[0][3]));
-#ifdef DEBUG
-	printf("%s ", d->get_Name().data());
-	printf("%f %f %f %f\n", left, top, width, height);
-	printf("%f %f %f %f\n", cleft, ctop, cright, cbottom);
-#endif
-	pen->SetWidth(cleft);
-	graphics->DrawLine(pen, box.left + cleft / 2, box.top, box.left + cleft / 2, box.top + height);
-	pen->SetWidth(ctop);
-	graphics->DrawLine(pen, box.left, box.top + ctop / 2, box.left + width - cright / 2, box.top + ctop / 2);
-	pen->SetWidth(cright);
-	graphics->DrawLine(pen, box.left + width - cright / 2, box.top, box.left + width - cright / 2, box.top + height);
-	pen->SetWidth(cbottom);
-	graphics->DrawLine(pen, box.left, box.top + height - cbottom / 2, box.left + width, box.top + height - cbottom / 2);
+}
+void show_node(RenderNode* d)
+{
+	print_position(d, graphics);
+	print_border(d, graphics);
+	print_string(d, graphics);
+	print_time(d, graphics);
 }
 void show_tree(RenderNode* d)
 {
@@ -150,7 +298,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 			KillTimer(hwnd, 1);
 			return 0;
 		}
-		time += 16;
 		RECT rctA;
 		rctA.right = nWidth;
 		rctA.bottom = nHeight;
@@ -192,10 +339,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message/*窗口消息*/, WPARAM wParam,
 		nHeight = rctA.bottom - rctA.top;  //窗口的高度
 		PAINTSTRUCT ps;
 		hdc = BeginPaint(hwnd, &ps);
+		graphics = new Graphics(hdc);
 		ctx->Render_Tree();
 		ctx->Layout_Tree();
-		YGNodeCalculateLayout(ctx->root->ygNode, nWidth, nHeight, YGDirectionLTR);
-		YGNodeCalculateLayout(ctx->root->ygNode, nWidth, nHeight, YGDirectionLTR);
+		YGNodeStyleSetMaxWidth(ctx->root->ygNode,nWidth);
+		YGNodeStyleSetMaxHeight(ctx->root->ygNode,nHeight);
+		YGNodeCalculateLayout(ctx->root->ygNode, YGUndefined, YGUndefined, YGDirectionLTR);
 		show_tree(ctx->root);
 		EndPaint(hwnd, &ps);
 		/*窗口有绘图操作更新时,会收到这个消息*/

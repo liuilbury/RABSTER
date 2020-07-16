@@ -32,7 +32,8 @@ enum SAlign
 enum SDisplay
 {
 	SDisplayFlex,
-	SDisplayNone
+	SDisplayNone,
+	SDisplayBlock
 };
 enum SWrap
 {
@@ -194,6 +195,7 @@ struct SPadding{
 
 struct Box{
 	float left=0,top=0;
+	float width=0,height=0;
 };
 class Style_Layout
 {

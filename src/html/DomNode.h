@@ -40,6 +40,7 @@ class DomNode
 	lwc_string* Id;
 	uint32_t n_classes;
 	lwc_string** classes;
+	std::string text;
 	void* node_data;
 	css_select_results* _style;
 	css_select_results* _final_style;

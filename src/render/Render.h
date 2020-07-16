@@ -9,11 +9,13 @@ class Render
 {
 	YGConfig* ygConfig;
  public:
-	RenderNode* build(DomNode* root,RenderNode* fa);
+	YGSize (* measure)(YGNodeRef node, float width, YGMeasureMode widthMode, float height, YGMeasureMode heightMode);
+	RenderNode* build(DomNode* root, RenderNode* fa);
 	RenderNode* root;
 	void Render_Tree();
 	void Layout_Tree();
 	void Print_Tree();
+
 };
 
 #endif //_RENDER_H_
