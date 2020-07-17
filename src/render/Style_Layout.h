@@ -200,6 +200,7 @@ struct Box{
 class Style_Layout
 {
  public:
+	bool vis= false;
 	Box box_size;
 	SValue swidth;
 	SValue sheight;

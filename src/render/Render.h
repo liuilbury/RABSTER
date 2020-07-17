@@ -15,7 +15,7 @@ class Render
 	void Render_Tree();
 	void Layout_Tree();
 	void Print_Tree();
-
+	void Clean_Tree();
 };
 
 #endif //_RENDER_H_

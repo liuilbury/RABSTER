@@ -171,10 +171,18 @@ DomNode* HtmlContent::build_html_tree(DomNode* fa, GumboNode* dom)
 	if(dom->type==GUMBO_NODE_TEXT){
 		const char* name;
 		name="text";
-
 		now->real_name = name;
 		lwc_intern_string(name, strlen(name), &now->name);
 		now->text=dom->v.text.text;
+		for(int i=0;i<now->text.size();i++){
+			DomNode* new_char = new DomNode();
+			new_char->_parent=now;
+			new_char->element= nullptr;
+			new_char->real_name = "char";
+			lwc_intern_string("char", strlen("char"), &new_char->name);
+			new_char->text=now->text[i];
+			now->_children.push_back(new_char);
+		}
 		return now;
 	}
 	GumboAttribute* attr;

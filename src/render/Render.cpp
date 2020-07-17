@@ -7,7 +7,6 @@
 void Render::Render_Tree()
 {
 	ygConfig = YGConfigNew();
-
 	std::queue<RenderNode*> q;
 	q.push(root);
 	while (!q.empty())
@@ -16,9 +15,12 @@ void Render::Render_Tree()
 		q.pop();
 		d->ygNode = YGNodeNewWithConfig(ygConfig);
 		d->ygNode->setContext(d);
-		if(d->element->type==GUMBO_NODE_TEXT)
-			d->ygNode->setMeasureFunc(measure);
 		d->Render_Node();
+		if(d->element->type==GUMBO_NODE_TEXT)
+		{
+			d->ygNode->setMeasureFunc(Render::measure);
+			continue;
+		}
 		for (auto i:d->getChildren())
 		{
 			q.push(i);
@@ -34,6 +36,10 @@ void Render::Layout_Tree()
 		RenderNode* d = q.front();
 		q.pop();
 		d->Calculate_Layout();
+		if(d->element->type==GUMBO_NODE_TEXT)
+		{
+			continue;
+		}
 		int cnt = 0;
 		for (auto i:d->getChildren())
 		{
@@ -51,7 +57,6 @@ void Render::Print_Tree()
 		RenderNode* d = q.front();
 		q.pop();
 		d->print();
-		int cnt = 0;
 		for (auto i:d->getChildren())
 		{
 			q.push(i);
@@ -86,5 +91,21 @@ RenderNode* Render::build(DomNode* dom, RenderNode* fa)
 		last = i;
 	}
 	return renderNode;
+}
+void Render::Clean_Tree()
+{
+	std::queue<RenderNode*> q;
+	q.push(root);
+	while (!q.empty())
+	{
+		RenderNode* d = q.front();
+		q.pop();
+		d->style->StyleLayout.vis=false;
+		if(d->element== nullptr)d->style->StyleLayout.vis=true;
+		for (auto i:d->getChildren())
+		{
+			q.push(i);
+		}
+	}
 }
 

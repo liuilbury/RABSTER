@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title></title>
     <style>
-        #content {
-            display: flex;
+        #main {
             width: 100%;
+            height: 100px;
+            border: 1px solid #c3c3c3;
+            display: -webkit-flex; /* Safari */
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        #content div {
-            border: 3px solid rgba(0,0,0,.2);
-            font-size: 30px;
+        #main div {
+            -webkit-flex-grow: 0; /* Safari 6.1+ */
+            -webkit-flex-shrink: 0; /* Safari 6.1+ */
+            -webkit-flex-basis: 40px; /* Safari 6.1+ */
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 40px;
         }
 
-        .box {
-            flex-shrink: 1;
-        }
 
-        .box1 {
-            flex-shrink: 1;
-        }
     </style>
 </head>
 <body>
-
-<div id="content" style="background-color: #0B4D69">
-    <div class="box" style="background-color:red;">So we beat on, boats against the current, borne back ceaselessly into the past.</div>
-</div>
-
+    <d style="font-size: 20px;font-family: Arial">abcdabcdasfasfasfasfasfaf abcdfga asfa asgfag asf af asf asfasasf</d>
 </body>
 </html>

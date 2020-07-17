@@ -12,7 +12,7 @@ class Node
 	_node* _next;
 	_node* _prev;
 	_node* _last_child;
-	std::list<_node*> _children;
+	std::vector<_node*> _children;
 
  public:
 	void setPrev(_node* n){
@@ -49,7 +49,7 @@ class Node
 	void setchild(_node* child){
 		_children.push_back(child);
 	}
-	std::list<_node*> getChildren()
+	std::vector<_node*> getChildren()
 	{
 		return _children;
 	}

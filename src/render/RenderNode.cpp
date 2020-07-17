@@ -125,6 +125,7 @@ void RenderNode::Calculate_Layout()
 void RenderNode::print()
 {
 	printf("%s\n", get_Name().data());
+	printf("text:%s",text.data());
 	style->print();
 }
 YGSize RenderNode::measure()
