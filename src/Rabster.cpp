@@ -149,6 +149,8 @@ void get_position(RenderNode* d, float& left, float& top, float& width, float& h
 				{
 					Box& br_box = d->getPrev()->style->StyleLayout.getBox();
 					box.top = br_box.top + br_box.height;
+					box.left=br_box.left;
+					left=0;
 				}
 			}
 			else
