@@ -56,13 +56,14 @@ YGSize GetTextBounds(std::string font_name, float emSize, float width, float hei
 			now_position.width += boundRect[c].Width;
 			if (now_position.width > width)
 			{
-				if (last_pos == last_ws)
+				if (last_pos == 0)
 				{
 					i--;
 				}
 				else
 				{
 					i = last_pos-1;
+					last_pos=0;
 				}
 				now_position.height += font.GetHeight(graphics);
 				now_position.width = 0;
@@ -81,7 +82,7 @@ YGSize GetTextBounds(std::string font_name, float emSize, float width, float hei
 			{
 				now_position.height += font.GetHeight(graphics);
 				now_position.width = 0;
-				last_ws = i + 1;
+				last_pos=0;
 			}else{
 				position.width=fmax(position.width,now_position.width);
 				Box& box = children[i]->style->StyleLayout.getBox();
@@ -91,6 +92,7 @@ YGSize GetTextBounds(std::string font_name, float emSize, float width, float hei
 		}
 	}
 	position.height=now_position.height+font.GetHeight(graphics);
+	position.width+=dom->style->StyleLayout.sborders.border[0]*2;
 	return position;
 }
 YGSize text_measure(YGNodeRef node, float width, YGMeasureMode widthMode, float height, YGMeasureMode heightMode)
@@ -163,7 +165,6 @@ void get_position(RenderNode* d, float& left, float& top, float& width, float& h
 		top = box.top = top + box.top;
 		box.width = width;
 		box.height = height;
-		//printf("%s\n%f %f %f %f\n", d->get_Name().data(), left, top, width, height);
 	}
 }
 void print_position(RenderNode* d, Graphics* graphics)
@@ -249,7 +250,6 @@ void show_node(RenderNode* d)
 	print_position(d, graphics);
 	if (d->element != nullptr)
 	{
-
 		print_border(d, graphics);
 		print_string(d, graphics);
 		print_time(d, graphics);
