@@ -586,3 +586,19 @@ void YGNode::reset() {
     useWebDefaults();
   }
 }
+size_t YGNode::GetGruop() const
+{
+  return gruop;
+}
+void YGNode::SetGruop(size_t gruop)
+{
+  YGNode::gruop = gruop;
+}
+size_t YGNode::GetGruopSize() const
+{
+	return gruop_size;
+}
+void YGNode::SetGruopSize(size_t gruopSize)
+{
+  gruop_size = gruopSize;
+}

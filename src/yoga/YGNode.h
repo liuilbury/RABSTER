@@ -35,8 +35,18 @@ private:
   static constexpr size_t baselineUsesContext_ = 5;
   static constexpr size_t printUsesContext_ = 6;
   static constexpr size_t useWebDefaults_ = 7;
-
-  void* context_ = nullptr;
+  size_t gruop=0;
+  size_t gruop_size=0;
+ public:
+	void SetGruopSize(size_t gruopSize);
+ public:
+	size_t GetGruopSize() const;
+ public:
+	void SetGruop(size_t gruop);
+ public:
+	size_t GetGruop() const;
+ private:
+	void* context_ = nullptr;
   uint8_t flags = 1;
   uint8_t reserved_ = 0;
   union {

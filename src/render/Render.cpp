@@ -6,6 +6,7 @@
 #include "Render.h"
 void Render::Render_Tree()
 {
+	size_t group=0;
 	ygConfig = YGConfigNew();
 	std::queue<RenderNode*> q;
 	q.push(root);
@@ -18,8 +19,19 @@ void Render::Render_Tree()
 		d->Render_Node();
 		if(d->element->type==GUMBO_NODE_TEXT)
 		{
-			d->ygNode->setMeasureFunc(Render::measure);
+			if(d->text==" "){
+				group++;
+				d->ygNode->SetGruop(group);
+				d->ygNode->setMeasureFunc(measure);
+				group++;
+				continue;
+			}
+			d->ygNode->SetGruop(group);
+			d->ygNode->setMeasureFunc(measure);
 			continue;
+		}else{
+			group++;
+			d->ygNode->SetGruop(group);
 		}
 		for (auto i:d->getChildren())
 		{
@@ -36,10 +48,6 @@ void Render::Layout_Tree()
 		RenderNode* d = q.front();
 		q.pop();
 		d->Calculate_Layout();
-		if(d->element->type==GUMBO_NODE_TEXT)
-		{
-			continue;
-		}
 		int cnt = 0;
 		for (auto i:d->getChildren())
 		{
@@ -71,12 +79,6 @@ RenderNode* Render::build(DomNode* dom, RenderNode* fa)
 	renderNode->setName(dom->real_name);
 	renderNode->setParent(fa);
 	renderNode->element = dom->element;
-	char* data = std::strtok(dom->text.data(), " ");
-	while (data != nullptr)
-	{
-		renderNode->data.push_back(data);
-		data = std::strtok(NULL, " ");
-	}
 	for (auto i:dom->_children)
 	{
 		renderNode->setchild(build(i, renderNode));
@@ -101,7 +103,6 @@ void Render::Clean_Tree()
 		RenderNode* d = q.front();
 		q.pop();
 		d->style->StyleLayout.vis=false;
-		if(d->element== nullptr)d->style->StyleLayout.vis=true;
 		for (auto i:d->getChildren())
 		{
 			q.push(i);

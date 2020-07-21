@@ -174,15 +174,6 @@ DomNode* HtmlContent::build_html_tree(DomNode* fa, GumboNode* dom)
 		now->real_name = name;
 		lwc_intern_string(name, strlen(name), &now->name);
 		now->text=dom->v.text.text;
-		for(int i=0;i<now->text.size();i++){
-			DomNode* new_char = new DomNode();
-			new_char->_parent=now;
-			new_char->element= nullptr;
-			new_char->real_name = "char";
-			lwc_intern_string("char", strlen("char"), &new_char->name);
-			new_char->text=now->text[i];
-			now->_children.push_back(new_char);
-		}
 		return now;
 	}
 	GumboAttribute* attr;
@@ -240,7 +231,7 @@ DomNode* HtmlContent::build_html_tree(DomNode* fa, GumboNode* dom)
 		for (int i = 0; i < children->length; ++i)
 		{
 			GumboNode* new_dom = static_cast<GumboNode*>(children->data[i]);
-			if (new_dom->type == GUMBO_NODE_ELEMENT||new_dom->type==GUMBO_NODE_TEXT)
+			if (new_dom->type == GUMBO_NODE_ELEMENT)
 			{
 				n = build_html_tree(now, new_dom);
 				if(n!= nullptr)
@@ -250,6 +241,20 @@ DomNode* HtmlContent::build_html_tree(DomNode* fa, GumboNode* dom)
 					if (_last_child != nullptr)
 						_last_child->_next = n;
 					_last_child = n;
+				}
+			}else if(new_dom->type==GUMBO_NODE_TEXT){
+				n = build_html_tree(now, new_dom);
+				for(char j : n->text){
+					DomNode* char_node = new DomNode();
+					char_node->text=j;
+					char_node->_parent=now;
+					char_node->_prev = _last_child;
+					char_node->element= new_dom;
+					char_node->real_name = "char";
+					lwc_intern_string("char", strlen("char"), &char_node->name);
+					//char_node->_inline_style="background-color:red";
+					now->_children.push_back(char_node);
+					_last_child = char_node;
 				}
 			}
 		}

@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title></title>
     <style>
         #main {
             width: 100%;
-            height: 100px;
+            height: 200px;
             border: 1px solid #c3c3c3;
             display: -webkit-flex; /* Safari */
+            -webkit-flex-wrap: wrap; /* Safari 6.1+ */
             display: flex;
             flex-wrap: wrap;
+            align-content: flex-start;
         }
 
         #main div {
-            -webkit-flex-grow: 0; /* Safari 6.1+ */
-            -webkit-flex-shrink: 0; /* Safari 6.1+ */
-            -webkit-flex-basis: 40px; /* Safari 6.1+ */
-            flex-grow: 0;
-            flex-shrink: 0;
-            flex-basis: 40px;
+            width: 50px;
+            height: 50px;
         }
-
-
     </style>
 </head>
 <body>
 
-<div id="main">
-    <d style="border: 3px solid #a81a1a;">aaaaaaaaaa bbbbbbbbbbbb</d>
-    <d style="border: 3px solid #ad6767;">c</d>
-    <d style="border: 3px solid #35adb8;">dddddd</d>
-    <d style="border: 3px solid #44746d;">eeeeee</d>
-    <d style="border: 3px solid #7dbf7b;">ffffff</d>
-    <d style="border: 3px solid #925a7d;">gggggg</d>
-    <d style="border: 3px solid #dbea1e;">hhhhhh</d>
-</div>
+<div id="main">AAAAA BBBBBBBBBBB CCCC</div>
 
 </body>
 </html>

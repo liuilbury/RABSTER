@@ -2032,6 +2032,7 @@ static YGCollectFlexItemsRowValues YGCalculateCollectFlexItemsRowValues(
 
   // Add items to the current line until it's full or we run out of items.
   uint32_t endOfLineIndex = startOfLineIndex;
+  bool flag=true;
   for (; endOfLineIndex < node->getChildren().size(); endOfLineIndex++) {
     const YGNodeRef child = node->getChild(endOfLineIndex);
     if (child->getStyle().display() == YGDisplayNone ||
@@ -2052,13 +2053,19 @@ static YGCollectFlexItemsRowValues YGCalculateCollectFlexItemsRowValues(
     // If this is a multi-line flow and this item pushes us over the available
     // size, we've hit the end of the current line. Break out of the loop and
     // lay out the current line.
+    if(sizeConsumedOnCurrentLineIncludingMinConstraint+child->GetGruopSize()>
+	   availableInnerMainDim&&isNodeFlexWrap&&isNodeFlexWrap&&flag){
+    	if(flexAlgoRowMeasurement.itemsOnLine > 0)
+			break;
+		else
+			flag=false;
+    }
     if (sizeConsumedOnCurrentLineIncludingMinConstraint +
                 flexBasisWithMinAndMaxConstraints + childMarginMainAxis >
             availableInnerMainDim &&
         isNodeFlexWrap && flexAlgoRowMeasurement.itemsOnLine > 0) {
       break;
     }
-
     sizeConsumedOnCurrentLineIncludingMinConstraint +=
         flexBasisWithMinAndMaxConstraints + childMarginMainAxis;
     flexAlgoRowMeasurement.sizeConsumedOnCurrentLine +=
@@ -2823,7 +2830,7 @@ static void YGNodelayoutImpl(
     return;
   }
 
-  const uint32_t childCount = YGNodeGetChildCount(node);
+  const int32_t childCount = YGNodeGetChildCount(node);
   if (childCount == 0) {
     YGNodeEmptyContainerSetMeasuredDimensions(
         node,
@@ -2957,6 +2964,32 @@ static void YGNodelayoutImpl(
   // Max main dimension of all the lines.
   float maxLineMainDim = 0;
   YGCollectFlexItemsRowValues collectedFlexItemsValues;
+  float _group_size=0;
+  size_t _group;
+  for (int i=childCount-1;i >= 0;i--){
+	  const YGNodeRef child = node->getChild(i);
+	  const float childMarginMainAxis =
+		  child->getMarginForAxis(mainAxis, availableInnerWidth).unwrap();
+	  const float flexBasisWithMinAndMaxConstraints =
+		  YGNodeBoundAxisWithinMinAndMax(
+			  child,
+			  mainAxis,
+			  child->getLayout().computedFlexBasis,
+			  mainAxisownerSize)
+			  .unwrap();
+	  if(i==childCount-1){
+	  	_group=child->GetGruop();
+	  	_group_size=flexBasisWithMinAndMaxConstraints + childMarginMainAxis;
+	  }else{
+	  	if(child->GetGruop()==_group){
+			_group_size+=flexBasisWithMinAndMaxConstraints + childMarginMainAxis;
+		}else{
+	  		_group=child->GetGruop();
+			_group_size=flexBasisWithMinAndMaxConstraints + childMarginMainAxis;
+	  	}
+	  }
+	  child->SetGruopSize(_group_size);
+  }
   for (; endOfLineIndex < childCount;
        lineCount++, startOfLineIndex = endOfLineIndex) {
     collectedFlexItemsValues = YGCalculateCollectFlexItemsRowValues(

@@ -29,79 +29,22 @@ int flag = 0;
 int cnt = 0;
 Render* ctx;
 Graphics* graphics;
-
-YGSize GetTextBounds(std::string font_name, float emSize, float width, float height, RenderNode* dom)
-{
-	RectF boundRect[255];
-	std::wstring w_font = utf8_decode(font_name);
-	FontFamily* fontFamily = new FontFamily(w_font.data());
-	Font font(fontFamily, emSize,FontStyleRegular,UnitPixel);
-	PointF pointF(0.0f, 0.0f);
-	std::wstring w_text;
-	for (int i = 0; i <= 255; i++)
-	{
-		std::string sss;
-		sss.push_back(i);
-		graphics->MeasureString(utf8_decode(sss).data(), 1, &font, pointF,StringFormat::GenericTypographic(), &boundRect[i]);
-		//boundRect[i].Width=floor(boundRect[i].Width);
-	}
-	int last_pos = 0, last_ws=0;
-	YGSize position={0,0}, now_position={0,0};
-	std::vector<RenderNode*> children = dom->getChildren();
-	for (int i = 0; i < children.size(); i++)
-	{
-		char c = children[i]->text[0];
-		if (c != ' ')
-		{
-			now_position.width += boundRect[c].Width;
-			if (now_position.width > width)
-			{
-				if (last_pos == 0)
-				{
-					i--;
-				}
-				else
-				{
-					i = last_pos-1;
-					last_pos=0;
-				}
-				now_position.height += font.GetHeight(graphics);
-				now_position.width = 0;
-			}else{
-				position.width=fmax(position.width,now_position.width);
-				Box& box = children[i]->style->StyleLayout.getBox();
-				box.left = now_position.width-boundRect[c].Width;
-				box.top = now_position.height;
-			}
-		}
-		else
-		{
-			last_pos = i + 1;
-			now_position.width += emSize/2;
-			if (now_position.width > width)
-			{
-				now_position.height += font.GetHeight(graphics);
-				now_position.width = 0;
-				last_pos=0;
-			}else{
-				position.width=fmax(position.width,now_position.width);
-				Box& box = children[i]->style->StyleLayout.getBox();
-				box.left= now_position.width-emSize/2;
-				box.top  = now_position.height;
-			}
-		}
-	}
-	position.height=now_position.height+font.GetHeight(graphics);
-	position.width+=dom->style->StyleLayout.sborders.border[0]*2;
-	return position;
-}
 YGSize text_measure(YGNodeRef node, float width, YGMeasureMode widthMode, float height, YGMeasureMode heightMode)
 {
 	if (widthMode == YGMeasureModeUndefined)width = 10000;
 	if (heightMode == YGMeasureModeUndefined)height = 10000;
-	YGSize size = GetTextBounds("Arial", 20, width, height, (RenderNode*)node->getContext());
-	width = size.width;
-	height = size.height;
+	RenderNode* dom = (RenderNode*)node->getContext();
+	std::wstring w_font = utf8_decode("Arial");
+	FontFamily* fontFamily = new FontFamily(w_font.data());
+	Font font(fontFamily, 20, FontStyleRegular, UnitPixel);
+	PointF pointF(0.0f, 0.0f);
+	RectF boundRect;
+	if(dom->text!=" ")
+		graphics->MeasureString(utf8_decode(dom->text).data(), 1, &font, pointF, StringFormat::GenericTypographic(), &boundRect);
+	else
+		boundRect.Width=10;
+	width = boundRect.Width;
+	height = boundRect.Height;
 	return {
 		.width=width,
 		.height=height
@@ -143,14 +86,17 @@ void get_position(RenderNode* d, float& left, float& top, float& width, float& h
 		if (d->getParent() != nullptr)
 		{
 			box = d->getParent()->style->StyleLayout.getBox();
-			if (d->getParent()->style->StyleLayout.sdisplay == 2)
+			if (d->getParent()->style->StyleLayout.sdisplay == 2&&d->element->type!=GUMBO_NODE_TEXT)
 			{
 				if (d->getPrev() != nullptr)
 				{
 					Box& br_box = d->getPrev()->style->StyleLayout.getBox();
 					box.top = br_box.top + br_box.height;
-					box.left=br_box.left;
-					left=0;
+					box.left = br_box.left;
+					left = 0;
+				}else{
+					Box& fa_box = d->getParent()->style->StyleLayout.getBox();
+					box = fa_box;
 				}
 			}
 			else
@@ -217,16 +163,13 @@ void print_string(RenderNode* d, Graphics* graphics)
 		}
 		SolidBrush* solidBrush = new SolidBrush(Color(255, color[1], color[2], color[3]));
 		FontFamily* fontFamily = new FontFamily(L"Arial");
-		Font font(fontFamily, 20,FontStyleRegular,UnitPixel);
+		Font font(fontFamily, 20, FontStyleRegular, UnitPixel);
 		Box& fabox = d->getParent()->style->StyleLayout.getBox();
 		std::string s, last;
 		YGSize fontSize;
-		for(auto i:d->getChildren()){
-			Box& box = i->style->StyleLayout.getBox();
-			box.left+=fabox.left,box.top+=fabox.top;
-			graphics->DrawString(utf8_decode(i->text).data(), -1, &font, PointF(box.left, box.top), solidBrush);
-			//printf("%s\n%f %f %f %f\n", i->get_Name().data(), box.left, box.top, box.width, box.height);
-		}
+		Box& box = d->style->StyleLayout.getBox();
+		graphics->DrawString(utf8_decode(d->text).data(), -1, &font, PointF(box.left, box.top), solidBrush);
+		//printf("%s\n%f %f %f %f\n", d->text.data(), box.left, box.top, box.width, box.height);
 	}
 }
 void print_time(RenderNode* d, Graphics* graphics)
@@ -250,12 +193,9 @@ void print_time(RenderNode* d, Graphics* graphics)
 void show_node(RenderNode* d)
 {
 	print_position(d, graphics);
-	if (d->element != nullptr)
-	{
-		print_border(d, graphics);
-		print_string(d, graphics);
-		print_time(d, graphics);
-	}
+	print_border(d, graphics);
+	print_string(d, graphics);
+	print_time(d, graphics);
 }
 void show_tree(RenderNode* d)
 {
