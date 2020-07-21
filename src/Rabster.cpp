@@ -57,6 +57,7 @@ void html_init()
 	ctx = new Render();
 	ctx->measure = text_measure;
 	ctx->root = ctx->build(html_ctx->root, nullptr);
+	ctx->Render_Tree();
 	//ctx->Print_Tree();
 }
 void html_destroy(DomNode* d)
@@ -93,7 +94,6 @@ void get_position(RenderNode* d, float& left, float& top, float& width, float& h
 					Box& br_box = d->getPrev()->style->StyleLayout.getBox();
 					box.top = br_box.top + br_box.height;
 					box.left = br_box.left;
-					left = 0;
 				}else{
 					Box& fa_box = d->getParent()->style->StyleLayout.getBox();
 					box = fa_box;
