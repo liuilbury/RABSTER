@@ -3,7 +3,10 @@
 - [Gumbo](https://github.com/google/gumbo-parser) 用于解析Html文件，得到Dom树
 - [LibCSS](https://www.netsurf-browser.org/projects/libcss/) 用于解析CSS文件,得到CSS规则并储存
 - [Yoga](https://github.com/facebook/yoga) 用于实现Flex布局
-- [Gdi+](https://docs.microsoft.com/en-us/windows/win32/gdiplus/-gdiplus-gdi-start) 用于最终画面的呈现 
+- [Gdi+](https://docs.microsoft.com/en-us/windows/win32/gdiplus/-gdiplus-gdi-start) 用于最终画面的呈现
+## 更新日志
+- 在LibCSS添加了transition属性的支持
+- 增加了一些代码以使得Flex可以正确的对文字进行排版
 ## 当前支持
 目前仅支持少量的CSS属性。 
 
