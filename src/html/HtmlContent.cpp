@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include <sstream>
-#include <string.h>
+#include <cstring>
 #include <queue>
 #include "HtmlContent.h"
 #include "Handle.h"
@@ -23,7 +23,7 @@ void HtmlContent::html_css_new_stylesheets()
 {
 	html_stylesheet htmlsheet;
 	htmlsheet.sheet = nullptr;
-	html_css_append_stylesheets("F:\\opengl\\RABSTER\\resources\\default.css");//STYLESHEET_BASE
+	html_css_append_stylesheets(R"(../resources/default.css)");//STYLESHEET_BASE
 	stylesheets.push_back(htmlsheet);//STYLESHEET_QUIRKS
 	stylesheets.push_back(htmlsheet);//STYLESHEET_ADBLOCK
 	stylesheets.push_back(htmlsheet);//STYLESHEET_USER
@@ -105,20 +105,6 @@ css_stylesheet* HtmlContent::create_inline_style(std::string inline_string)
 	css_stylesheet_data_done(sheet);
 	return sheet;
 }
-void show(DomNode* d)
-{
-	css_color color_shade;
-	css_computed_color(d->_final_style->styles[CSS_PSEUDO_ELEMENT_NONE], &color_shade);
-	printf("color of %s is %x\n", d->real_name.c_str(), color_shade);
-	char buf[8];
-	sprintf(buf, "%x", color_shade);
-	for (int i = 0; i < 4; i++)
-	{
-		uint32_t x;
-		sscanf(buf + 2 * i, "%2x", &x);
-		printf("%d\n", x);
-	}
-}
 void HtmlContent::get_node_style(DomNode* d, const css_computed_style* parent_style)
 {
 	css_stylesheet* inline_style = nullptr;
@@ -139,7 +125,6 @@ void HtmlContent::get_node_style(DomNode* d, const css_computed_style* parent_st
 		styles->styles[CSS_PSEUDO_ELEMENT_NONE] = composed;
 	}
 	d->_final_style = styles;
-	//show(d);
 }
 void HtmlContent::get_tree_style(DomNode* d)
 {
@@ -184,7 +169,7 @@ DomNode* HtmlContent::build_html_tree(DomNode* fa, GumboNode* dom)
 	{
 		std::string oo = "style(" + std::to_string(css_url.size()) + ").css";
 		css_url.push_back(oo);
-		std::ofstream fs(R"(F:\opengl\RABSTER\resources\)" + oo);
+		std::ofstream fs(R"(../resources/)" + oo);
 		GumboNode* data = static_cast<GumboNode*>(children->data[0]);
 		fs << std::string(data->v.text.text);
 		fs.close();
@@ -286,7 +271,7 @@ void HtmlContent::html_init(std::string url)
 	html_css_new_stylesheets();
 	for (auto i:css_url)
 	{
-		std::string str = R"(F:\opengl\RABSTER\resources\)" + i;
+		std::string str = R"(../resources/)" + i;
 		html_css_append_stylesheets(str.data());
 	}
 	html_css_new_selection_context();

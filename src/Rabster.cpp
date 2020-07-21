@@ -53,7 +53,7 @@ YGSize text_measure(YGNodeRef node, float width, YGMeasureMode widthMode, float 
 void html_init()
 {
 	html_ctx = new HtmlContent();
-	html_ctx->html_init(R"(F:\opengl\RABSTER\resources\test.html)");
+	html_ctx->html_init(R"(../resources/test.html)");
 	ctx = new Render();
 	ctx->measure = text_measure;
 	ctx->root = ctx->build(html_ctx->root, nullptr);
@@ -127,6 +127,7 @@ void print_position(RenderNode* d, Graphics* graphics)
 	float left, top, width, height;
 	get_position(d, left, top, width, height);
 	graphics->FillRectangle(solidBrush, left, top, width, height);
+	printf("%s\n%f %f %f %f\n", d->get_Name().data(), left, top, width,height);
 }
 void print_border(RenderNode* d, Graphics* graphics)
 {
@@ -169,7 +170,6 @@ void print_string(RenderNode* d, Graphics* graphics)
 		YGSize fontSize;
 		Box& box = d->style->StyleLayout.getBox();
 		graphics->DrawString(utf8_decode(d->text).data(), -1, &font, PointF(box.left, box.top), solidBrush);
-		//printf("%s\n%f %f %f %f\n", d->text.data(), box.left, box.top, box.width, box.height);
 	}
 }
 void print_time(RenderNode* d, Graphics* graphics)
