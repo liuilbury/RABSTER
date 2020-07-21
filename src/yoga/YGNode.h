@@ -84,8 +84,8 @@ private:
   using CompactValue = facebook::yoga::detail::CompactValue;
 
 public:
-	size_t gruop=0;
-	size_t gruop_size=0;
+	size_t group=0;
+	size_t group_size=0;
   YGNode() : YGNode{YGConfigGetDefault()} {}
   explicit YGNode(const YGConfigRef config) : config_{config} {
     if (config->useWebDefaults) {

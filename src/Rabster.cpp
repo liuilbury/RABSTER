@@ -290,8 +290,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		nWidth = rctA.right - rctA.left;   //窗口的宽度
 		nHeight = rctA.bottom - rctA.top;  //窗口的高度
 		PAINTSTRUCT ps;
+		Bitmap bitmap(nWidth,nHeight);
+		graphics = Graphics::FromImage(&bitmap);
 		hdc = BeginPaint(hwnd, &ps);
-		graphics = new Graphics(hdc);
+		Graphics* grap = new Graphics(hdc);
 		ctx->Clean_Tree();
 		ctx->Render_Tree();
 		ctx->Layout_Tree();
@@ -299,6 +301,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		YGNodeStyleSetMaxHeight(ctx->root->ygNode, nHeight);
 		YGNodeCalculateLayout(ctx->root->ygNode, YGUndefined, YGUndefined, YGDirectionLTR);
 		show_tree(ctx->root);
+		grap->DrawImage(&bitmap,0.0,0.0,nWidth,nHeight);
 		EndPaint(hwnd, &ps);
 		return 0;
 	}

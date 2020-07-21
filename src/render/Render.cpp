@@ -21,17 +21,17 @@ void Render::Render_Tree()
 		{
 			if(d->text==" "){
 				group++;
-				d->ygNode->gruop=group;
+				d->ygNode->group=group;
 				d->ygNode->setMeasureFunc(measure);
 				group++;
 				continue;
 			}
-			d->ygNode->gruop=group;
+			d->ygNode->group=group;
 			d->ygNode->setMeasureFunc(measure);
 			continue;
 		}else{
 			group++;
-			d->ygNode->gruop=group;
+			d->ygNode->group=group;
 		}
 		for (auto i:d->getChildren())
 		{
