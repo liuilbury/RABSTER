@@ -2053,7 +2053,7 @@ static YGCollectFlexItemsRowValues YGCalculateCollectFlexItemsRowValues(
     // If this is a multi-line flow and this item pushes us over the available
     // size, we've hit the end of the current line. Break out of the loop and
     // lay out the current line.
-    if(sizeConsumedOnCurrentLineIncludingMinConstraint+child->GetGruopSize()>
+    if(sizeConsumedOnCurrentLineIncludingMinConstraint+child->gruop_size>
 	   availableInnerMainDim&&isNodeFlexWrap&&isNodeFlexWrap&&flag){
     	if(flexAlgoRowMeasurement.itemsOnLine > 0)
 			break;
@@ -2978,17 +2978,17 @@ static void YGNodelayoutImpl(
 			  mainAxisownerSize)
 			  .unwrap();
 	  if(i==childCount-1){
-	  	_group=child->GetGruop();
+	  	_group=child->gruop;
 	  	_group_size=flexBasisWithMinAndMaxConstraints + childMarginMainAxis;
 	  }else{
-	  	if(child->GetGruop()==_group){
+	  	if(child->gruop==_group){
 			_group_size+=flexBasisWithMinAndMaxConstraints + childMarginMainAxis;
 		}else{
-	  		_group=child->GetGruop();
+			_group=child->gruop;
 			_group_size=flexBasisWithMinAndMaxConstraints + childMarginMainAxis;
 	  	}
 	  }
-	  child->SetGruopSize(_group_size);
+	  child->gruop_size=_group_size;
   }
   for (; endOfLineIndex < childCount;
        lineCount++, startOfLineIndex = endOfLineIndex) {

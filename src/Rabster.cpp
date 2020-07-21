@@ -127,7 +127,7 @@ void print_position(RenderNode* d, Graphics* graphics)
 	float left, top, width, height;
 	get_position(d, left, top, width, height);
 	graphics->FillRectangle(solidBrush, left, top, width, height);
-	printf("%s\n%f %f %f %f\n", d->get_Name().data(), left, top, width,height);
+	//printf("%s\n%f %f %f %f\n", d->get_Name().data(), left, top, width,height);
 }
 void print_border(RenderNode* d, Graphics* graphics)
 {

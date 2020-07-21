@@ -4,26 +4,33 @@
     <meta charset="utf-8">
     <title></title>
     <style>
-        #main {
-            width: 100%;
-            height: 200px;
-            border: 1px solid #c3c3c3;
+        .flex1 {
+            height: 100%;
+            border: 2px solid #ef0c0c;
+            background-color: gray;
             display: -webkit-flex; /* Safari */
             -webkit-flex-wrap: wrap; /* Safari 6.1+ */
             display: flex;
             flex-wrap: wrap;
+            flex-grow: 1;
             align-content: flex-start;
         }
-
-        #main div {
-            width: 50px;
-            height: 50px;
+        .flex2 {
+            height: 100%;
+            border: 2px solid #1cd5d0;
+            background-color: gray;
+            display: -webkit-flex; /* Safari */
+            -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            align-content: flex-start;
+            justify-content: center;
         }
     </style>
 </head>
-<body>
-
-<div id="main">AAAAA BBBBBBBBBBB CCCC</div>
-
+<body style="display: flex;width: 100%;height: 100%">
+<div class="flex1">So we beat on, boats against the current, borne back ceaselessly into the past.</div>
+<div class="flex2">So we beat on, boats against the current, borne back ceaselessly into the past.</div>
 </body>
 </html>

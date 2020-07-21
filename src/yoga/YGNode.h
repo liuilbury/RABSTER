@@ -35,16 +35,6 @@ private:
   static constexpr size_t baselineUsesContext_ = 5;
   static constexpr size_t printUsesContext_ = 6;
   static constexpr size_t useWebDefaults_ = 7;
-  size_t gruop=0;
-  size_t gruop_size=0;
- public:
-	void SetGruopSize(size_t gruopSize);
- public:
-	size_t GetGruopSize() const;
- public:
-	void SetGruop(size_t gruop);
- public:
-	size_t GetGruop() const;
  private:
 	void* context_ = nullptr;
   uint8_t flags = 1;
@@ -94,6 +84,8 @@ private:
   using CompactValue = facebook::yoga::detail::CompactValue;
 
 public:
+	size_t gruop=0;
+	size_t gruop_size=0;
   YGNode() : YGNode{YGConfigGetDefault()} {}
   explicit YGNode(const YGConfigRef config) : config_{config} {
     if (config->useWebDefaults) {
