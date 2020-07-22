@@ -271,8 +271,7 @@ void HtmlContent::html_init(std::string url)
 	html_css_new_stylesheets();
 	for (auto i:css_url)
 	{
-		std::string str = R"(../resources/)" + i;
-		html_css_append_stylesheets(str.data());
+		html_css_append_stylesheets(i.data());
 	}
 	html_css_new_selection_context();
 	get_tree_style(root);

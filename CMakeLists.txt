@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project (RABSTER)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++17")
-
+set(CMAKE_CXX_STANDARD 20)
 
 include_directories(src/css/libparserutils/0.2.4/src)
 file(GLOB_RECURSE file5    src/css/libparserutils/0.2.4/src/*.c)
@@ -35,4 +34,3 @@ add_executable(rabster src/Rabster.cpp ${CSS} ${HTML} ${gumbo} ${yoga} src/rende
 target_link_libraries(rabster  PUBLIC gdiplus)
 target_link_libraries(rabster PUBLIC iconv)
 target_include_directories(rabster PUBLIC /include/parserutils/iconv.h)
-#add_definitions(-DDEBUG_HTML)

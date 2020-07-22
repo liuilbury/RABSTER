@@ -50,10 +50,10 @@ YGSize text_measure(YGNodeRef node, float width, YGMeasureMode widthMode, float 
 		.height=height
 	};
 }
-void html_init()
+void html_init(char* url)
 {
 	html_ctx = new HtmlContent();
-	html_ctx->html_init(R"(../resources/test.html)");
+	html_ctx->html_init(url);
 	ctx = new Render();
 	ctx->measure = text_measure;
 	ctx->root = ctx->build(html_ctx->root, nullptr);
@@ -313,7 +313,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 }
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
 {
-	html_init();
+	html_init(szCmdLine);
 	GdiplusStartupInput gdiplusStartupInput;
 	ULONG_PTR gdiplusToken;
 	GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
